@@ -1,0 +1,26 @@
+{
+  "purpose": "用于继续扩展《忍者必须死3》动画素材，需人工核实版权、内容及清晰度",
+  "sources": [
+    {
+      "name": "忍者必须死3 BWIKI",
+      "url": "https://wiki.biligame.com/nmd3/",
+      "type": "characters bosses weapons wallpapers"
+    },
+    {
+      "name": "小米游戏忍者必须死3资讯",
+      "url": "https://game.xiaomi.com/",
+      "type": "official-promotional-and-editorial"
+    },
+    {
+      "name": "三大妈游戏资讯",
+      "url": "https://shouyou.3dmgame.com/",
+      "type": "editorial-screenshots"
+    },
+    {
+      "name": "Wallpapersden",
+      "url": "https://wallpapersden.com/",
+      "type": "fan-wallpaper"
+    }
+  ],
+  "notes": "链接为候选素材来源，不意味着获得下载或再分发许可。"
+}
