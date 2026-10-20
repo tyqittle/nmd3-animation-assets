@@ -808,10 +808,15 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/c/cf/eii0oejtgrs6zwvc9klai69af60ztc7.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E4%BF%A1%E9%B9%A4%E7%BE%BD",
       "local_path": "assets/weapons/extra/wind_feather_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_raw_image_url_from_wiki",
       "copyright": "third_party_review_needed",
-      "animation_use": "prop_layer"
+      "animation_use": "prop_layer",
+      "bytes": 125569,
+      "width": 555,
+      "height": 555,
+      "sha256": "aecb3c3e63846598fde7cba0d2305feaa511a7d434be3a5634ffdb50607dd583",
+      "has_alpha": true
     },
     {
       "id": "weiyan_01",
@@ -821,10 +826,15 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/6/66/0m2s4g8nvyvnww8xc6a181hugnpj4n3.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%BB%87%E7%82%8E",
       "local_path": "assets/weapons/extra/weiyan_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_raw_image_url_from_wiki",
       "copyright": "third_party_review_needed",
-      "animation_use": "prop_layer"
+      "animation_use": "prop_layer",
+      "bytes": 123426,
+      "width": 555,
+      "height": 555,
+      "sha256": "628616d277d399e5170e6f934407575917ffbd5fca971cd59f856539d73a245e",
+      "has_alpha": true
     },
     {
       "id": "divine_conch_01",
@@ -834,10 +844,15 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/a/ab/qjiknadu71ixsrycwc17b69dxhvi3bj.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%A5%9E%E4%BD%BF%C2%B7%E6%B2%A7%E6%BA%9F",
       "local_path": "assets/weapons/extra/divine_conch_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_raw_image_url_from_wiki",
       "copyright": "third_party_review_needed",
-      "animation_use": "prop_layer"
+      "animation_use": "prop_layer",
+      "bytes": 162699,
+      "width": 555,
+      "height": 555,
+      "sha256": "cbd350f591099a931de8e7a9a32c1e21ff4d92d6c0bb087c0fa190ad019c78a1",
+      "has_alpha": true
     },
     {
       "id": "bailai_dawn_01",
@@ -847,10 +862,15 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/8/85/dgtpj1uxnnvewghymsvpo6cqerzu320.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%99%BE%E9%9B%B7%C2%B7%E6%8B%82%E6%99%93",
       "local_path": "assets/weapons/extra/bailai_dawn_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_raw_image_url_from_wiki",
       "copyright": "third_party_review_needed",
-      "animation_use": "prop_layer"
+      "animation_use": "prop_layer",
+      "bytes": 193075,
+      "width": 555,
+      "height": 555,
+      "sha256": "f2874faec4e3983663084785f9b96a00afbe88bcc4938967d2e436fb137e6d34",
+      "has_alpha": true
     }
   ]
 }
