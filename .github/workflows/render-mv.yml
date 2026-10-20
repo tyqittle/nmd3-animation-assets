@@ -23,16 +23,16 @@ jobs:
       - name: Dependencies
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg python3-pil fonts-dejavu-core
+          sudo apt-get install -y ffmpeg python3-pil python3-numpy fonts-dejavu-core
       - name: Render MP4
         run: python3 ninja/mv/make_mv.py
       - name: Verify output
         run: |
-          test -s output/ninja3-shadow-bloom-mv.mp4
-          ffprobe -v error -show_entries format=duration,size -of default=nw=1 output/ninja3-shadow-bloom-mv.mp4
+          test -s output/ninja3-shadow-protocol-v2.mp4
+          ffprobe -v error -show_entries format=duration,size -of default=nw=1 output/ninja3-shadow-protocol-v2.mp4
       - name: Publish MP4 as downloadable artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ninja3-shadow-bloom-mv
-          path: output/ninja3-shadow-bloom-mv.mp4
+          name: ninja3-shadow-protocol-v2
+          path: output/ninja3-shadow-protocol-v2.mp4
           retention-days: 30
