@@ -1,0 +1,58 @@
+name: Expand NMD3 skin artwork
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/expand-artwork.yml'
+      - 'scripts/discover_wiki_art.py'
+      - 'catalog/wiki_illustration_targets.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nmd3-assets-wiki-expansion
+  cancel-in-progress: false
+
+jobs:
+  discover-and-collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install parser and validator
+        run: python -m pip install -r requirements.txt
+      - name: Collect labeled illustrations and validate real files
+        run: python -u scripts/discover_wiki_art.py
+      - name: Audit downloaded files
+        run: python -u scripts/audit_assets.py
+      - name: Update searchable CSV metadata
+        run: |
+          python - <<'PY'
+          import json,csv
+          from pathlib import Path
+          cat=json.loads(Path("catalog/assets.json").read_text("utf-8"))
+          keys=["id","name","category","subcategory","character","image_url","source_page","local_path","download_status","width","height","has_alpha","quality_tier"]
+          with open("catalog/assets.csv","w",encoding="utf-8",newline="") as f:
+              w=csv.DictWriter(f,fieldnames=keys,extrasaction="ignore")
+              w.writeheader()
+              for a in cat["assets"]:
+                  w.writerow({k:a.get(k,"") for k in keys})
+          PY
+      - name: Publish only validated files and metadata
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog/assets.json catalog/assets.csv assets/characters/skins/
+          if ! git diff --cached --quiet; then
+            git commit -m "Expand NMD3 skin artwork with verified images"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No new valid artwork; original catalog unchanged."
+          fi
