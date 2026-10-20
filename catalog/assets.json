@@ -1231,11 +1231,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/2/2e/84rlib4wnseb9y98rrdgea3zb2me7yc.png",
       "source_page": "https://wiki.biligame.com/nmd3/冰羽·兮兰",
       "local_path": "assets/characters/2026expansion/xilan_icefeather_2026.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_web_image_source_unverified_binary",
       "copyright": "third_party_review_needed",
       "animation_use": "character_reference",
-      "quality_tier": "awaiting_download"
+      "quality_tier": "awaiting_download",
+      "bytes": 527293,
+      "width": 620,
+      "height": 780,
+      "sha256": "9a2ebe54f895af6448a6b002660c3ddd492c1a52ab12bda8ba50280a7fa2855a",
+      "has_alpha": true
     },
     {
       "id": "ying_sakurafire_promo_2026",
@@ -1246,11 +1251,16 @@
       "image_url": "https://syimg.3dmgame.com/uploadimg/xiaz/2025/1023/1761188232604.png",
       "source_page": "https://shouyou.3dmgame.com/gl/596953.html",
       "local_path": "assets/characters/2026expansion/ying_sakurafire_promo_2026.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_web_image_source_unverified_binary",
       "copyright": "third_party_review_needed",
       "animation_use": "character_reference",
-      "quality_tier": "awaiting_download"
+      "quality_tier": "awaiting_download",
+      "bytes": 747234,
+      "width": 511,
+      "height": 687,
+      "sha256": "8828736ce0e154acf9722342db7f54c94b96754075b265a5517c4bef65d64c59",
+      "has_alpha": true
     },
     {
       "id": "ying_sakurafire_attack_2026",
@@ -1260,11 +1270,16 @@
       "image_url": "https://syimg.3dmgame.com/uploadimg/xiaz/2025/1023/1761188233749.png",
       "source_page": "https://shouyou.3dmgame.com/gl/596953.html",
       "local_path": "assets/backgrounds/2026expansion/ying_sakurafire_attack_2026.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_web_image_source_unverified_binary",
       "copyright": "third_party_review_needed",
       "animation_use": "cinematic_reference",
-      "quality_tier": "awaiting_download"
+      "quality_tier": "awaiting_download",
+      "bytes": 2482652,
+      "width": 1819,
+      "height": 831,
+      "sha256": "6caf535e9d7d08548f21518dfa191a3476bb7379f2618cb62df1bde306034ad4",
+      "has_alpha": true
     },
     {
       "id": "xushi_sword_dance_promo_2026",
@@ -1274,11 +1289,16 @@
       "image_url": "https://pic.7xz.com/7xz/imgfile/20241217/171002359pn8.jpg",
       "source_page": "https://www.7xz.com/games/25409.html",
       "local_path": "assets/backgrounds/2026expansion/xushi_sword_dance_promo_2026.jpg",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_web_image_source_unverified_binary",
       "copyright": "third_party_review_needed",
       "animation_use": "cinematic_reference",
-      "quality_tier": "awaiting_download"
+      "quality_tier": "awaiting_download",
+      "bytes": 880052,
+      "width": 1280,
+      "height": 720,
+      "sha256": "9a764d739f0e0d293e0dc71eadcb68e242ee6f1af1ae2b1ee1f40e2ad0eaafef",
+      "has_alpha": false
     },
     {
       "id": "yinxiao_spring_event_2026",
@@ -1288,11 +1308,16 @@
       "image_url": "https://img2-tc.tapimg.com/moment/etag/FtwDA6X0GsR7LdyWdiF1kGTJz30w_20260121142737.jpg",
       "source_page": "https://www.taptap.cn/moment/763051652507764510",
       "local_path": "assets/backgrounds/2026expansion/yinxiao_spring_event_2026.jpg",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_web_image_source_unverified_binary",
       "copyright": "third_party_review_needed",
       "animation_use": "cinematic_reference",
-      "quality_tier": "awaiting_download"
+      "quality_tier": "awaiting_download",
+      "bytes": 580978,
+      "width": 1920,
+      "height": 1080,
+      "sha256": "10c54f5403ee4b5fb414e40cc5f54f8cc1c347f33613d948094a79335c1f2eb8",
+      "has_alpha": false
     }
   ]
 }
