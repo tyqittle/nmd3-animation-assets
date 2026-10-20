@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "source_index": "https://wiki.biligame.com/nmd3/忍者皮肤",
+  "description": "仅从 BWIKI 皮肤详情页采集名称包含立绘的资源；不会采集头像、表情或缩略图。",
+  "targets": [
+    {
+      "name": "镜花·琳",
+      "character": "琳",
+      "slug": "001_lin"
+    },
+    {
+      "name": "蓝雪·琳",
+      "character": "琳",
+      "slug": "002_lin"
+    },
+    {
+      "name": "青行姬·琳",
+      "character": "琳",
+      "slug": "003_lin"
+    },
+    {
+      "name": "芳青·琳",
+      "character": "琳",
+      "slug": "004_lin"
+    },
+    {
+      "name": "樱花·琳",
+      "character": "琳",
+      "slug": "005_lin"
+    },
+    {
+      "name": "嫣华·琳",
+      "character": "琳",
+      "slug": "006_lin"
+    },
+    {
+      "name": "女仆·琳",
+      "character": "琳",
+      "slug": "007_lin"
+    },
+    {
+      "name": "夏梦·琳",
+      "character": "琳",
+      "slug": "008_lin"
+    },
+    {
+      "name": "巫女·琳",
+      "character": "琳",
+      "slug": "009_lin"
+    },
+    {
+      "name": "弥生·琳",
+      "character": "琳",
+      "slug": "010_lin"
+    },
+    {
+      "name": "桃姬·琳",
+      "character": "琳",
+      "slug": "011_lin"
+    },
+    {
+      "name": "兔女郎·琳",
+      "character": "琳",
+      "slug": "012_lin"
+    },
+    {
+      "name": "琳儿响叮当",
+      "character": "琳",
+      "slug": "013_lin"
+    },
+    {
+      "name": "神乐·琳",
+      "character": "琳",
+      "slug": "014_lin"
+    },
+    {
+      "name": "魂·苍牙",
+      "character": "苍牙",
+      "slug": "015_cangya"
+    },
+    {
+      "name": "鬼·苍牙",
+      "character": "苍牙",
+      "slug": "016_cangya"
+    },
+    {
+      "name": "辉·苍牙",
+      "character": "苍牙",
+      "slug": "017_cangya"
+    },
+    {
+      "name": "猫灵·苍牙",
+      "character": "苍牙",
+      "slug": "018_cangya"
+    },
+    {
+      "name": "战·苍牙",
+      "character": "苍牙",
+      "slug": "019_cangya"
+    },
+    {
+      "name": "源·苍牙",
+      "character": "苍牙",
+      "slug": "020_cangya"
+    },
+    {
+      "name": "胧·苍牙",
+      "character": "苍牙",
+      "slug": "021_cangya"
+    },
+    {
+      "name": "雪·苍牙",
+      "character": "苍牙",
+      "slug": "022_cangya"
+    },
+    {
+      "name": "祭·苍牙",
+      "character": "苍牙",
+      "slug": "023_cangya"
+    },
+    {
+      "name": "煞·苍牙",
+      "character": "苍牙",
+      "slug": "024_cangya"
+    },
+    {
+      "name": "海滨·苍牙",
+      "character": "苍牙",
+      "slug": "025_cangya"
+    },
+    {
+      "name": "樱舞·小椒",
+      "character": "小椒",
+      "slug": "026_xiaojiao"
+    },
+    {
+      "name": "闹春·小椒",
+      "character": "小椒",
+      "slug": "027_xiaojiao"
+    },
+    {
+      "name": "桃花·小椒",
+      "character": "小椒",
+      "slug": "028_xiaojiao"
+    },
+    {
+      "name": "柠檬小椒",
+      "character": "小椒",
+      "slug": "029_xiaojiao"
+    },
+    {
+      "name": "蹦跳·小椒",
+      "character": "小椒",
+      "slug": "030_xiaojiao"
+    },
+    {
+      "name": "放课·小椒",
+      "character": "小椒",
+      "slug": "031_xiaojiao"
+    },
+    {
+      "name": "喵呜·小椒",
+      "character": "小椒",
+      "slug": "032_xiaojiao"
+    },
+    {
+      "name": "航海·小椒",
+      "character": "小椒",
+      "slug": "033_xiaojiao"
+    },
+    {
+      "name": "虚拟歌姬",
+      "character": "小椒",
+      "slug": "034_xiaojiao"
+    },
+    {
+      "name": "雪中红裘",
+      "character": "小椒",
+      "slug": "035_xiaojiao"
+    },
+    {
+      "name": "黄巾·小黑",
+      "character": "小黑",
+      "slug": "036_xiaohei"
+    },
+    {
+      "name": "百炼·小黑",
+      "character": "小黑",
+      "slug": "037_xiaohei"
+    },
+    {
+      "name": "贺春·小黑",
+      "character": "小黑",
+      "slug": "038_xiaohei"
+    },
+    {
+      "name": "炎龙铠甲",
+      "character": "小黑",
+      "slug": "039_xiaohei"
+    },
+    {
+      "name": "电音·小黑",
+      "character": "小黑",
+      "slug": "040_xiaohei"
+    },
+    {
+      "name": "宇宙·小黑",
+      "character": "小黑",
+      "slug": "041_xiaohei"
+    },
+    {
+      "name": "无面·小黑",
+      "character": "小黑",
+      "slug": "042_xiaohei"
+    },
+    {
+      "name": "夜叉·隼白",
+      "character": "隼白",
+      "slug": "043_hayabusa"
+    },
+    {
+      "name": "紫降·隼白",
+      "character": "隼白",
+      "slug": "044_hayabusa"
+    },
+    {
+      "name": "隼击鹰扬",
+      "character": "隼白",
+      "slug": "045_hayabusa"
+    },
+    {
+      "name": "紫刹·血影",
+      "character": "血影",
+      "slug": "046_bloodshadow"
+    },
+    {
+      "name": "极刃·血影",
+      "character": "血影",
+      "slug": "047_bloodshadow"
+    },
+    {
+      "name": "松烟锦年",
+      "character": "伊鹤",
+      "slug": "048_yihe"
+    },
+    {
+      "name": "红与黑",
+      "character": "伊鹤",
+      "slug": "049_yihe"
+    },
+    {
+      "name": "幽兰蝶梦",
+      "character": "伊鹤",
+      "slug": "050_yihe"
+    },
+    {
+      "name": "夜色春华",
+      "character": "伊鹤",
+      "slug": "051_yihe"
+    },
+    {
+      "name": "翡歌咏叹",
+      "character": "伊鹤",
+      "slug": "052_yihe"
+    },
+    {
+      "name": "棋士·紫原",
+      "character": "紫原",
+      "slug": "053_ziyuan"
+    },
+    {
+      "name": "天青·紫原",
+      "character": "紫原",
+      "slug": "054_ziyuan"
+    },
+    {
+      "name": "荧",
+      "character": "荧",
+      "slug": "055_ying"
+    },
+    {
+      "name": "晴空·荧",
+      "character": "荧",
+      "slug": "056_ying"
+    },
+    {
+      "name": "银翼骇客",
+      "character": "银枭",
+      "slug": "057_yinxiao"
+    },
+    {
+      "name": "虹羽逐浪",
+      "character": "银枭",
+      "slug": "058_yinxiao"
+    },
+    {
+      "name": "海祭·洛青",
+      "character": "洛青",
+      "slug": "059_luoqing"
+    },
+    {
+      "name": "深红魅影",
+      "character": "洛青",
+      "slug": "060_luoqing"
+    },
+    {
+      "name": "白棘裁决者",
+      "character": "卫鲤",
+      "slug": "061_weili"
+    },
+    {
+      "name": "剑心无澜",
+      "character": "卫鲤",
+      "slug": "062_weili"
+    },
+    {
+      "name": "极道·卫鲤",
+      "character": "卫鲤",
+      "slug": "063_weili"
+    },
+    {
+      "name": "极光律使",
+      "character": "其他",
+      "slug": "064_misc"
+    },
+    {
+      "name": "王牌魔术",
+      "character": "其他",
+      "slug": "065_misc"
+    },
+    {
+      "name": "暗鸦断罪者",
+      "character": "其他",
+      "slug": "066_misc"
+    },
+    {
+      "name": "青空·乘霄",
+      "character": "其他",
+      "slug": "067_misc"
+    },
+    {
+      "name": "报恩桃·戌时",
+      "character": "其他",
+      "slug": "068_misc"
+    },
+    {
+      "name": "澄碧·寒绡",
+      "character": "其他",
+      "slug": "069_misc"
+    },
+    {
+      "name": "清悦·兮兰",
+      "character": "其他",
+      "slug": "070_misc"
+    }
+  ]
+}
