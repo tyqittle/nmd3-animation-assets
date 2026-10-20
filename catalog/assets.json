@@ -470,11 +470,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/b/b0/4jpbb5fe7y47bbezlgshx8m0iy5i39z.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E5%A4%9C%E5%8F%89%C2%B7%E9%9A%BC%E7%99%BD%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89",
       "local_path": "assets/characters/extra/hayabusa_yasha_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 551542,
+      "width": 620,
+      "height": 780,
+      "sha256": "c5279f6c9409aad0ad28650612fb8d10cf8e16d7b37cecfd3b4cedcadc08315d",
+      "has_alpha": true
     },
     {
       "id": "hayabusa_anniversary_01",
@@ -485,11 +490,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/8/8e/rksm908dey11byxwqglre0cal5497nc.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E5%A4%9C%E5%8F%89%C2%B7%E9%9A%BC%E7%99%BD",
       "local_path": "assets/characters/extra/hayabusa_anniversary_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 643225,
+      "width": 620,
+      "height": 780,
+      "sha256": "424bfa4bbce33bbe989b058ebd84bd128379b555e0d5c1b1490345ce88d6af14",
+      "has_alpha": true
     },
     {
       "id": "ziyuan_default_01",
@@ -500,11 +510,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/e/e9/0z4l7uiheqqfbg441zc3thy5f78x1w7.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%B4%AB%E5%8E%9F",
       "local_path": "assets/characters/extra/ziyuan_default_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 555772,
+      "width": 620,
+      "height": 780,
+      "sha256": "31f607babf28e990e0eef7102d9dae2d42ee99338bfda68c22af8ec2d944a3e2",
+      "has_alpha": true
     },
     {
       "id": "silver_owl_combat_01",
@@ -515,11 +530,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/e/e4/1o7baifcs9sj8a864ty9a3ijjarnmy8.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E5%A5%94%E9%9B%B7%C2%B7%E9%93%B6%E6%9E%AD",
       "local_path": "assets/characters/extra/silver_owl_combat_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 381757,
+      "width": 620,
+      "height": 780,
+      "sha256": "1e38284a14123537cb0e25d78c6c3e36116b714263a890a654371d72b1f7a46d",
+      "has_alpha": true
     },
     {
       "id": "xilan_hanxiao_01",
@@ -530,11 +550,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/2/20/g0ik6hyo2zw3f4lyxcllhiam60tmle5.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E5%AF%92%E7%BB%A1%C2%B7%E5%85%AE%E5%85%B0",
       "local_path": "assets/characters/extra/xilan_hanxiao_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 505625,
+      "width": 620,
+      "height": 780,
+      "sha256": "d77c6f1870e95c7afaa9b1570a5655eb39e8a26423ce662b623bbb638d56c7d7",
+      "has_alpha": true
     },
     {
       "id": "lin_kagura_01",
@@ -545,11 +570,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/4/4a/1xjhmyq1zjqcrwk1iry9se346z732w0.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%A5%9E%E4%B9%90%C2%B7%E7%90%B3%EF%BC%88%E7%9A%AE%E8%82%A4%EF%BC%89",
       "local_path": "assets/characters/extra/lin_kagura_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 537714,
+      "width": 620,
+      "height": 780,
+      "sha256": "0c9672f6553aa6c2f77534d4387e50abe311f9046871c8bd525021a383961f56",
+      "has_alpha": true
     },
     {
       "id": "ziyuan_guizhan_01",
@@ -560,11 +590,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/c/cb/9iui0y5igcsq50duy1fhaqr4p66pue5.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%AC%BC%E6%96%A9%C2%B7%E7%B4%AB%E5%8E%9F",
       "local_path": "assets/characters/extra/ziyuan_guizhan_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 583666,
+      "width": 620,
+      "height": 780,
+      "sha256": "01cbf3c5a748a0421eb8ea1eabb5770f67b83f082ecaf7b9982bfe2d0e4c74a4",
+      "has_alpha": true
     },
     {
       "id": "yihe_shuangren_01",
@@ -575,11 +610,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/5/57/sl6o0blavfoq4fozen19wmenbx4yxb8.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%9C%9C%E5%88%83%C2%B7%E4%BC%8A%E9%B9%A4",
       "local_path": "assets/characters/extra/yihe_shuangren_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 500501,
+      "width": 620,
+      "height": 780,
+      "sha256": "be5829d384b4c8dc0fd28435a456935f35535e3cc5bb40b24d47585074ba4e8e",
+      "has_alpha": true
     },
     {
       "id": "xiaojiao_star_01",
@@ -590,11 +630,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/c/c1/af38z8ee4esnednly11cgqnnizsiyha.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E6%98%9F%E9%97%AA%C2%B7%E5%B0%8F%E6%A4%92",
       "local_path": "assets/characters/extra/xiaojiao_star_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 349002,
+      "width": 620,
+      "height": 780,
+      "sha256": "831f430386dc6f47723de48466e628f3c5289d8dfb69f23886c1e18894c6a088",
+      "has_alpha": true
     },
     {
       "id": "xiaohei_magic_01",
@@ -605,11 +650,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/c/c4/olg1n8oa1f3vjc2a2htqnyyy4k002yh.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%BE%99%E7%84%B0%C2%B7%E5%B0%8F%E9%BB%91",
       "local_path": "assets/characters/extra/xiaohei_magic_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 249280,
+      "width": 620,
+      "height": 780,
+      "sha256": "36c9f4d51becccfe939bbe5b4c002f851ca87910b2892fe843516ab237e02832",
+      "has_alpha": true
     },
     {
       "id": "ali_super_01",
@@ -620,11 +670,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/a/a7/5fzz960qqfie93kui5gr8vsczlfytrv.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E8%B6%85%E5%A8%81%C2%B7%E9%98%BF%E5%8A%9B",
       "local_path": "assets/characters/extra/ali_super_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 567797,
+      "width": 620,
+      "height": 780,
+      "sha256": "df0b51739f35c866ee9bbb17736defa05f5deaf0b966394706d621c6c77134f3",
+      "has_alpha": true
     },
     {
       "id": "ali_super_02",
@@ -635,11 +690,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/7/7e/3907mi41h6r2cqvbskp9ob7wjhr9wv8.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E8%B6%85%E5%A8%81%C2%B7%E9%98%BF%E5%8A%9B",
       "local_path": "assets/characters/extra/ali_super_02.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 217384,
+      "width": 620,
+      "height": 780,
+      "sha256": "b0d7239053b21412b5470efd1917483b0f1fe8ddedb33324f24f29fcd671ce44",
+      "has_alpha": true
     },
     {
       "id": "cangya_snow_01",
@@ -650,11 +710,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/3/3e/6cja854qo4ejaq82xxul6lcz64ezn6u.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%9B%AA%C2%B7%E8%8B%8D%E7%89%99",
       "local_path": "assets/characters/extra/cangya_snow_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 287963,
+      "width": 620,
+      "height": 780,
+      "sha256": "7aa6abe5dd491da22450dbd1056d1df80b502509bd9c7ef781b876da8cd4913c",
+      "has_alpha": true
     },
     {
       "id": "lin_snow_art_02",
@@ -665,11 +730,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/a/a5/hvl7d9ilekkdkfw41jq9ahy0t8ke7cy.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%9B%AA%E8%88%9E%C2%B7%E7%90%B3",
       "local_path": "assets/characters/extra/lin_snow_art_02.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 584419,
+      "width": 620,
+      "height": 780,
+      "sha256": "560e4a20651b1b778eeec3e7e01ac33c151973c40152ad1518a563ddd4140802",
+      "has_alpha": true
     },
     {
       "id": "xiaojiao_xuanhuang_01",
@@ -680,11 +750,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/6/66/7ya5zxh3zn9lhpic8poyhqoic4qlnl9.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%8E%84%E9%BB%84%C2%B7%E5%8F%8C%E7%84%B0",
       "local_path": "assets/characters/extra/xiaojiao_xuanhuang_01.png",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 411592,
+      "width": 620,
+      "height": 780,
+      "sha256": "35f711c6b20e44bc4597dd2a19033461030fbcf85ff7e97c96444b11c06536cf",
+      "has_alpha": true
     },
     {
       "id": "silver_owl_leyuan_01",
@@ -695,11 +770,16 @@
       "image_url": "https://community-hs.233leyuan.com/community/post/652162e7ff534661b8641d7da9631a7a_791765387.webp",
       "source_page": "https://www.233leyuan.com/post-detail/2034103331797209088",
       "local_path": "assets/characters/extra/silver_owl_leyuan_01.webp",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_source",
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 107926,
+      "width": 620,
+      "height": 780,
+      "sha256": "3f09a1766252ed2baeca35c09d01a3f54df1fd73a9222eff3d922c304dab9663",
+      "has_alpha": true
     },
     {
       "id": "wallpaper_lantern_lake_02",
@@ -709,11 +789,16 @@
       "image_url": "https://patchwiki.biligame.com/images/nmd3/4/4b/rcvkera6e6b5z1m55i7qcvdpccyelhe.jpg",
       "source_page": "https://wiki.biligame.com/nmd3/松烟锦年（壁纸）",
       "local_path": "assets/backgrounds/extra/wallpaper_lantern_lake_02.jpg",
-      "download_status": "not_downloaded",
+      "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_source",
       "copyright": "third_party_review_needed",
       "animation_use": "background_layer",
-      "quality_tier": "awaiting_download_and_review"
+      "quality_tier": "awaiting_download_and_review",
+      "bytes": 1982056,
+      "width": 2560,
+      "height": 1440,
+      "sha256": "af944ae33a36fc46568ec36f274139d48c3b0670b733d8fe8b4033969d04e05f",
+      "has_alpha": false
     }
   ]
 }
