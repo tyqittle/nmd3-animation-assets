@@ -799,6 +799,58 @@
       "height": 1440,
       "sha256": "af944ae33a36fc46568ec36f274139d48c3b0670b733d8fe8b4033969d04e05f",
       "has_alpha": false
+    },
+    {
+      "id": "wind_feather_01",
+      "name": "风信鹤羽",
+      "category": "weapons",
+      "subcategory": "weapon_art",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/c/cf/eii0oejtgrs6zwvc9klai69af60ztc7.png",
+      "source_page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E4%BF%A1%E9%B9%A4%E7%BE%BD",
+      "local_path": "assets/weapons/extra/wind_feather_01.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_raw_image_url_from_wiki",
+      "copyright": "third_party_review_needed",
+      "animation_use": "prop_layer"
+    },
+    {
+      "id": "weiyan_01",
+      "name": "织炎",
+      "category": "weapons",
+      "subcategory": "weapon_art",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/6/66/0m2s4g8nvyvnww8xc6a181hugnpj4n3.png",
+      "source_page": "https://wiki.biligame.com/nmd3/%E7%BB%87%E7%82%8E",
+      "local_path": "assets/weapons/extra/weiyan_01.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_raw_image_url_from_wiki",
+      "copyright": "third_party_review_needed",
+      "animation_use": "prop_layer"
+    },
+    {
+      "id": "divine_conch_01",
+      "name": "神使·沧溟",
+      "category": "weapons",
+      "subcategory": "weapon_art",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/a/ab/qjiknadu71ixsrycwc17b69dxhvi3bj.png",
+      "source_page": "https://wiki.biligame.com/nmd3/%E7%A5%9E%E4%BD%BF%C2%B7%E6%B2%A7%E6%BA%9F",
+      "local_path": "assets/weapons/extra/divine_conch_01.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_raw_image_url_from_wiki",
+      "copyright": "third_party_review_needed",
+      "animation_use": "prop_layer"
+    },
+    {
+      "id": "bailai_dawn_01",
+      "name": "百雷·拂晓·银铠听雷",
+      "category": "weapons",
+      "subcategory": "weapon_art",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/8/85/dgtpj1uxnnvewghymsvpo6cqerzu320.png",
+      "source_page": "https://wiki.biligame.com/nmd3/%E7%99%BE%E9%9B%B7%C2%B7%E6%8B%82%E6%99%93",
+      "local_path": "assets/weapons/extra/bailai_dawn_01.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_raw_image_url_from_wiki",
+      "copyright": "third_party_review_needed",
+      "animation_use": "prop_layer"
     }
   ]
 }
