@@ -1221,6 +1221,78 @@
       "height": 555,
       "sha256": "32de1bc869c88870304b7c0e7ac08e7835742010e6533178ead8161a3483d68e",
       "has_alpha": true
+    },
+    {
+      "id": "xilan_icefeather_2026",
+      "name": "冰羽·兮兰·蓝羽斩击",
+      "category": "characters",
+      "character": "兮兰",
+      "subcategory": "character_illustration",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/2/2e/84rlib4wnseb9y98rrdgea3zb2me7yc.png",
+      "source_page": "https://wiki.biligame.com/nmd3/冰羽·兮兰",
+      "local_path": "assets/characters/2026expansion/xilan_icefeather_2026.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_web_image_source_unverified_binary",
+      "copyright": "third_party_review_needed",
+      "animation_use": "character_reference",
+      "quality_tier": "awaiting_download"
+    },
+    {
+      "id": "ying_sakurafire_promo_2026",
+      "name": "樱火·荧·樱花初登场",
+      "category": "characters",
+      "character": "荧",
+      "subcategory": "character_promo",
+      "image_url": "https://syimg.3dmgame.com/uploadimg/xiaz/2025/1023/1761188232604.png",
+      "source_page": "https://shouyou.3dmgame.com/gl/596953.html",
+      "local_path": "assets/characters/2026expansion/ying_sakurafire_promo_2026.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_web_image_source_unverified_binary",
+      "copyright": "third_party_review_needed",
+      "animation_use": "character_reference",
+      "quality_tier": "awaiting_download"
+    },
+    {
+      "id": "ying_sakurafire_attack_2026",
+      "name": "樱火·荧·樱火忍术展示",
+      "category": "backgrounds",
+      "subcategory": "effect_reference",
+      "image_url": "https://syimg.3dmgame.com/uploadimg/xiaz/2025/1023/1761188233749.png",
+      "source_page": "https://shouyou.3dmgame.com/gl/596953.html",
+      "local_path": "assets/backgrounds/2026expansion/ying_sakurafire_attack_2026.png",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_web_image_source_unverified_binary",
+      "copyright": "third_party_review_needed",
+      "animation_use": "cinematic_reference",
+      "quality_tier": "awaiting_download"
+    },
+    {
+      "id": "xushi_sword_dance_promo_2026",
+      "name": "戌时·樱花剑舞宣传",
+      "category": "backgrounds",
+      "subcategory": "event_promo",
+      "image_url": "https://pic.7xz.com/7xz/imgfile/20241217/171002359pn8.jpg",
+      "source_page": "https://www.7xz.com/games/25409.html",
+      "local_path": "assets/backgrounds/2026expansion/xushi_sword_dance_promo_2026.jpg",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_web_image_source_unverified_binary",
+      "copyright": "third_party_review_needed",
+      "animation_use": "cinematic_reference",
+      "quality_tier": "awaiting_download"
+    },
+    {
+      "id": "yinxiao_spring_event_2026",
+      "name": "雷羿·银枭·新春资料片",
+      "category": "backgrounds",
+      "subcategory": "event_promo",
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FtwDA6X0GsR7LdyWdiF1kGTJz30w_20260121142737.jpg",
+      "source_page": "https://www.taptap.cn/moment/763051652507764510",
+      "local_path": "assets/backgrounds/2026expansion/yinxiao_spring_event_2026.jpg",
+      "download_status": "not_downloaded",
+      "source_verified": "candidate_web_image_source_unverified_binary",
+      "copyright": "third_party_review_needed",
+      "animation_use": "cinematic_reference",
+      "quality_tier": "awaiting_download"
     }
   ]
 }
