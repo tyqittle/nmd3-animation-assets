@@ -440,6 +440,26 @@
       "source_verified": "candidate_not_http_checked",
       "copyright": "third_party_review_needed",
       "animation_use": "background_layer"
+    },
+    {
+      "id": "skin_003_lin",
+      "name": "青行姬·琳",
+      "category": "characters",
+      "subcategory": "skin_illustration",
+      "character": "琳",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/e/e7/mnvob16cevjk9xqvyub31qo4mjpsmtp.png",
+      "source_page": "https://wiki.biligame.com/nmd3/%E9%9D%92%E8%A1%8C%E5%A7%AC%C2%B7%E7%90%B3",
+      "local_path": "assets/characters/skins/skin_003_lin.png",
+      "download_status": "downloaded",
+      "width": 620,
+      "height": 780,
+      "sha256": "eb9fc99efc8eba2833adddf20dfeb1dae60d733f51a0a56b509712b9ed3417c8",
+      "bytes": 607704,
+      "has_alpha": false,
+      "source_verified": "downloaded_from_wiki_page",
+      "copyright": "third_party_review_needed",
+      "animation_use": "character_layer",
+      "quality_tier": "standard_character"
     }
   ]
 }
