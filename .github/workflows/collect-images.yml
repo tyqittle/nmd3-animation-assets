@@ -38,6 +38,7 @@ jobs:
           git add catalog/assets.json assets/
           if ! git diff --cached --quiet; then
             git commit -m "Collect and verify downloadable NMD3 image assets"
+            git pull --rebase origin main
             git push
           else
             echo "No new valid image files downloaded."
