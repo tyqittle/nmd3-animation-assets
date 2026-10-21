@@ -418,10 +418,14 @@ def build(dest):
             for i,fr in enumerate(frames):
                 buf=io.BytesIO();fr.save(buf,format="PNG",optimize=True)
                 z.writestr(f"{ident}_{i:03d}.png",buf.getvalue())
-        for fr in (frames[0],frames[5],frames[-1]):
+        # Fade-in/out animation is allowed to have a FULLY transparent first or last frame.
+        # Midway frames MUST contain visible content and at least some transparent pixels.
+        for fi,fr in enumerate(frames):
             if fr.mode!="RGBA":raise AssertionError("Alpha missing")
             aa=fr.getchannel("A");hist=aa.getextrema()
-            if hist[0] != 0 or hist[1]==0: raise AssertionError(f"Invalid transparency {ident}:{hist}")
+            if hist[0] != 0:raise AssertionError(f"Background not transparent {ident}:{fi}:{hist}")
+            if 4 <= fi <= 10 and hist[1]==0:
+                raise AssertionError(f"Missing visible middle frame {ident}:{fi}:{hist}")
         if Image.open(anim).n_frames!=N_FRAMES:
             raise AssertionError("WebP not really animated: "+ident)
         effects.append({
