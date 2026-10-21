@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "id": "deep-abyss-meeting-v1",
+  "title": "忍村深渊复盘会：谁把闪交了？",
+  "duration": 48,
+  "background": "assets/backgrounds/wallpaper_moon_01.jpg",
+  "rights": "非官方同人二创。交闪与深渊战术为玩家主题；血影入麦等是原创笑点而非游戏台词。",
+  "characters": {
+    "hayabusa": {
+      "name": "隼白",
+      "path": "assets/characters/hayabusa_01.png",
+      "color": "#F1D3A3"
+    },
+    "xiaohei": {
+      "name": "小黑",
+      "path": "assets/characters/xiaohei_fire_01.png",
+      "color": "#FFA979"
+    },
+    "cangya": {
+      "name": "苍牙",
+      "path": "assets/characters/cangya_01.png",
+      "color": "#A8D8F7"
+    },
+    "ali": {
+      "name": "阿力",
+      "path": "assets/characters/ali_01.png",
+      "color": "#FED279"
+    },
+    "lin": {
+      "name": "琳",
+      "path": "assets/characters/lin_01.png",
+      "color": "#9CCBEC"
+    },
+    "blood": {
+      "name": "血影",
+      "path": "assets/characters/blood_shadow_01.png",
+      "color": "#FF708D"
+    }
+  },
+  "shots": [
+    {
+      "start": 0,
+      "end": 2.4,
+      "kind": "intro",
+      "lines": [
+        "忍村深渊复盘会",
+        "谁把闪交了？"
+      ]
+    },
+    {
+      "start": 2.4,
+      "end": 5.7,
+      "kind": "dialogue",
+      "speaker": "hayabusa",
+      "lines": [
+        "今晚深渊，目标六十层。",
+        "先报一下战力。"
+      ],
+      "effect": "normal",
+      "voice": "今晚深渊，目标六十层。先报一下战力。"
+    },
+    {
+      "start": 5.7,
+      "end": 8.9,
+      "kind": "dialogue",
+      "speaker": "xiaohei",
+      "lines": [
+        "报告！",
+        "我能开三大！"
+      ],
+      "effect": "normal",
+      "voice": "报告！我能开三大！"
+    },
+    {
+      "start": 8.9,
+      "end": 12.1,
+      "kind": "dialogue",
+      "speaker": "cangya",
+      "lines": [
+        "你上次第一大还没开，",
+        "就暴毙了。"
+      ],
+      "effect": "normal",
+      "voice": "你上次第一大还没开，就暴毙了。"
+    },
+    {
+      "start": 12.1,
+      "end": 15.5,
+      "kind": "dialogue",
+      "speaker": "xiaohei",
+      "lines": [
+        "那是战术性……",
+        "提前接力！"
+      ],
+      "effect": "normal",
+      "voice": "那是战术性……提前接力！"
+    },
+    {
+      "start": 15.5,
+      "end": 18.35,
+      "kind": "dialogue",
+      "speaker": "ali",
+      "lines": [
+        "放心！",
+        "我这次包稳！"
+      ],
+      "effect": "normal",
+      "voice": "放心！我这次包稳！"
+    },
+    {
+      "start": 18.35,
+      "end": 20.7,
+      "kind": "system",
+      "lines": [
+        "连接已断开",
+        "玩家「阿力」已退出队伍"
+      ],
+      "effect": "disconnect"
+    },
+    {
+      "start": 20.7,
+      "end": 24.25,
+      "kind": "dialogue",
+      "speaker": "lin",
+      "lines": [
+        "先别吵。六十一层，",
+        "谁交闪？"
+      ],
+      "effect": "normal",
+      "voice": "先别吵。六十一层，谁交闪？"
+    },
+    {
+      "start": 24.25,
+      "end": 27.75,
+      "kind": "dialogue",
+      "speaker": "xiaohei",
+      "lines": [
+        "我交了！",
+        "手机刚刚直接闪退！"
+      ],
+      "effect": "normal",
+      "voice": "我交了！手机刚刚直接闪退！"
+    },
+    {
+      "start": 27.75,
+      "end": 31.6,
+      "kind": "dialogue",
+      "speaker": "hayabusa",
+      "lines": [
+        "我说的是闪电！",
+        "不是闪退！！"
+      ],
+      "effect": "panic",
+      "voice": "我说的是闪电！不是闪退！！"
+    },
+    {
+      "start": 31.6,
+      "end": 35.9,
+      "kind": "dialogue",
+      "speaker": "blood",
+      "lines": [
+        "听说……你们在讨论",
+        "怎么打我？"
+      ],
+      "effect": "boss",
+      "voice": "听说……你们在讨论怎么打我？"
+    },
+    {
+      "start": 35.9,
+      "end": 39.55,
+      "kind": "dialogue",
+      "speaker": "cangya",
+      "lines": [
+        "等下……BOSS怎么",
+        "进家族语音了？！"
+      ],
+      "effect": "normal",
+      "voice": "等下……BOSS怎么进家族语音了？！"
+    },
+    {
+      "start": 39.55,
+      "end": 44.2,
+      "kind": "dialogue",
+      "speaker": "hayabusa",
+      "lines": [
+        "别问了！",
+        "先把麦关了！！"
+      ],
+      "effect": "panic",
+      "voice": "别问了！先把麦关了！！"
+    },
+    {
+      "start": 44.2,
+      "end": 48,
+      "kind": "outro",
+      "lines": [
+        "本周深渊战报",
+        "成功开大：0次",
+        "开会：1次 · BOSS进群：1次"
+      ]
+    }
+  ]
+}
