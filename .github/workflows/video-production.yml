@@ -54,7 +54,7 @@ jobs:
           python -m pip install pillow numpy
       - name: Compile Python sources
         run: |
-          python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/production.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/test_audio.py ninja/video/workflow/scripts/test_production.py ninja/video/projects/fentian-ad-parody/render.py
+          python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/production.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/test_audio.py ninja/video/workflow/scripts/test_production.py ninja/video/projects/fentian-ad-parody/render.py ninja/video/projects/xiaojiao-fentian-shop/render.py
       - name: Test generic video workflow (no fixed visual language)
         run: python ninja/video/workflow/scripts/test_production.py
       - name: Test existing dialogue engine
