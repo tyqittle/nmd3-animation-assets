@@ -2,7 +2,7 @@
   "version": 1,
   "updated": "2026-10-21",
   "source": "https://wiki.biligame.com/nmd3/武器图鉴",
-  "description": "仅采集 BWIKI 详情页明确标注的武器与武器幻化实图。新增百炼/三日月雷切的4个已在详情页标注的幻化候选；下载失败不入素材库。",
+  "description": "武器候选来自忍3 BWIKI 分类:武器品质SSR与官方2025-2026幻化公告；仅采集目标页明确标注的真实武器图片，经图像与哈希校验后入库。候选不等于成功入库。",
   "targets": [
     {
       "name": "焚天",
@@ -121,6 +121,268 @@
       "page": "https://wiki.biligame.com/nmd3/三日月雷切",
       "asset_type": "weapon_appearance",
       "weapon_family": "三日月雷切"
+    },
+    {
+      "name": "爱疯XXX",
+      "slug": "123_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%88%B1%E7%96%AFXXX"
+    },
+    {
+      "name": "百雷·拂晓",
+      "slug": "124_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%99%BE%E9%9B%B7%C2%B7%E6%8B%82%E6%99%93"
+    },
+    {
+      "name": "冰岚折扇",
+      "slug": "125_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E5%86%B0%E5%B2%9A%E6%8A%98%E6%89%87"
+    },
+    {
+      "name": "苍月战刃",
+      "slug": "126_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E8%8B%8D%E6%9C%88%E6%88%98%E5%88%83"
+    },
+    {
+      "name": "赤芒",
+      "slug": "127_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E8%B5%A4%E8%8A%92"
+    },
+    {
+      "name": "赤焰龙息",
+      "slug": "128_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E8%B5%A4%E7%84%B0%E9%BE%99%E6%81%AF"
+    },
+    {
+      "name": "断潮",
+      "slug": "129_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E6%96%AD%E6%BD%AE"
+    },
+    {
+      "name": "风宿·苍龙",
+      "slug": "130_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E5%AE%BF%C2%B7%E8%8B%8D%E9%BE%99"
+    },
+    {
+      "name": "风妖镰鼬",
+      "slug": "131_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E5%A6%96%E9%95%B0%E9%BC%AC"
+    },
+    {
+      "name": "封渊",
+      "slug": "132_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B0%81%E6%B8%8A"
+    },
+    {
+      "name": "广罗天寒",
+      "slug": "133_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B9%BF%E7%BD%97%E5%A4%A9%E5%AF%92"
+    },
+    {
+      "name": "鬼泪村正",
+      "slug": "134_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%AC%BC%E6%B3%AA%E6%9D%91%E6%AD%A3"
+    },
+    {
+      "name": "雷契·化龙",
+      "slug": "135_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%9B%B7%E5%A5%91%C2%B7%E5%8C%96%E9%BE%99"
+    },
+    {
+      "name": "雷宿·麒麟",
+      "slug": "136_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%9B%B7%E5%AE%BF%C2%B7%E9%BA%92%E9%BA%9F"
+    },
+    {
+      "name": "雷狱光剑",
+      "slug": "137_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%9B%B7%E7%8B%B1%E5%85%89%E5%89%91"
+    },
+    {
+      "name": "龙神飨宴",
+      "slug": "138_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E9%BE%99%E7%A5%9E%E9%A3%A8%E5%AE%B4"
+    },
+    {
+      "name": "破云",
+      "slug": "139_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%A0%B4%E4%BA%91"
+    },
+    {
+      "name": "神炎杖",
+      "slug": "140_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%A5%9E%E7%82%8E%E6%9D%96"
+    },
+    {
+      "name": "天晶苦无",
+      "slug": "141_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E5%A4%A9%E6%99%B6%E8%8B%A6%E6%97%A0"
+    },
+    {
+      "name": "天音灵箫",
+      "slug": "142_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E5%A4%A9%E9%9F%B3%E7%81%B5%E7%AE%AB"
+    },
+    {
+      "name": "亡魂之音",
+      "slug": "143_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E4%BA%A1%E9%AD%82%E4%B9%8B%E9%9F%B3"
+    },
+    {
+      "name": "漩雷一文字",
+      "slug": "144_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E6%BC%A9%E9%9B%B7%E4%B8%80%E6%96%87%E5%AD%97"
+    },
+    {
+      "name": "炎宿·朱雀",
+      "slug": "145_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%82%8E%E5%AE%BF%C2%B7%E6%9C%B1%E9%9B%80"
+    },
+    {
+      "name": "御火芭蕉扇",
+      "slug": "146_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E5%BE%A1%E7%81%AB%E8%8A%AD%E8%95%89%E6%89%87"
+    },
+    {
+      "name": "真·凌玉弓",
+      "slug": "147_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%9C%9F%C2%B7%E5%87%8C%E7%8E%89%E5%BC%93"
+    },
+    {
+      "name": "祝融",
+      "slug": "148_ssr",
+      "page": "https://wiki.biligame.com/nmd3/%E7%A5%9D%E8%9E%8D"
+    },
+    {
+      "name": "怒鲤双生·刃歌",
+      "slug": "149_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%92%E9%B2%A4%E5%8F%8C%E7%94%9F",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "怒鲤双生"
+    },
+    {
+      "name": "风月含袖·衔星",
+      "slug": "150_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E6%9C%88%E5%90%AB%E8%A2%96",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "风月含袖"
+    },
+    {
+      "name": "赤焰龙息·吞耀",
+      "slug": "151_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E8%B5%A4%E7%84%B0%E9%BE%99%E6%81%AF",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "赤焰龙息"
+    },
+    {
+      "name": "八岐断雷枪·破云青",
+      "slug": "152_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E5%85%AB%E5%B2%90%E6%96%AD%E9%9B%B7%E6%9E%AA",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "八岐断雷枪"
+    },
+    {
+      "name": "龙毫笔·湛水蓝",
+      "slug": "153_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E9%BE%99%E6%AF%AB%E7%AC%94",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "龙毫笔"
+    },
+    {
+      "name": "紫电白虹·饲蔷",
+      "slug": "154_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E7%B4%AB%E7%94%B5%E7%99%BD%E8%99%B9",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "紫电白虹"
+    },
+    {
+      "name": "断潮·索幽",
+      "slug": "155_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E6%96%AD%E6%BD%AE",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "断潮"
+    },
+    {
+      "name": "百雷·拂晓·解码",
+      "slug": "156_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E7%99%BE%E9%9B%B7%C2%B7%E6%8B%82%E6%99%93",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "百雷·拂晓"
+    },
+    {
+      "name": "尽滅·重构",
+      "slug": "157_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B0%BD%E6%BB%85",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "尽滅"
+    },
+    {
+      "name": "伏溟九渊·倚霜羽",
+      "slug": "158_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E4%BC%8F%E6%BA%9F%E4%B9%9D%E6%B8%8A",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "伏溟九渊"
+    },
+    {
+      "name": "怒鲤双生·引鲤舞",
+      "slug": "159_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%92%E9%B2%A4%E5%8F%8C%E7%94%9F",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "怒鲤双生"
+    },
+    {
+      "name": "八岐断雷枪·绯霆",
+      "slug": "160_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E5%85%AB%E5%B2%90%E6%96%AD%E9%9B%B7%E6%9E%AA",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "八岐断雷枪"
+    },
+    {
+      "name": "丛云之霜羽·时刃",
+      "slug": "161_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E4%B8%9B%E4%BA%91%E4%B9%8B%E9%9C%9C%E7%BE%BD",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "丛云之霜羽"
+    },
+    {
+      "name": "紫电白虹·银鞘",
+      "slug": "162_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E7%B4%AB%E7%94%B5%E7%99%BD%E8%99%B9",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "紫电白虹"
+    },
+    {
+      "name": "雷契·化龙·留霜",
+      "slug": "163_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E9%9B%B7%E5%A5%91%C2%B7%E5%8C%96%E9%BE%99",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "雷契·化龙"
+    },
+    {
+      "name": "巨阙·缚日·雪愿",
+      "slug": "164_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B7%A8%E9%98%99%C2%B7%E7%BC%9A%E6%97%A5",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "巨阙·缚日"
+    },
+    {
+      "name": "伏溟九渊·破音障",
+      "slug": "165_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E4%BC%8F%E6%BA%9F%E4%B9%9D%E6%B8%8A",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "伏溟九渊"
+    },
+    {
+      "name": "雷契·化龙·赤梦",
+      "slug": "166_skin",
+      "page": "https://wiki.biligame.com/nmd3/%E9%9B%B7%E5%A5%91%C2%B7%E5%8C%96%E9%BE%99",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "雷契·化龙"
     }
+  ],
+  "reference_pages": [
+    "https://wiki.biligame.com/nmd3/分类:武器品质SSR",
+    "https://wiki.biligame.com/nmd3/2025年8月7日停服维护公告",
+    "https://wiki.biligame.com/nmd3/2026年8月6日停服维护公告",
+    "https://wiki.biligame.com/nmd3/2026年3月26日不停服维护公告"
   ]
 }
