@@ -35,3 +35,21 @@
 - [忍3社区：疯狂星期四跨圈话题](https://www.taptap.cn/moment/220332494610760817) — 玩家论坛
 - [忍三主播：卷不动直播录像](https://www.bilibili.com/video/BV1Kb4y1E7oG/) — 玩家直播
 - [角色银枭相关设定梳理](https://zh.wikipedia.org/wiki/%E5%BF%8D%E8%80%85%E5%BF%85%E9%A0%88%E6%AD%BB3) — 百科汇编
+
+## 2026-10-21 热点新增来源（按原始发布日期整理）
+
+- [2026-10-13 证券日报：不烧心](https://wap.eastmoney.com/a/202610133893053059.html) — 媒体
+- [2026-09 非遗动作话题原视频](https://www.douyin.com/video/7688616111110203758) — 抖音视频
+- [2026-10-01 闪身步/狗熊哆嗦毛报道](https://www.mexicohuawentime.com/static/content/ZGXW/2026-10-01/1555176248257426963.html) — 新闻
+- [2026-10-11 全网大水时代视频](https://www.douyin.com/video/7695062914030506915) — 抖音视频
+- [2026-02 从夯到拉排行样例](https://www.douyin.com/video/7610030037681947043) — 抖音视频
+- [2026-10 国际变装与场景视频趋势](https://clipchamp.com/zh-hans/blog/tiktok-trends-challenges/) — 形式参考
+- [2026-10-14 忍3焚天与双焰返场公告](https://www.taptap.cn/moment/859512141445599177?group_id=61080) — 官方
+- [2026-09-29 忍3镜界与头像框活动公告](https://www.pandadastudio.com/m/news/20260929165115A73AC3F90973E0D3EF) — 官方
+- [2026-10-01 镜界隐藏Boss玩家讨论](https://www.douyin.com/video/7691654752089804051) — 抖音视频
+- [2026-09-30 镜器配置玩家讨论](https://www.douyin.com/video/7691267001616169192) — 抖音视频
+- [2026-10-02 忍三大心脏短视频](https://www.douyin.com/video/7692094106248672363) — 抖音视频
+- [2026-09-20 戌时狗狗go短视频](https://www.douyin.com/video/7687554964302346914) — 抖音视频
+- [2026-10 忍3官号近期动态](https://www.taptap.cn/app/79068/topic?type=official) — 官方社区
+
+说明：仅将新闻或官方公告的**事件真实性**、平台短视频的**单个案例真实性**写为出处，不以单视频点赞数推断跨平台热度。短视频动作或音效不得未经授权直接下载二次分发。
