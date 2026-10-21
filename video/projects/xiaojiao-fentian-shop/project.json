@@ -71,5 +71,23 @@
       }
     }
   },
-  "notes": "百炼与焚天都属于控伤兼备的火系武器。本片比较操作复杂度，不比较实际售价、总伤、系数或保值率。"
+  "notes": "百炼与焚天都属于控伤兼备的火系武器。本片比较操作复杂度，不比较实际售价、总伤、系数或保值率。",
+  "script_revision": "2026-10-21-bailian-comparison-v2",
+  "asserted_weapon_comparison": {
+    "bailian": [
+      "non_shuangyan_manual_catch",
+      "charge_1_5_seconds_for_higher_damage",
+      "straight_forward_release_requires_timing"
+    ],
+    "fentian": [
+      "short_invulnerable_window_in_both_stages",
+      "first_stage_root",
+      "second_stage_knockup_slam_stab"
+    ],
+    "commercial_price_relation": "fictional_scene_only",
+    "mechanics_sources": [
+      "https://wiki.biligame.com/nmd3/百炼",
+      "https://www.taptap.cn/moment/858789402606832545"
+    ]
+  }
 }
