@@ -131,9 +131,9 @@ python scripts/audit_assets.py
 
 ## 2026-10-21 新短剧工程：小椒卖焚天
 
-**[《小椒卖焚天：贵是贵了点，但不烧心》独立工程](video/projects/xiaojiao-fentian-shop/README.md)** · [分镜与渲染程序](video/projects/xiaojiao-fentian-shop/render.py) · [生产清单](video/projects/xiaojiao-fentian-shop/project.json)
+**[《小椒卖焚天：百炼烧心 vs 焚天不烧心》独立工程](video/projects/xiaojiao-fentian-shop/README.md)** · [分镜与渲染程序](video/projects/xiaojiao-fentian-shop/render.py) · [生产清单](video/projects/xiaojiao-fentian-shop/project.json)
 
-原创22.5秒竖屏荒诞短剧：小黑质疑新武器焚天贵，小椒保证不烧心；现场验货却把兵器铺烧掉，反转台词「只烧铺子，不烧心」。工程引用仓库内小椒、小黑及焚天的实际图片文件，程序缺图直接报错，不以色块人物代替。由通用视频制作工作流渲染为MP4并自动生成质检联络图、配音日志；**此处说明工程已入库，不表示已经目检或确认MP4渲染成功**。
+【2026-10-21重制】37秒竖屏忍村市井对比短剧：小黑贪便宜用百炼，经历非双焰角色接锤、回锤后蓄力1.5秒和出手时机的「烧心」，再试带双段短暂无敌与定身连招的焚天，感叹「贵是贵了点，但用着不烧心」，小椒认真立规矩。工程引用仓库小椒、小黑、百炼及焚天四份原图，缺图拒绝渲染；售价关系为虚构，不比较真实武器伤害高低。由通用视频制作工作流渲染为MP4并自动生成质检联络图、配音日志；**此处说明工程已入库，不表示已经目检或确认MP4渲染成功**。
 
 ## 忍3视频制作流程（v2.0 · 不绑定画面模板）
 
