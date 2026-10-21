@@ -1,0 +1,73 @@
+{
+  "schema_version": "1",
+  "id": "fentian-cinematic",
+  "title": "《焚天：命中率靠缘分》镜头重制版 2.5D",
+  "concept": "忍3原创恶搞广告，动作喜剧，视觉重制并非仅超分原视频；所有机制和奖项均为虚构二创",
+  "creative_direction": "独立镜头构图、角色视差、武器手工曲线运动、冲击帧、动态字卡、电影式光效、真正背景音乐+定制打击音效，摒弃静态PPT幻灯片",
+  "sources": {
+    "weapon": "assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "boss": "assets/bosses/wiki/wiki_boss_haigu_sishen.png",
+    "hero": "assets/characters/xiaohei_fire_01.png",
+    "background": "assets/backgrounds/wallpaper_rooftop_01.jpg",
+    "music": "anime-music-library/music/game-ost/unique-boss-battle.mp3（请自行核实具体发布授权）"
+  },
+  "required_files": [
+    "ninja/video/projects/fentian-ad-parody/render.py",
+    "ninja/video/projects/fentian-ad-parody/cinematic.py",
+    "ninja/assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "ninja/assets/bosses/wiki/wiki_boss_haigu_sishen.png",
+    "ninja/assets/characters/xiaohei_fire_01.png",
+    "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg",
+    "music/music/game-ost/unique-boss-battle.mp3"
+  ],
+  "setup": [
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "pillow",
+      "numpy",
+      "edge-tts"
+    ]
+  ],
+  "render": {
+    "preview": {
+      "argv": [
+        "python",
+        "ninja/video/projects/fentian-ad-parody/cinematic.py",
+        "--preview",
+        "--seconds",
+        "3",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-preview.mp4",
+      "timeout_seconds": 600,
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 2.7,
+        "max_seconds": 3.3,
+        "min_width": 430,
+        "min_height": 760
+      }
+    },
+    "final": {
+      "argv": [
+        "python",
+        "ninja/video/projects/fentian-ad-parody/cinematic.py",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-final.mp4",
+      "timeout_seconds": 3600,
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 23.8,
+        "max_seconds": 24.2,
+        "min_width": 1080,
+        "min_height": 1920
+      }
+    }
+  }
+}
