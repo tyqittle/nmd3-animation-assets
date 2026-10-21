@@ -155,7 +155,25 @@ def verify(path, checks=None):
               "video_codec": v.get("codec_name"),
               "audio_codecs": [stream.get("codec_name") for stream in audios],
               "bytes": path.stat().st_size}
-    print("QA PASS:", json.dumps(result, ensure_ascii=False), flush=True)
+    # Review is creative, not reducible to resolution/codec checks.
+    # Generate an 8-frame contact sheet for actual human inspection when asked.
+    if checks.get("contact_sheet", False):
+        contact = path.with_name(path.stem + "-contact-sheet.jpg")
+        cadence = max(0.01, 8.0 / duration)
+        contact_filter = (
+            "fps={:.6f},scale=270:-2:flags=lanczos,"
+            "tile=4x2:padding=6:margin=8:color=0x131520"
+        ).format(cadence)
+        process = subprocess.run(
+            ["ffmpeg", "-y", "-v", "error", "-i", str(path), "-vf",
+             contact_filter, "-frames:v", "1", str(contact)],
+            capture_output=True, text=True,
+        )
+        if process.returncode != 0 or not contact.is_file():
+            raise RuntimeError("Contact-sheet generation failed: " + process.stderr[-800:])
+        result["contact_sheet"] = str(contact)
+    print("TECHNICAL QA PASS (creative review is still required):",
+          json.dumps(result, ensure_ascii=False), flush=True)
     return result
 
 
