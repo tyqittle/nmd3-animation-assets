@@ -11,12 +11,12 @@ CATALOG=ROOT/"catalog/assets.json"
 CSV=ROOT/"catalog/assets.csv"
 TYPES={
     "characters":{"base_portrait","style_portrait","costume_portrait","pose_reference",
-                  "alternate_portrait","character_reference","unreviewed_portrait"},
+                  "alternate_portrait","character_reference","unreviewed_portrait","awakening_portrait"},
     "weapons":{"weapon_art","weapon_appearance"},
     "bosses":{"boss_art"},
     "scenes":{"scene_reference"},
     "wallpapers":{"wallpaper_composite","unverified_wallpaper"},
-    "promos":{"event_promo"},
+    "promos":{"event_promo","promo_composite"},
     "effects":{"skill_effect_reference"},
 }
 
@@ -42,8 +42,12 @@ def check():
             problems.append(f"{ident}: path outside assets")
         if not x.get("source_page","").startswith("https://"):
             problems.append(f"{ident}: no original HTTPS source")
-        if x.get("visual_review") not in {"pending","verified"}:
+        if x.get("visual_review") not in {"pending","verified","type_reviewed_identity_pending"}:
             problems.append(f"{ident}: visual review must be explicit")
+        if x.get("review_status") not in {"categorized","quarantined"}:
+            problems.append(f"{ident}: missing/invalid review status")
+        if x.get("review_status")=="quarantined" and not x.get("classification_note"):
+            problems.append(f"{ident}: quarantined item needs an explanation")
         if x.get("download_status")=="downloaded":
             for k in ("bytes","width","height"):
                 if not isinstance(x.get(k),int) or x[k]<=0:
@@ -64,7 +68,7 @@ def check():
         if len(export)!=len(rows):problems.append("CSV length differs from JSON")
         if "subcategory" not in (reader.fieldnames or []):problems.append("CSV missing subtype column")
         for i,(x,y) in enumerate(zip(rows,export)):
-            for key in ("id","category","subcategory","character","weapon_family","download_status"):
+            for key in ("id","name","category","subcategory","character","weapon_family","review_status","download_status"):
                 expected=str(x.get(key,""))
                 if y.get(key)!=expected:problems.append(f"CSV row {i+2}, {key}: {y.get(key)!r} != {expected!r}")
     stats=Counter(a["category"] for a in rows if a.get("download_status")=="downloaded")
