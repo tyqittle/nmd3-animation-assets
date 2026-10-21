@@ -1,0 +1,72 @@
+{
+  "schema_version": "1",
+  "id": "xiaojiao-fentian-shop",
+  "title": "小椒卖焚天：贵是贵了点，但不烧心",
+  "role": "independent-story-film",
+  "concept": "忍村街头兵器铺荒诞喜剧。口头承诺不烧心，试用却把铺子点着。所有对白和剧情均属二创，非游戏内真实机制。",
+  "creative_direction": "复古街头店铺摄影语言、店招纵深、人物实图动画、火焰道具轨迹、烧毁后停拍静默、干冷结尾，不复用历史视频模板。",
+  "sources": {
+    "seller": "assets/characters/xiaojiao_01.png",
+    "buyer": "assets/characters/xiaohei_01.png",
+    "weapon": "assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "backdrop": "assets/backgrounds/wallpaper_rooftop_01.jpg"
+  },
+  "required_files": [
+    "ninja/video/projects/xiaojiao-fentian-shop/render.py",
+    "ninja/assets/characters/xiaojiao_01.png",
+    "ninja/assets/characters/xiaohei_01.png",
+    "ninja/assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg"
+  ],
+  "setup": [
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "pillow",
+      "numpy",
+      "edge-tts"
+    ]
+  ],
+  "render": {
+    "preview": {
+      "argv": [
+        "python",
+        "ninja/video/projects/xiaojiao-fentian-shop/render.py",
+        "--preview",
+        "--seconds",
+        "3",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-preview.mp4",
+      "timeout_seconds": 480,
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 2.8,
+        "max_seconds": 3.2
+      }
+    },
+    "final": {
+      "argv": [
+        "python",
+        "ninja/video/projects/xiaojiao-fentian-shop/render.py",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-final.mp4",
+      "timeout_seconds": 2400,
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 22.3,
+        "max_seconds": 22.7,
+        "min_width": 720,
+        "min_height": 1280,
+        "min_fps": 24,
+        "decode_test": true,
+        "contact_sheet": true
+      }
+    }
+  }
+}
