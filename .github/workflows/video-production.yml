@@ -123,10 +123,24 @@ jobs:
       - name: Validate dialogue quality report
         if: (inputs.video_type || 'short') == 'short' && (inputs.narration || 'edge') != 'off'
         env:
-          EPISODE: ${{ inputs.episode || 'deep-abyss-meeting-v1' }}
+          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
           QUALITY: ${{ inputs.quality || 'final' }}
         run: |
-          python -c 'import json,os; p="output/%s-%s-audio-report.json"%(os.environ["EPISODE"],os.environ["QUALITY"]); d=json.load(open(p)); assert d["voice_count"]>=10, d; assert not d["speech_clipped"]; print("PASS: speech clips",d["voice_count"],"peak",d["peak"])'
+          python - <<'PY'
+          import json, os
+          ep = os.environ["EPISODE"]
+          episode = json.load(open("ninja/video/workflow/episodes/"+ep+".json", encoding="utf-8"))
+          report = json.load(open("output/"+ep+"-"+os.environ["QUALITY"]+"-audio-report.json", encoding="utf-8"))
+          expected = [i for i, s in enumerate(episode["shots"]) if s.get("voice")]
+          clips = report["clips"]
+          assert len(clips) == len(expected), (len(clips), len(expected))
+          assert not report["speech_clipped"]
+          assert all(c["shot"] == i and c["start"] >= episode["shots"][i]["start"]
+                     and c["end"] <= episode["shots"][i]["end"]
+                     for i, c in zip(expected, clips)), clips
+          assert report["peak"] > 0
+          print("PASS:", len(clips), "fully aligned voices, peak:", report["peak"])
+          PY
       - name: Verify music source for legacy MV
         if: (inputs.video_type || 'short') == 'mv'
         run: test -s music/music/game-ost/jrpg-epic-rock-full.mp3
