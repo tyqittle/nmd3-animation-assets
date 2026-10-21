@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "updated": "2026-10-21",
+  "description": "忍3 BWiki 怪物页面：direct_image 指向页面内明确标注对应 BOSS 的图片源文件；只有实际下载、验图和去重成功才入 assets.json。其他为待核查候选。",
+  "source": "https://wiki.biligame.com/nmd3/怪物档案",
+  "targets": [
+    {
+      "name": "异化毒龙",
+      "slug": "yihua_dulong",
+      "page": "https://wiki.biligame.com/nmd3/异化毒龙",
+      "direct_image": "https://patchwiki.biligame.com/images/nmd3/0/0b/9fnfu27g0qik63ysudlc2df7enejpzt.png"
+    },
+    {
+      "name": "八咫乌",
+      "slug": "baza_wu",
+      "page": "https://wiki.biligame.com/nmd3/八咫乌",
+      "direct_image": "https://patchwiki.biligame.com/images/nmd3/3/3d/ignz2dam0gzsstqb5ftkw41a9pe22ny.png"
+    },
+    {
+      "name": "骸骨死神",
+      "slug": "haigu_sishen",
+      "page": "https://wiki.biligame.com/nmd3/骸骨死神",
+      "direct_image": "https://patchwiki.biligame.com/images/nmd3/0/08/8nwbkpj2brhv312nup61s0gt3tcu7ld.png"
+    },
+    {
+      "name": "青翼龙王",
+      "slug": "qingyi_longwang",
+      "page": "https://wiki.biligame.com/nmd3/青翼龙王",
+      "direct_image": "https://patchwiki.biligame.com/images/nmd3/c/c1/ht1zqt3xcaxl31ae1zm4uqabxlutyrp.png"
+    },
+    {
+      "name": "残心",
+      "slug": "canxin",
+      "page": "https://wiki.biligame.com/nmd3/残心",
+      "direct_image": "https://patchwiki.biligame.com/images/nmd3/7/7d/bb1fb03xg2ekt487423iqw2lmmhpgtw.png"
+    },
+    {
+      "name": "樱花精",
+      "slug": "yinghuajing",
+      "page": "https://wiki.biligame.com/nmd3/樱花精"
+    },
+    {
+      "name": "暴躁黑龙",
+      "slug": "baozao_heilong",
+      "page": "https://wiki.biligame.com/nmd3/暴躁黑龙"
+    },
+    {
+      "name": "无心之傀",
+      "slug": "wuxin_zhikui",
+      "page": "https://wiki.biligame.com/nmd3/无心之傀"
+    },
+    {
+      "name": "机械蜂III型",
+      "slug": "jixiefeng_3",
+      "page": "https://wiki.biligame.com/nmd3/机械蜂III型"
+    },
+    {
+      "name": "鱿刃先生",
+      "slug": "youren_xiansheng",
+      "page": "https://wiki.biligame.com/nmd3/鱿刃先生"
+    }
+  ]
+}
