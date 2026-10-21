@@ -69,7 +69,7 @@ def load_voice(mp3):
     if len(x)<1000:raise RuntimeError("TTS voice is too short")
     valid=np.flatnonzero(np.abs(x)>.005)
     if valid.size<700:raise RuntimeError("TTS is silent")
-    l=max(0,int(valid[0])-.055*SR);r=min(len(x),int(valid[-1])+.090*SR)
+    l=max(0,int(valid[0])-round(.055*SR));r=min(len(x),int(valid[-1])+round(.090*SR))
     return fade(x[l:r])
 
 def create_sources(tmp):
