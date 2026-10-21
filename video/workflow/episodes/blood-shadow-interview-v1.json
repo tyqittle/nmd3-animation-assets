@@ -101,7 +101,8 @@
         "录用成功",
         "岗位：血影的唯一宿敌"
       ],
-      "effect": "disconnect"
+      "effect": "disconnect",
+      "actor": "hayabusa"
     },
     {
       "start": 19.2,
