@@ -137,8 +137,21 @@ def verify(path, checks=None):
     for setting, key in (("min_width", "width"), ("min_height", "height")):
         if setting in checks and int(v.get(key, 0)) < int(checks[setting]):
             raise RuntimeError("Video violates " + setting)
+    fps_fraction = v.get("avg_frame_rate", "0/1")
+    num, sep, den = fps_fraction.partition("/")
+    fps = (float(num) / float(den)) if sep and float(den) else float(num or 0)
+    if "min_fps" in checks and fps + .05 < float(checks["min_fps"]):
+        raise RuntimeError("Video frame rate below requested min_fps: " + str(fps))
+    # An ffprobe stream header is not sufficient to prove video frames decode.
+    if checks.get("decode_test", False):
+        decoder = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path),
+                                  "-map", "0:v:0", "-f", "null", "-"],
+                                 capture_output=True, text=True)
+        if decoder.returncode != 0:
+            raise RuntimeError("Video decode test failed: " + decoder.stderr[-1000:])
     result = {"file": str(path), "seconds": round(duration, 3),
               "width": v.get("width"), "height": v.get("height"),
+              "fps": round(fps, 3),
               "video_codec": v.get("codec_name"),
               "audio_codecs": [stream.get("codec_name") for stream in audios],
               "bytes": path.stat().st_size}
