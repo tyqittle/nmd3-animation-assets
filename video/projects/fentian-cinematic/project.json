@@ -68,7 +68,8 @@
         "min_width": 1080,
         "min_height": 1920,
         "min_fps": 29.9,
-        "decode_test": true
+        "decode_test": true,
+        "contact_sheet": true
       }
     }
   }
