@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="68条忍者必须死3有出处梗、术语、剧情反差和短视频创作分镜">
+<title>忍3梗档案馆 · NMD3 Meme Archive</title>
+<style>
+:root{color-scheme:dark;--bg:#111518;--panel:#1c2227;--border:#344047;--fg:#e9e6e0;--muted:#a7b3b7;--accent:#f0b87d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 800px 450px at 90% -150px,#452e2733,transparent),var(--bg);color:var(--fg);font:15px/1.65 system-ui,-apple-system,'Microsoft YaHei',sans-serif}
+a{color:var(--accent);text-underline-offset:3px}a:hover{opacity:.84}.wrap{max-width:1160px;margin:0 auto;padding:28px 20px 70px}
+header{border-bottom:1px solid var(--border);padding-bottom:25px}h1{margin:4px 0;font-size:clamp(2rem,5vw,3.4rem);line-height:1.18;font-weight:720;letter-spacing:.015em}
+h1 span{color:var(--accent)}.micro{font-size:11px;letter-spacing:.22em;color:var(--accent);font-weight:800}.subtitle{max-width:780px;color:var(--muted);margin:15px 0}
+header nav{display:flex;gap:17px;flex-wrap:wrap;font-size:13px}.toolbar{display:flex;gap:11px;flex-wrap:wrap;margin:25px 0 11px}.toolbar>*{border:1px solid var(--border);background:var(--panel);color:var(--fg);border-radius:8px;padding:10px 12px;font:inherit}
+#search{flex:1;min-width:210px}select{min-width:130px;max-width:100%}#result{color:var(--muted);font-size:13px;margin:9px 0 17px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.item{background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:19px;min-width:0;display:flex;flex-direction:column}
+.kicker{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:11px;letter-spacing:.025em}.chip{padding:2px 7px;border:1px solid #536067;border-radius:5px;color:#cfdbdd}
+.item h2{font-size:20px;line-height:1.28;margin:11px 0}.actors{font-size:12px;color:var(--accent);margin-bottom:8px}.item p{margin:7px 0}.item p small{font-weight:700;color:#c9b79f}
+.hook{border-left:3px solid #a77c55;padding:8px 11px;margin:8px 0;background:#302720;border-radius:0 5px 5px 0}.hook small{font-size:11px;color:#d4b88e}.bottom{border-top:1px solid var(--border);margin-top:auto;padding-top:13px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bottom a,.bottom button{font-size:12px}.bottom button{margin-left:auto;background:#343d43;border:1px solid #4c595e;color:var(--fg);border-radius:6px;padding:5px 10px;cursor:pointer}
+.footer{color:var(--muted);font-size:12px;margin-top:36px;border-top:1px solid var(--border);padding-top:22px}.notice{color:var(--muted);font-size:13px;margin:8px 0 17px;max-width:850px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.toolbar{flex-direction:column}.toolbar>*{width:100%}.wrap{padding:20px 14px 45px}}
+</style></head><body><div class="wrap">
+<header>
+<div class="micro">NINJA MUST DIE 3 / STORY & MEME MATERIALS</div>
+<h1>忍3<span>梗档案馆</span></h1>
+<p class="subtitle">有出处的老梗、社区黑话、剧情反差与可拍摄的二创点子。每条都能直接展开成配音台词、镜头或鬼畜短片。此页仅收录文本与来源链接，没有搬运其他UP主的原视频、图片或音轨。</p>
+<nav><a href="../">返回忍3立绘图鉴 ↗</a><a href="README.md">创作说明</a><a href="SOURCES.md">来源列表</a><a href="catalog.json">JSON 数据</a><a href="https://github.com/tyqittle/nmd3-animation-assets/tree/main/memes">GitHub 目录 ↗</a></nav>
+</header>
+<div class="toolbar"><input id="search" type="search" placeholder="搜索梗、角色、说明、分镜…"><select id="category" aria-label="类别"><option value="">所有类别</option></select><select id="evidence" aria-label="出处等级"><option value="">所有证据级别</option><option value="高">高 · 出处明确</option><option value="中">中 · 社区参考</option><option value="创意">创意 · 二创点子</option></select></div>
+<p class="notice">“高”表示资料明确支持这个内容，不表示该梗最火；“创意”表示新编桥段，不要当作游戏原台词。历史版本玩法请重新核对。</p>
+<div id="result" aria-live="polite">加载素材中…</div><main class="grid" id="grid"></main>
+<footer class="footer">忍3非官方个人素材整理。外部链接的版权属于其原作者。镜头建议为新创内容，转载请尊重作者与游戏版权。整理时间：2026-10-21。</footer>
+</div>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const search=document.querySelector('#search'),category=document.querySelector('#category'),evidence=document.querySelector('#evidence'),grid=document.querySelector('#grid'),result=document.querySelector('#result');
+let list=[];
+function show(){
+ const q=search.value.trim().toLowerCase();
+ const data=list.filter(x=>(!category.value||x.category===category.value)&&(!evidence.value||x.evidence===evidence.value)&&(!q||[x.id,x.title,x.category,x.context,x.hook,x.shot,...x.characters].join(' ').toLowerCase().includes(q)));
+ result.textContent='显示 '+data.length+' / '+list.length+' 条素材';
+ grid.innerHTML=data.map(x=>'<article class="item"><div class="kicker"><span>'+esc(x.id)+'</span><span class="chip">'+esc(x.category)+'</span><span class="chip">'+esc(x.evidence)+'</span></div><h2>'+esc(x.title)+'</h2><div class="actors">角色 / '+esc(x.characters.join('、'))+'</div><p>'+esc(x.context)+'</p><div class="hook"><small>笑点 / 建议字幕</small><div>'+esc(x.hook)+'</div></div><p><small>镜头建议　</small>'+esc(x.shot)+'</p><div class="bottom">'+x.sources.filter(u=>/^https:\/\//.test(u)).map((u,i)=>'<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">出处 '+(i+1)+' ↗</a>').join('')+'<button data-id="'+esc(x.id)+'" type="button">复制分镜</button></div></article>').join('');
+ if(!data.length)grid.innerHTML='<p>没有匹配项，试试更短的关键词。</p>';
+}
+Promise.resolve(fetch('catalog.json',{cache:'no-cache'})).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{list=d.items||[];[...new Set(list.map(x=>x.category))].sort((a,b)=>a.localeCompare(b,'zh-CN')).forEach(x=>{const o=document.createElement('option');o.value=x;o.textContent=x;category.appendChild(o)});show()}).catch(e=>{result.textContent='载入失败：'+e.message+'。请通过 GitHub Pages 地址访问，或直接打开 catalog.json。'});
+[search,category,evidence].forEach(el=>el.addEventListener('input',show));
+grid.addEventListener('click',async ev=>{const button=ev.target.closest('button[data-id]');if(!button)return;const x=list.find(y=>y.id===button.dataset.id);if(!x)return;const content=[x.title,'背景：'+x.context,'笑点：'+x.hook,'镜头：'+x.shot,'出处：'+x.sources.join(' ')].join('\n');try{await navigator.clipboard.writeText(content);button.textContent='已复制';setTimeout(()=>button.textContent='复制分镜',1400)}catch{button.textContent='复制失败'}});
+</script></body></html>
