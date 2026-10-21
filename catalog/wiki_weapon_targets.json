@@ -2,7 +2,7 @@
   "version": 1,
   "updated": "2026-10-21",
   "source": "https://wiki.biligame.com/nmd3/武器图鉴",
-  "description": "真实武器/幻化图采集目标。只下载 BWIKI 页面清晰对应武器名称的图片，若无明确对应或下载失败不入库。包括2026年10月新武器焚天；该武器详情页尚不保证可获取。",
+  "description": "仅采集 BWIKI 详情页明确标注的武器与武器幻化实图。新增百炼/三日月雷切的4个已在详情页标注的幻化候选；下载失败不入素材库。",
   "targets": [
     {
       "name": "焚天",
@@ -93,6 +93,34 @@
       "name": "丛云之霜羽",
       "slug": "118_congyun",
       "page": "https://wiki.biligame.com/nmd3/%E4%B8%9B%E4%BA%91%E4%B9%8B%E9%9C%9C%E7%BE%BD"
+    },
+    {
+      "name": "百炼·玄烈",
+      "slug": "119_bailian_xuanlie",
+      "page": "https://wiki.biligame.com/nmd3/百炼",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "百炼"
+    },
+    {
+      "name": "百炼·超音速",
+      "slug": "120_bailian_chaoyinsu",
+      "page": "https://wiki.biligame.com/nmd3/百炼",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "百炼"
+    },
+    {
+      "name": "百炼·萌愿",
+      "slug": "121_bailian_mengyuan",
+      "page": "https://wiki.biligame.com/nmd3/百炼",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "百炼"
+    },
+    {
+      "name": "三日月雷切·樱鬼",
+      "slug": "122_sanriyue_yinggui",
+      "page": "https://wiki.biligame.com/nmd3/三日月雷切",
+      "asset_type": "weapon_appearance",
+      "weapon_family": "三日月雷切"
     }
   ]
 }
