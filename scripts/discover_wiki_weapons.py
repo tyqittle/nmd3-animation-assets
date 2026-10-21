@@ -96,6 +96,7 @@ def main():
                 "weapon_family":t.get("weapon_family",t["name"]),
                 "variant_kind":"appearance" if t.get("asset_type")=="weapon_appearance" else "original",
                 "classification_source":"wiki_target_metadata", "visual_review":"pending",
+                "review_status":"categorized",
                 "image_url":x["image_url"],
                 "source_page":x["source_page"],"local_path":out,
                 "download_status":"downloaded","source_verified":"weapon_image_label_on_wiki_page",
