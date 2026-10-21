@@ -29,83 +29,157 @@ button:hover{border-color:#e7899f}button.active{background:#973852;border-color:
 .notice{font-size:12px;color:#818998;margin:25px 0;line-height:1.7}
 #empty{padding:55px;text-align:center;color:#b8bfcd;border:1px dashed #565c6c;border-radius:12px}
 dialog{border:1px solid #535666;border-radius:16px;background:#11141c;color:#eee;max-width:min(94vw,1200px);max-height:95vh;padding:16px}
-dialog::backdrop{background:rgba(0,0,0,.84)}dialog img{display:block;max-width:100%;max-height:78vh;margin:auto;object-fit:contain}dialog .dtop{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:10px}dialog a{color:#ff9ab0}
+dialog::backdrop{background:rgba(0,0,0,.84)}dialog img{display:block;max-width:100%;max-height:78vh;margin:auto;object-fit:contain}dialog .dtop{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:10px}.category-help{color:#b3bdca;font-size:12px;line-height:1.7;margin:-9px 0 20px}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.tag{font-size:11px;color:#cdd5dc;border:1px solid #465061;background:#272b38;border-radius:5px;padding:2px 7px}
+.tag.top{color:#f2b5c3;border-color:#7e435c;background:#402432}
+#subtype,#role,#sort{max-width:210px}
+dialog a{color:#ff9ab0}
 @media(max-width:700px){header{padding:30px 22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.poster{height:210px}.toolbar input{max-width:none}.meta{padding:10px}.meta h3{font-size:13px}}
 </style></head>
 <body>
-<header><div class="eyebrow">NINJA MUST DIE 3 / ART ARCHIVE</div><h1>忍3视觉素材库</h1><p>角色立绘 · 皮肤 · Boss · 武器 · 战斗场景<br>从 GitHub 仓库直接读取已保存的真实图片，供后续动画、MV 制作时挑选素材。</p></header>
+<header><div class="eyebrow">NINJA MUST DIE 3 / ART ARCHIVE</div><h1>忍3视觉素材库</h1><p>忍者与流派 · 角色皮肤 · 武器与幻化 · Boss · 场景 · 壁纸 · 宣传 · 特效<br>按大类、细分类和角色精准筛选；图片从 GitHub 仓库读取。</p></header>
 <main>
  <div class="stats" id="stats">正在载入素材……</div>
  <div class="toolbar">
   <input id="search" placeholder="搜索：隼白、琳、苍牙、背景……" aria-label="搜索素材">
   <nav id="filters" aria-label="素材分类"></nav>
+  <select id="subtype" aria-label="选择细分类"><option value="all">全部细分类</option></select>
+  <select id="role" aria-label="按角色筛选"><option value="all">全部角色</option></select>
   <select id="quality" aria-label="筛选清晰度">
    <option value="all">全部清晰度</option>
    <option value="hd">较高清（≥ 700px）</option>
    <option value="alpha">带透明通道</option>
   </select>
+  <select id="sort" aria-label="排序"><option value="group">按角色/类型排序</option><option value="name">按名称排序</option><option value="recent">新入库优先</option></select>
  </div>
+ <p class="category-help" id="category-help" aria-live="polite"></p>
  <div class="grid" id="grid" aria-live="polite"></div>
  <div id="empty" hidden>没有符合条件的已下载图片，请试试其他关键词或分类。</div>
- <p class="notice">图像版权归原权利方；这里是个人非官方素材索引，不代表拥有再分发或商业使用授权。部分立绘未完成内容和裁切的人工审核，高清标签仅按像素尺寸筛选。</p>
+ <p class="notice">图像版权归原权利方；这里是个人非官方素材索引，不代表拥有再分发或商业使用授权。分类根据素材名称与来源重新核对，尚未对每张图片完成视觉复核；“场景参考”不代表无人物的纯净背景。高清标签仅按像素尺寸筛选。</p>
 </main>
 <dialog id="viewer"><div class="dtop"><strong id="viewer-title"></strong><button id="viewer-close">关闭 ×</button></div><img id="viewer-img" alt=""><div class="actions"><a id="viewer-original" target="_blank" rel="noopener">打开仓库原图</a><a id="viewer-source" target="_blank" rel="noopener">查看来源</a></div></dialog>
 <script>
 "use strict";
-const labels={all:"全部",characters:"人物",bosses:"Boss",weapons:"武器",backgrounds:"背景"};
-const fmt={characters:"人物",bosses:"Boss",weapons:"武器",backgrounds:"背景"};
-let data=[],category="all",term="",quality="all";
+const cats=[
+ ["all","全部"],["characters","忍者角色"],["weapons","武器"],["bosses","Boss"],
+ ["scenes","场景参考"],["wallpapers","壁纸构图"],["promos","活动宣传"],["effects","战斗特效"]
+];
+const subLabels={
+ base_portrait:"基础立绘",style_portrait:"忍者流派",costume_portrait:"角色皮肤",
+ pose_reference:"动作参考",alternate_portrait:"立绘其他版本",character_reference:"角色宣传参考",
+ boss_art:"Boss立绘",weapon_art:"武器本体",weapon_appearance:"武器幻化",
+ scene_reference:"场景参考",wallpaper_composite:"壁纸构图",unverified_wallpaper:"待采集壁纸",
+ event_promo:"活动宣传图",skill_effect_reference:"技能/忍术特效"
+};
+const explanations={
+ all:"人物按角色归组，区分基础立绘、流派与皮肤；其他画面不再一律归到“背景”。",
+ characters:"忍者角色按人物、流派、外观与动作类型区分；流派不是皮肤，动作参考不是独立的新角色。",
+ weapons:"普通武器和武器幻化分别显示；武器幻化不能标成角色皮肤。",
+ bosses:"独立的敌人和Boss图片，不与可操作忍者混淆。",
+ scenes:"场景参考不一定是可直接复用的纯背景。需要人工确认人物、文字和遮挡情况。",
+ wallpapers:"含场景构图或人物的壁纸、复合画面；不冒充无字的纯场景。",
+ promos:"纪念、活动、宣传、角色展示图，不应放在纯净背景类。",
+ effects:"角色忍术、战斗技能、特效镜头的画面参考，不当作完整角色立绘。"
+};
+const mapLabel=Object.fromEntries(cats);
+let data=[],category="all",subtype="all",role="all",term="",quality="all",sort="group";
 const $=s=>document.querySelector(s);
+const localPath=a=>"./"+a.local_path;
+const groupName=a=>a.category==="characters"?(a.character||"其他角色"):(a.category==="weapons"?(a.weapon_family||a.name):"");
+const textFor=a=>[a.name,a.character||"",a.weapon_family||"",a.id,mapLabel[a.category]||"",subLabels[a.subcategory]||""].join(" ").toLowerCase();
+const originalHref=a=>a.source_page&&a.source_page.startsWith("https://")?a.source_page:"https://github.com/tyqittle/nmd3-animation-assets";
 const openViewer=a=>{
- $("#viewer-title").textContent=a.name;
- $("#viewer-img").src="./"+a.local_path;
+ $("#viewer-title").textContent=a.name+" · "+(subLabels[a.subcategory]||mapLabel[a.category]||"参考");
  $("#viewer-img").alt=a.name;
- $("#viewer-original").href="./"+a.local_path;
- $("#viewer-source").href=a.source_page;
+ $("#viewer-img").src=localPath(a);
+ $("#viewer-original").href=localPath(a);
+ $("#viewer-source").href=originalHref(a);
  $("#viewer").showModal();
 };
 $("#viewer-close").onclick=()=>$("#viewer").close();
 $("#viewer").onclick=e=>{if(e.target===$("#viewer"))$("#viewer").close()};
 $("#search").oninput=e=>{term=e.target.value.trim().toLowerCase();paint()};
 $("#quality").onchange=e=>{quality=e.target.value;paint()};
+$("#sort").onchange=e=>{sort=e.target.value;paint()};
+$("#subtype").onchange=e=>{subtype=e.target.value;paint()};
+$("#role").onchange=e=>{role=e.target.value;paint()};
+function updateSelectors(){
+ const types=[...new Set(data.filter(a=>category==="all"||a.category===category).map(a=>a.subcategory).filter(Boolean))];
+ types.sort((a,b)=>(subLabels[a]||a).localeCompare(subLabels[b]||b,"zh"));
+ if(!types.includes(subtype))subtype="all";
+ $("#subtype").replaceChildren(new Option("全部细分类","all"),...types.map(t=>new Option(subLabels[t]||t,t)));
+ $("#subtype").value=subtype;
+ const visibleCharacters=data.filter(a=>a.category==="characters");
+ const people=[...new Set(visibleCharacters.map(a=>a.character).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"zh"));
+ if(category!=="all"&&category!=="characters")role="all";
+ if(!people.includes(role))role="all";
+ $("#role").replaceChildren(new Option("全部角色","all"),...people.map(p=>new Option(p,p)));
+ $("#role").value=role;
+ $("#role").hidden=category!=="all"&&category!=="characters";
+ $("#category-help").textContent=explanations[category]||"";
+}
 function paint(){
  const filter=$("#filters");filter.replaceChildren();
- for(const [id,label] of Object.entries(labels)){
-  const b=document.createElement("button");b.textContent=label+" "+(id==="all"?data.length:data.filter(a=>a.category===id).length);
+ for(const [id,label] of cats){
+  const n=id==="all"?data.length:data.filter(a=>a.category===id).length;
+  const b=document.createElement("button");
+  b.type="button";b.textContent=label+" "+n;
   b.className=id===category?"active":"";
-  b.setAttribute("aria-pressed",id===category?"true":"false");
-  b.onclick=()=>{category=id;paint()};filter.append(b);
+  b.setAttribute("aria-pressed",String(id===category));
+  b.onclick=()=>{category=id;subtype="all";updateSelectors();paint()};
+  filter.append(b);
  }
  const rows=data.filter(a=>(category==="all"||a.category===category)&&
-    (!term||[a.name,a.character||"",a.id].join(" ").toLowerCase().includes(term))&&
-    (quality==="all"||(quality==="hd"&&Math.max(a.width||0,a.height||0)>=700)||
-       (quality==="alpha"&&a.has_alpha===true)));
- const grid=$("#grid");grid.replaceChildren();$("#empty").hidden=rows.length!==0;
+  (subtype==="all"||a.subcategory===subtype)&&
+  (role==="all"||a.category==="characters"&&a.character===role)&&
+  (!term||textFor(a).includes(term))&&
+  (quality==="all"||(quality==="hd"&&Math.max(a.width||0,a.height||0)>=700)||
+   (quality==="alpha"&&a.has_alpha===true)));
+ const order=Object.fromEntries(cats.map((v,i)=>[v[0],i]));
+ rows.sort((a,b)=>sort==="recent"?data.indexOf(b)-data.indexOf(a):
+   sort==="name"?a.name.localeCompare(b.name,"zh"):
+   (order[a.category]-order[b.category])||
+   groupName(a).localeCompare(groupName(b),"zh")||
+   (subLabels[a.subcategory]||"").localeCompare(subLabels[b.subcategory]||"","zh")||
+   a.name.localeCompare(b.name,"zh"));
+ const grid=$("#grid");grid.replaceChildren();
+ $("#empty").hidden=rows.length>0;
  const frag=document.createDocumentFragment();
  for(const a of rows){
   const art=document.createElement("article");art.className="card";
   const poster=document.createElement("div");poster.className="poster";
-  const im=document.createElement("img");im.src="./"+a.local_path;im.loading="lazy";im.decoding="async";im.alt=a.name;
+  const im=document.createElement("img");
+  im.src=localPath(a);im.loading="lazy";im.decoding="async";im.alt=a.name;
   im.addEventListener("click",()=>openViewer(a));
-  im.onerror=()=>{im.remove();poster.append(document.createTextNode("图片暂不可用"))};
+  im.onerror=()=>{im.remove();const t=document.createElement("span");t.textContent="图片加载失败";poster.append(t)};
   poster.append(im);
   if(a.width&&a.height){const sz=document.createElement("span");sz.textContent=a.width+" × "+a.height;poster.append(sz)}
   const meta=document.createElement("div");meta.className="meta";
   const h=document.createElement("h3");h.textContent=a.name;meta.append(h);
-  const p=document.createElement("p");p.textContent=(a.character?a.character+" · ":"")+(fmt[a.category]||a.category);
-  meta.append(p);
-  const acts=document.createElement("div");acts.className="actions";
-  for(const [text,url] of [["查看原图","./"+a.local_path],["素材来源",a.source_page]]){
-   const link=document.createElement("a");link.textContent=text;link.href=url;link.target="_blank";link.rel="noopener";acts.append(link)
+  const chips=document.createElement("div");chips.className="badges";
+  for(const [label,top] of [[mapLabel[a.category]||a.category,true],[subLabels[a.subcategory]||"待细分",false]]){
+   const el=document.createElement("span");el.className="tag"+(top?" top":"");el.textContent=label;chips.append(el);
   }
-  meta.append(acts);art.append(poster,meta);frag.append(art);
+  meta.append(chips);
+  if(a.category==="characters"&&a.character||a.category==="weapons"&&a.weapon_family){
+   const p=document.createElement("p");p.textContent=(a.category==="characters"?"所属角色：":"武器系列：")+groupName(a);meta.append(p);
+  }
+  const actions=document.createElement("div");actions.className="actions";
+  for(const [text,url] of [["查看原图",localPath(a)],["素材来源",originalHref(a)]]){
+   const link=document.createElement("a");link.textContent=text;link.href=url;link.target="_blank";link.rel="noopener";actions.append(link);
+  }
+  meta.append(actions);art.append(poster,meta);frag.append(art);
  }
  grid.append(frag);
+ $("#stats").textContent="共 "+data.length+" 张已入库 · 当前显示 "+rows.length+" 张；类型按原始记录归类，文件路径未移动";
 }
-fetch("./catalog/assets.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(cat=>{
- data=cat.assets.filter(a=>a.download_status==="downloaded"&&a.local_path).sort((a,b)=>(a.category===b.category?a.name.localeCompare(b.name,"zh"):(a.category==="characters"?-1:b.category==="characters"?1:0)));
- const counts=Object.fromEntries(Object.keys(labels).filter(k=>k!=="all").map(k=>[k,data.filter(a=>a.category===k).length]));
- $("#stats").innerHTML="<span>已入库 <strong>"+data.length+"</strong> 张</span><span>人物 <strong>"+counts.characters+"</strong></span><span>Boss <strong>"+counts.bosses+"</strong></span><span>武器 <strong>"+counts.weapons+"</strong></span><span>背景 <strong>"+counts.backgrounds+"</strong></span>";
- paint();
-}).catch(err=>{$("#stats").textContent="加载素材索引失败："+err.message});
+fetch("./catalog/assets.json",{cache:"no-cache"}).then(r=>{
+ if(!r.ok)throw Error("HTTP "+r.status);return r.json()
+}).then(cat=>{
+ data=cat.assets.filter(a=>a.download_status==="downloaded"&&a.local_path);
+ updateSelectors();paint();
+}).catch(err=>{
+ $("#stats").textContent="素材索引加载失败："+err.message;
+});
 </script></body></html>
