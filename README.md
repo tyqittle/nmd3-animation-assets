@@ -128,6 +128,13 @@ python scripts/audit_assets.py
 
 本仓库为非官方个人参考资料库，图片版权属于原权利人。网页可见不意味着获授权公开复制、再分发或商用。仓库目前为 **Public**；如需仅私人使用，可在 GitHub Settings 调整为 Private。见 [版权说明](docs/RIGHTS.md)。
 
+
+## 2026-10-21 新短剧工程：小椒卖焚天
+
+**[《小椒卖焚天：贵是贵了点，但不烧心》独立工程](video/projects/xiaojiao-fentian-shop/README.md)** · [分镜与渲染程序](video/projects/xiaojiao-fentian-shop/render.py) · [生产清单](video/projects/xiaojiao-fentian-shop/project.json)
+
+原创22.5秒竖屏荒诞短剧：小黑质疑新武器焚天贵，小椒保证不烧心；现场验货却把兵器铺烧掉，反转台词「只烧铺子，不烧心」。工程引用仓库内小椒、小黑及焚天的实际图片文件，程序缺图直接报错，不以色块人物代替。由通用视频制作工作流渲染为MP4并自动生成质检联络图、配音日志；**此处说明工程已入库，不表示已经目检或确认MP4渲染成功**。
+
 ## 忍3视频制作流程（v2.0 · 不绑定画面模板）
 
 **[查看创作自由版完整制作规范](video/workflow/README.md)** · [GitHub Actions 通用视频生产入口](.github/workflows/video-production.yml) · [作品目录](video/projects/)
