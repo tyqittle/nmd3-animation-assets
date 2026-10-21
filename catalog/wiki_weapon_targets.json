@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "updated": "2026-10-21",
+  "source": "https://wiki.biligame.com/nmd3/武器图鉴",
+  "description": "真实武器/幻化图采集目标。只下载 BWIKI 页面清晰对应武器名称的图片，若无明确对应或下载失败不入库。包括2026年10月新武器焚天；该武器详情页尚不保证可获取。",
+  "targets": [
+    {
+      "name": "焚天",
+      "slug": "101_fentian",
+      "page": "https://wiki.biligame.com/nmd3/%E7%84%9A%E5%A4%A9"
+    },
+    {
+      "name": "百炼",
+      "slug": "102_bailian",
+      "page": "https://wiki.biligame.com/nmd3/%E7%99%BE%E7%82%BC"
+    },
+    {
+      "name": "破雾·贯羽",
+      "slug": "103_pouwu_guanyu",
+      "page": "https://wiki.biligame.com/nmd3/%E7%A0%B4%E9%9B%BE%C2%B7%E8%B4%AF%E7%BE%BD"
+    },
+    {
+      "name": "尽滅",
+      "slug": "104_jinmie",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B0%BD%E6%BB%85"
+    },
+    {
+      "name": "伏溟九渊",
+      "slug": "105_fuming",
+      "page": "https://wiki.biligame.com/nmd3/%E4%BC%8F%E6%BA%9F%E4%B9%9D%E6%B8%8A"
+    },
+    {
+      "name": "三日月雷切",
+      "slug": "106_sanriyue",
+      "page": "https://wiki.biligame.com/nmd3/%E4%B8%89%E6%97%A5%E6%9C%88%E9%9B%B7%E5%88%87"
+    },
+    {
+      "name": "苍雪祝神铃",
+      "slug": "107_cangxue",
+      "page": "https://wiki.biligame.com/nmd3/%E8%8B%8D%E9%9B%AA%E7%A5%9D%E7%A5%9E%E9%93%83"
+    },
+    {
+      "name": "岚·不鸣之刃",
+      "slug": "108_lan_buming",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B2%9A%C2%B7%E4%B8%8D%E9%B8%A3%E4%B9%8B%E5%88%83"
+    },
+    {
+      "name": "龙毫笔",
+      "slug": "109_longhaobi",
+      "page": "https://wiki.biligame.com/nmd3/%E9%BE%99%E6%AF%AB%E7%AC%94"
+    },
+    {
+      "name": "风月含袖",
+      "slug": "110_fengyue",
+      "page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E6%9C%88%E5%90%AB%E8%A2%96"
+    },
+    {
+      "name": "怒鲤双生",
+      "slug": "111_nuli",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%92%E9%B2%A4%E5%8F%8C%E7%94%9F"
+    },
+    {
+      "name": "巨阙·缚日",
+      "slug": "112_juque",
+      "page": "https://wiki.biligame.com/nmd3/%E5%B7%A8%E9%98%99%C2%B7%E7%BC%9A%E6%97%A5"
+    },
+    {
+      "name": "紫电白虹",
+      "slug": "113_zidian",
+      "page": "https://wiki.biligame.com/nmd3/%E7%B4%AB%E7%94%B5%E7%99%BD%E8%99%B9"
+    },
+    {
+      "name": "薪火",
+      "slug": "114_xinhuo",
+      "page": "https://wiki.biligame.com/nmd3/%E8%96%AA%E7%81%AB"
+    },
+    {
+      "name": "风信鹤羽",
+      "slug": "115_fengxin",
+      "page": "https://wiki.biligame.com/nmd3/%E9%A3%8E%E4%BF%A1%E9%B9%A4%E7%BE%BD"
+    },
+    {
+      "name": "八岐断雷枪",
+      "slug": "116_baqi",
+      "page": "https://wiki.biligame.com/nmd3/%E5%85%AB%E5%B2%90%E6%96%AD%E9%9B%B7%E6%9E%AA"
+    },
+    {
+      "name": "如龙临渊",
+      "slug": "117_rulong",
+      "page": "https://wiki.biligame.com/nmd3/%E5%A6%82%E9%BE%99%E4%B8%B4%E6%B8%8A"
+    },
+    {
+      "name": "丛云之霜羽",
+      "slug": "118_congyun",
+      "page": "https://wiki.biligame.com/nmd3/%E4%B8%9B%E4%BA%91%E4%B9%8B%E9%9C%9C%E7%BE%BD"
+    }
+  ]
+}
