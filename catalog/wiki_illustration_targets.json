@@ -1,452 +1,541 @@
 {
-  "version": 2,
+  "version": 3,
   "source_index": "https://wiki.biligame.com/nmd3/忍者皮肤",
-  "description": "扩展角色与皮肤立绘采集目标，使用 BWIKI 页面显式标注的立绘图；仅将通过下载校验的图片入库。",
+  "description": "每项带角色主体与初步细分类（style_portrait、costume_portrait、unreviewed_portrait）。不将 Wiki 的'皮肤'栏目机械等同于服装：流派默认外观单列；后续新增仍需逐图确认。",
   "targets": [
     {
       "name": "镜花·琳",
       "character": "琳",
-      "slug": "001_lin"
+      "slug": "001_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "蓝雪·琳",
       "character": "琳",
-      "slug": "002_lin"
+      "slug": "002_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "青行姬·琳",
       "character": "琳",
-      "slug": "003_lin"
+      "slug": "003_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "芳青·琳",
       "character": "琳",
-      "slug": "004_lin"
+      "slug": "004_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "樱花·琳",
       "character": "琳",
-      "slug": "005_lin"
+      "slug": "005_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "嫣华·琳",
       "character": "琳",
-      "slug": "006_lin"
+      "slug": "006_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "女仆·琳",
       "character": "琳",
-      "slug": "007_lin"
+      "slug": "007_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "夏梦·琳",
       "character": "琳",
-      "slug": "008_lin"
+      "slug": "008_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "巫女·琳",
       "character": "琳",
-      "slug": "009_lin"
+      "slug": "009_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "弥生·琳",
       "character": "琳",
-      "slug": "010_lin"
+      "slug": "010_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "桃姬·琳",
       "character": "琳",
-      "slug": "011_lin"
+      "slug": "011_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "兔女郎·琳",
       "character": "琳",
-      "slug": "012_lin"
+      "slug": "012_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "琳儿响叮当",
       "character": "琳",
-      "slug": "013_lin"
+      "slug": "013_lin",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "神乐·琳",
       "character": "琳",
-      "slug": "014_lin"
+      "slug": "014_lin",
+      "asset_type": "style_portrait"
     },
     {
       "name": "魂·苍牙",
       "character": "苍牙",
-      "slug": "015_cangya"
+      "slug": "015_cangya",
+      "asset_type": "style_portrait"
     },
     {
       "name": "鬼·苍牙",
       "character": "苍牙",
-      "slug": "016_cangya"
+      "slug": "016_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "辉·苍牙",
       "character": "苍牙",
-      "slug": "017_cangya"
+      "slug": "017_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "猫灵·苍牙",
       "character": "苍牙",
-      "slug": "018_cangya"
+      "slug": "018_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "战·苍牙",
       "character": "苍牙",
-      "slug": "019_cangya"
+      "slug": "019_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "源·苍牙",
       "character": "苍牙",
-      "slug": "020_cangya"
+      "slug": "020_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "胧·苍牙",
       "character": "苍牙",
-      "slug": "021_cangya"
+      "slug": "021_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "雪·苍牙",
       "character": "苍牙",
-      "slug": "022_cangya"
+      "slug": "022_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "祭·苍牙",
       "character": "苍牙",
-      "slug": "023_cangya"
+      "slug": "023_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "煞·苍牙",
       "character": "苍牙",
-      "slug": "024_cangya"
+      "slug": "024_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "海滨·苍牙",
       "character": "苍牙",
-      "slug": "025_cangya"
+      "slug": "025_cangya",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "樱舞·小椒",
       "character": "小椒",
-      "slug": "026_xiaojiao"
+      "slug": "026_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "闹春·小椒",
       "character": "小椒",
-      "slug": "027_xiaojiao"
+      "slug": "027_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "桃花·小椒",
       "character": "小椒",
-      "slug": "028_xiaojiao"
+      "slug": "028_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "柠檬小椒",
       "character": "小椒",
-      "slug": "029_xiaojiao"
+      "slug": "029_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "蹦跳·小椒",
       "character": "小椒",
-      "slug": "030_xiaojiao"
+      "slug": "030_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "放课·小椒",
       "character": "小椒",
-      "slug": "031_xiaojiao"
+      "slug": "031_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "喵呜·小椒",
       "character": "小椒",
-      "slug": "032_xiaojiao"
+      "slug": "032_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "航海·小椒",
       "character": "小椒",
-      "slug": "033_xiaojiao"
+      "slug": "033_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "虚拟歌姬",
       "character": "小椒",
-      "slug": "034_xiaojiao"
+      "slug": "034_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "雪中红裘",
       "character": "小椒",
-      "slug": "035_xiaojiao"
+      "slug": "035_xiaojiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "黄巾·小黑",
       "character": "小黑",
-      "slug": "036_xiaohei"
+      "slug": "036_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "百炼·小黑",
       "character": "小黑",
-      "slug": "037_xiaohei"
+      "slug": "037_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "贺春·小黑",
       "character": "小黑",
-      "slug": "038_xiaohei"
+      "slug": "038_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "炎龙铠甲",
       "character": "小黑",
-      "slug": "039_xiaohei"
+      "slug": "039_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "电音·小黑",
       "character": "小黑",
-      "slug": "040_xiaohei"
+      "slug": "040_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "宇宙·小黑",
       "character": "小黑",
-      "slug": "041_xiaohei"
+      "slug": "041_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "无面·小黑",
       "character": "小黑",
-      "slug": "042_xiaohei"
+      "slug": "042_xiaohei",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "夜叉·隼白",
       "character": "隼白",
-      "slug": "043_hayabusa"
+      "slug": "043_hayabusa",
+      "asset_type": "style_portrait"
     },
     {
       "name": "紫降·隼白",
       "character": "隼白",
-      "slug": "044_hayabusa"
+      "slug": "044_hayabusa",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "隼击鹰扬",
       "character": "隼白",
-      "slug": "045_hayabusa"
+      "slug": "045_hayabusa",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "紫刹·血影",
       "character": "血影",
-      "slug": "046_bloodshadow"
+      "slug": "046_bloodshadow",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "极刃·血影",
       "character": "血影",
-      "slug": "047_bloodshadow"
+      "slug": "047_bloodshadow",
+      "asset_type": "style_portrait"
     },
     {
       "name": "松烟锦年",
       "character": "伊鹤",
-      "slug": "048_yihe"
+      "slug": "048_yihe",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "红与黑",
       "character": "伊鹤",
-      "slug": "049_yihe"
+      "slug": "049_yihe",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "幽兰蝶梦",
       "character": "伊鹤",
-      "slug": "050_yihe"
+      "slug": "050_yihe",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "夜色春华",
       "character": "伊鹤",
-      "slug": "051_yihe"
+      "slug": "051_yihe",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "翡歌咏叹",
       "character": "伊鹤",
-      "slug": "052_yihe"
+      "slug": "052_yihe",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "棋士·紫原",
       "character": "紫原",
-      "slug": "053_ziyuan"
+      "slug": "053_ziyuan",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "天青·紫原",
       "character": "紫原",
-      "slug": "054_ziyuan"
+      "slug": "054_ziyuan",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "荧",
       "character": "荧",
-      "slug": "055_ying"
+      "slug": "055_ying",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "晴空·荧",
       "character": "荧",
-      "slug": "056_ying"
+      "slug": "056_ying",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "银翼骇客",
       "character": "银枭",
-      "slug": "057_yinxiao"
+      "slug": "057_yinxiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "虹羽逐浪",
       "character": "银枭",
-      "slug": "058_yinxiao"
+      "slug": "058_yinxiao",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "海祭·洛青",
       "character": "洛青",
-      "slug": "059_luoqing"
+      "slug": "059_luoqing",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "深红魅影",
       "character": "洛青",
-      "slug": "060_luoqing"
+      "slug": "060_luoqing",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "白棘裁决者",
       "character": "卫鲤",
-      "slug": "061_weili"
+      "slug": "061_weili",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "剑心无澜",
       "character": "卫鲤",
-      "slug": "062_weili"
+      "slug": "062_weili",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "极道·卫鲤",
       "character": "卫鲤",
-      "slug": "063_weili"
+      "slug": "063_weili",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "极光律使",
-      "character": "其他",
-      "slug": "064_misc"
+      "character": "待核对",
+      "slug": "064_misc",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "王牌魔术",
-      "character": "其他",
-      "slug": "065_misc"
+      "character": "待核对",
+      "slug": "065_misc",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "暗鸦断罪者",
-      "character": "其他",
-      "slug": "066_misc"
+      "character": "待核对",
+      "slug": "066_misc",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "青空·乘霄",
-      "character": "其他",
-      "slug": "067_misc"
+      "character": "戌时",
+      "slug": "067_misc",
+      "asset_type": "style_portrait"
     },
     {
       "name": "报恩桃·戌时",
-      "character": "其他",
-      "slug": "068_misc"
+      "character": "戌时",
+      "slug": "068_misc",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "澄碧·寒绡",
-      "character": "其他",
-      "slug": "069_misc"
+      "character": "兮兰",
+      "slug": "069_misc",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "清悦·兮兰",
-      "character": "其他",
-      "slug": "070_misc"
+      "character": "兮兰",
+      "slug": "070_misc",
+      "asset_type": "style_portrait"
     },
     {
       "name": "乘霄·戌时（皮肤）",
-      "character": "乘霄·戌时",
-      "slug": "071_chengxiao_juexing"
+      "character": "戌时",
+      "slug": "071_chengxiao_juexing",
+      "asset_type": "style_portrait"
     },
     {
       "name": "戌时（皮肤）",
-      "character": "乘霄·戌时",
-      "slug": "072_chengxiao_base"
+      "character": "戌时",
+      "slug": "072_chengxiao_base",
+      "asset_type": "style_portrait"
     },
     {
       "name": "浪花快枪手",
       "character": "乘霄·戌时",
-      "slug": "074_chengxiao_watergun"
+      "slug": "074_chengxiao_watergun",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "风铭·戌时（皮肤）",
-      "character": "风铭·戌时",
-      "slug": "075_xushi_fengming"
+      "character": "戌时",
+      "slug": "075_xushi_fengming",
+      "asset_type": "style_portrait"
     },
     {
       "name": "戌时",
       "character": "风铭·戌时",
-      "slug": "076_xushi_base"
+      "slug": "076_xushi_base",
+      "asset_type": "style_portrait"
     },
     {
       "name": "胜利之星",
-      "character": "风铭·戌时",
-      "slug": "077_xushi_star"
+      "character": "戌时",
+      "slug": "077_xushi_star",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "萌军船长",
-      "character": "风铭·戌时",
-      "slug": "078_xushi_captain"
+      "character": "戌时",
+      "slug": "078_xushi_captain",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "双焰·小椒",
-      "character": "双焰·小椒",
-      "slug": "080_shuangyan"
+      "character": "小椒",
+      "slug": "080_shuangyan",
+      "asset_type": "style_portrait"
     },
     {
       "name": "喵之双子星",
-      "character": "双焰·小椒",
-      "slug": "081_shuangyan_cats"
+      "character": "小椒",
+      "slug": "081_shuangyan_cats",
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "贺新焰",
-      "character": "双焰·小椒",
-      "slug": "082_shuangyan_anniversary"
+      "character": "小椒",
+      "slug": "082_shuangyan_anniversary",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "跃焰双驱",
-      "character": "双焰·小椒",
-      "slug": "083_shuangyan_dual"
+      "character": "小椒",
+      "slug": "083_shuangyan_dual",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "星祈捕梦者",
-      "character": "霜刃·伊鹤",
-      "slug": "084_yihe_starseer"
+      "character": "伊鹤",
+      "slug": "084_yihe_starseer",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "旧日·时之轮",
-      "character": "雷羿·银枭",
-      "slug": "085_yinxiao_time"
+      "character": "银枭",
+      "slug": "085_yinxiao_time",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "心动怪谈",
-      "character": "樱火·荧",
-      "slug": "086_ying_ghost"
+      "character": "荧",
+      "slug": "086_ying_ghost",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "绯斩·苍牙",
       "character": "绯斩·苍牙",
-      "slug": "088_cangya_fezhan"
+      "slug": "088_cangya_fezhan",
+      "asset_type": "style_portrait"
     },
     {
       "name": "神炎·小椒",
       "character": "神炎·小椒",
-      "slug": "089_xiaojiao_shenyan"
+      "slug": "089_xiaojiao_shenyan",
+      "asset_type": "style_portrait"
     },
     {
       "name": "雷兽·阿力",
       "character": "雷兽·阿力",
-      "slug": "090_ali_thunder"
+      "slug": "090_ali_thunder",
+      "asset_type": "style_portrait"
     },
     {
       "name": "不知火·舞",
-      "character": "不知火·舞",
-      "slug": "091_mai"
+      "character": "不知火舞",
+      "slug": "091_mai",
+      "asset_type": "costume_portrait"
     },
     {
       "name": "乘霄·戌时",
-      "character": "乘霄·戌时",
-      "slug": "092_chengxiao"
+      "character": "戌时",
+      "slug": "092_chengxiao",
+      "asset_type": "style_portrait"
     }
   ],
   "updated": "2026-10-21"
