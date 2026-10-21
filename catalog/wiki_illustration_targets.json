@@ -1,7 +1,7 @@
 {
-  "version": 3,
+  "version": 4,
   "source_index": "https://wiki.biligame.com/nmd3/忍者皮肤",
-  "description": "每项带角色主体与初步细分类（style_portrait、costume_portrait、unreviewed_portrait）。不将 Wiki 的'皮肤'栏目机械等同于服装：流派默认外观单列；后续新增仍需逐图确认。",
+  "description": "忍者立绘采集：身份由BWIKI角色/皮肤详情页决定，必须按真实皮肤获取类型分类；下载时验证透明单人图。不确定的记录走 unreviewed_portrait，不能默认展示为正常流派。",
   "targets": [
     {
       "name": "镜花·琳",
@@ -19,7 +19,7 @@
       "name": "青行姬·琳",
       "character": "琳",
       "slug": "003_lin",
-      "asset_type": "costume_portrait"
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "芳青·琳",
@@ -91,7 +91,7 @@
       "name": "魂·苍牙",
       "character": "苍牙",
       "slug": "015_cangya",
-      "asset_type": "style_portrait"
+      "asset_type": "costume_portrait"
     },
     {
       "name": "鬼·苍牙",
@@ -259,7 +259,7 @@
       "name": "夜叉·隼白",
       "character": "隼白",
       "slug": "043_hayabusa",
-      "asset_type": "style_portrait"
+      "asset_type": "awakening_portrait"
     },
     {
       "name": "紫降·隼白",
@@ -283,7 +283,7 @@
       "name": "极刃·血影",
       "character": "血影",
       "slug": "047_bloodshadow",
-      "asset_type": "style_portrait"
+      "asset_type": "awakening_portrait"
     },
     {
       "name": "松烟锦年",
@@ -469,7 +469,7 @@
       "name": "双焰·小椒",
       "character": "小椒",
       "slug": "080_shuangyan",
-      "asset_type": "style_portrait"
+      "asset_type": "awakening_portrait"
     },
     {
       "name": "喵之双子星",
@@ -517,25 +517,25 @@
       "name": "神炎·小椒",
       "character": "小椒",
       "slug": "089_xiaojiao_shenyan",
-      "asset_type": "style_portrait"
+      "asset_type": "awakening_portrait"
     },
     {
       "name": "雷兽·阿力",
       "character": "阿力",
       "slug": "090_ali_thunder",
-      "asset_type": "style_portrait"
+      "asset_type": "awakening_portrait"
     },
     {
       "name": "不知火·舞",
       "character": "不知火舞",
       "slug": "091_mai",
-      "asset_type": "style_portrait"
+      "asset_type": "base_portrait"
     },
     {
       "name": "乘霄·戌时",
       "character": "戌时",
       "slug": "092_chengxiao",
-      "asset_type": "style_portrait"
+      "asset_type": "awakening_portrait"
     }
   ],
   "updated": "2026-10-21"
