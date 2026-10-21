@@ -13,7 +13,7 @@ TYPES={
     "characters":{"base_portrait","style_portrait","costume_portrait","pose_reference",
                   "alternate_portrait","character_reference","unreviewed_portrait","awakening_portrait"},
     "weapons":{"weapon_art","weapon_appearance"},
-    "bosses":{"boss_art"},
+    "bosses":{"boss_art","monster_group_reference"},
     "scenes":{"scene_reference"},
     "wallpapers":{"wallpaper_composite","unverified_wallpaper"},
     "promos":{"event_promo","promo_composite"},
