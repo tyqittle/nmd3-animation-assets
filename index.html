@@ -83,13 +83,13 @@ dialog a{color:#ff9ab0}
 <script>
 "use strict";
 const cats=[
- ["all","全部"],["characters","忍者角色"],["weapons","武器"],["bosses","Boss"],
+ ["all","全部"],["characters","忍者角色"],["weapons","武器"],["bosses","Boss与怪物"],
  ["scenes","场景参考"],["wallpapers","壁纸构图"],["promos","活动宣传"],["effects","战斗特效"]
 ];
 const subLabels={
  base_portrait:"基础立绘",style_portrait:"忍者流派",costume_portrait:"角色皮肤",
  pose_reference:"动作参考",alternate_portrait:"立绘其他版本",character_reference:"角色宣传参考",
- boss_art:"Boss立绘",weapon_art:"武器本体",weapon_appearance:"武器幻化",
+ boss_art:"Boss立绘",monster_group_reference:"怪物系代表图",weapon_art:"武器本体",weapon_appearance:"武器幻化",
  scene_reference:"场景参考",wallpaper_composite:"壁纸构图",unverified_wallpaper:"待采集壁纸",
  event_promo:"活动宣传图",promo_composite:"复合宣传插画",awakening_portrait:"流派觉醒外观",skill_effect_reference:"技能/忍术特效"
 };
@@ -97,7 +97,7 @@ const explanations={
  all:"人物按角色归组，区分基础立绘、流派与皮肤；其他画面不再一律归到“背景”。",
  characters:"忍者角色按人物、流派、外观与动作类型区分；流派不是皮肤，动作参考不是独立的新角色。",
  weapons:"普通武器和武器幻化分别显示；武器幻化不能标成角色皮肤。",
- bosses:"独立的敌人和Boss图片，不与可操作忍者混淆。",
+ bosses:"Boss独立立绘与怪物系图鉴参考分开标注；系列代表图不等于该系列内每个 Boss 的完整立绘。",
  scenes:"场景参考不一定是可直接复用的纯背景。需要人工确认人物、文字和遮挡情况。",
  wallpapers:"含场景构图或人物的壁纸、复合画面；不冒充无字的纯场景。",
  promos:"纪念、活动、宣传、角色展示图，不应放在纯净背景类。",
