@@ -50,11 +50,11 @@ def original_image_url(raw):
 
 def candidate_image_urls(html, name, page_url):
     soup=BeautifulSoup(html,"html.parser")
-    wanted=name.replace(" ","").lower()
+    wanted=name.replace(" ","").replace("（皮肤）","").replace("(皮肤)","").lower()
     result=[]
     for el in soup.select("img"):
         alt=(el.get("alt") or "").replace(" ","").lower()
-        if "立绘" not in alt or (wanted not in alt and "流派" not in alt): continue
+        if "立绘" not in alt or wanted not in alt: continue
         for attr in ("data-src","data-original","data-lazy-src","src","data-actualsrc"):
             u=original_image_url(el.get(attr))
             if u and u not in result: result.append(u)
@@ -141,7 +141,7 @@ def main():
             added.append(name)
             print("SAVED",name,row["width"],row["height"],row["bytes"],flush=True)
             report.append({k:v for k,v in row.items() if k!="data"})
-    catalog["as_of"]="2026-10-20"
+    catalog["as_of"]="2026-10-21"
     CATALOG_PATH.write_text(json.dumps(catalog,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     REPORT_PATH.parent.mkdir(parents=True,exist_ok=True)
     REPORT_PATH.write_text(json.dumps({"added":added,"attempted":len(targets),"results":report},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
