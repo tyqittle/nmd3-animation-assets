@@ -60,16 +60,16 @@ nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:19px;font
 <header class="top">
 <div class="tiny">NINJA MUST DIE 3 / COMEDY EDITING KIT</div>
 <h1>忍村<em>整活工具箱</em></h1>
-<div class="lead">让“百炼烧心，焚天不烧心”这类短剧真的好笑：夸张重击、破防音效、冷场虫鸣、弹簧鬼畜、还有最新加入的 <strong>「曼波！」真人声感 TTS 创意音效</strong>——单发、变声、鬼畜、回声、喜报等。<strong>真实 WAV 和透明特效保存在 GitHub 仓库，不依赖外部音效网站。</strong></div>
+<div class="lead">剪辑素材分清<strong>经典音效</strong>与<strong>近期正在使用的配音玩法</strong>：这里的14个「曼波！」WAV是2024年原梗的自制旧式短叫变体，<strong>不是2026年最新爆火声线，也不能朗读完整台词</strong>。2026年10月可查到的另一种用法是“曼波配音”读完整故事/文案，本页尚未收录对应的正式授权声线。<strong>媒体文件保存在 GitHub，不依赖第三方声音网站。</strong></div>
 <nav><a href="../">返回忍3角色图鉴 ↗</a><a href="../memes/">忍3梗档案馆 ↗</a><a href="https://github.com/tyqittle/nmd3-animation-assets/tree/main/assets/comedy" target="_blank" rel="noopener">查看原始媒体目录 ↗</a><a href="https://github.com/tyqittle/nmd3-animation-assets/blob/main/assets/comedy/README.md" target="_blank" rel="noopener">素材使用说明 ↗</a></nav>
 </header>
 <div class="stats" aria-live="polite"><div class="stat"><strong id="all-number">—</strong>总素材</div><div class="stat"><strong id="audio-number">—</strong>搞笑音效 · WAV</div><div class="stat"><strong id="effect-number">—</strong>透明特效 · 动画</div></div>
-<div class="batch"><a href="../assets/comedy/mambo/mambo-sfx-14-wav.zip" download>↓ 下载 14 个曼波语音包 WAV</a><a href="../assets/comedy/comedy-sfx-24-wav.zip" download>↓ 原创基础 24 个 WAV 音效包</a><a href="../assets/comedy/comedy-vfx-16-complete.zip" download>↓ 一键下载 16 个透明特效包</a></div>
+<div class="batch"><a href="../memes/research/MAMBO_TREND_AUDIT_2026-10-21.md" style="border-color:#b99065">✓ 查看2026-10曼波热点研究与旧梗纠偏</a><a href="../assets/comedy/mambo/mambo-sfx-14-wav.zip" download>↓ 14个经典曼波短叫（旧梗）WAV</a><a href="../assets/comedy/comedy-sfx-24-wav.zip" download>↓ 原创基础 24 个 WAV 音效包</a><a href="../assets/comedy/comedy-vfx-16-complete.zip" download>↓ 一键下载 16 个透明特效包</a></div>
 <div class="tools">
 <div class="tabs" aria-label="素材类型">
 <button type="button" class="tab" data-type="all" aria-pressed="true">全部</button>
 <button type="button" class="tab" data-type="sound" aria-pressed="false">音效 WAV</button>
-<button type="button" class="tab" data-type="mambo" aria-pressed="false">曼波专题</button>
+<button type="button" class="tab" data-type="mambo" aria-pressed="false">经典曼波短叫（旧梗）</button>
 <button type="button" class="tab" data-type="effect" aria-pressed="false">透明动画</button>
 </div>
 <input id="search" placeholder="搜索：曼波、变声、尴尬、重击、冷汗、Boss…" aria-label="搜索素材">
@@ -194,7 +194,7 @@ Promise.all([loadJSON("catalog.json"),loadJSON("mambo/catalog.json").catch(()=>n
  $("#audio-number").textContent=cat.sounds.length+(mambo?.sounds.length||0);
  $("#effect-number").textContent=cat.effects.length;
  if(!mambo)$("#mambo-note").textContent="曼波语音包尚未成功发布；原有音效和特效仍可正常试听下载。";
- else $("#mambo-note").textContent="曼波专题已接入 "+mambo.sounds.length+" 个真实 WAV，非游戏原声或UP主录音。";
+ else $("#mambo-note").textContent="【热点纠偏】本页曼波分类是 "+mambo.sounds.length+" 个2024经典曼波短叫的自制变体；2026年10月仍可见的「曼波配音」是朗读整段文案的另一种形式，本页暂未提供其授权声线。";
  resetCategories();repaint()
 }).catch(e=>{
  $("#count").textContent="素材清单加载失败："+e.message+"。请检查 GitHub Actions 是否生成 assets/comedy/catalog.json。"
