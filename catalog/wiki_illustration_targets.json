@@ -437,7 +437,7 @@
     },
     {
       "name": "浪花快枪手",
-      "character": "乘霄·戌时",
+      "character": "戌时",
       "slug": "074_chengxiao_watergun",
       "asset_type": "costume_portrait"
     },
@@ -449,7 +449,7 @@
     },
     {
       "name": "戌时",
-      "character": "风铭·戌时",
+      "character": "戌时",
       "slug": "076_xushi_base",
       "asset_type": "style_portrait"
     },
@@ -509,19 +509,19 @@
     },
     {
       "name": "绯斩·苍牙",
-      "character": "绯斩·苍牙",
+      "character": "苍牙",
       "slug": "088_cangya_fezhan",
       "asset_type": "style_portrait"
     },
     {
       "name": "神炎·小椒",
-      "character": "神炎·小椒",
+      "character": "小椒",
       "slug": "089_xiaojiao_shenyan",
       "asset_type": "style_portrait"
     },
     {
       "name": "雷兽·阿力",
-      "character": "雷兽·阿力",
+      "character": "阿力",
       "slug": "090_ali_thunder",
       "asset_type": "style_portrait"
     },
