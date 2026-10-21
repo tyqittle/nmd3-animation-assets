@@ -403,7 +403,7 @@
       "name": "青空·乘霄",
       "character": "戌时",
       "slug": "067_misc",
-      "asset_type": "style_portrait"
+      "asset_type": "costume_portrait"
     },
     {
       "name": "报恩桃·戌时",
@@ -421,7 +421,7 @@
       "name": "清悦·兮兰",
       "character": "兮兰",
       "slug": "070_misc",
-      "asset_type": "style_portrait"
+      "asset_type": "unreviewed_portrait"
     },
     {
       "name": "乘霄·戌时（皮肤）",
@@ -529,7 +529,7 @@
       "name": "不知火·舞",
       "character": "不知火舞",
       "slug": "091_mai",
-      "asset_type": "costume_portrait"
+      "asset_type": "style_portrait"
     },
     {
       "name": "乘霄·戌时",
