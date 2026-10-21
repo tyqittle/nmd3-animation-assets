@@ -36,6 +36,25 @@ dialog::backdrop{background:rgba(0,0,0,.84)}dialog img{display:block;max-width:1
 #subtype,#role,#sort{max-width:210px}
 dialog a{color:#ff9ab0}
 @media(max-width:700px){header{padding:30px 22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.poster{height:210px}.toolbar input{max-width:none}.meta{padding:10px}.meta h3{font-size:13px}}
+
+/* Performance: reserve card and viewer geometry before images finish decoding. */
+.card{content-visibility:auto;contain-intrinsic-size:auto 386px}
+.poster{contain:layout paint;overflow:hidden}
+.preview-button{appearance:none;display:block;width:100%;height:100%;padding:0;border:0;border-radius:0;background:transparent;cursor:zoom-in;overflow:hidden}
+.preview-button:focus-visible{outline:3px solid #ffb1c5;outline-offset:-3px}
+.preview-button img{width:100%;height:100%;object-fit:contain;display:block;transition:opacity .18s ease;opacity:0}
+.preview-button img.loaded{opacity:1}
+#more-wrap{display:flex;justify-content:center;padding:26px 0}
+#more-wrap[hidden]{display:none}
+#more{min-width:150px}
+#viewer{width:min(96vw,1100px);max-width:1100px;max-height:94vh}
+.viewer-stage{height:min(72vh,730px);min-height:min(48vh,340px);display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse,#242a37,#10131b 74%);border-radius:10px}
+.viewer-stage img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;opacity:0;transition:opacity .16s ease}
+.viewer-stage.ready img{opacity:1}
+.loading-label{position:absolute;inset:0;display:grid;place-items:center;color:#c5cad8;font-size:13px;pointer-events:none;text-align:center;padding:20px}
+.viewer-stage.ready .loading-label{display:none}
+@media (prefers-reduced-motion:reduce){.card,.preview-button img,.viewer-stage img{transition:none}}
+@media(max-width:700px){.card{contain-intrinsic-size:auto 356px}.viewer-stage{height:65vh;min-height:260px}}
 </style></head>
 <body>
 <header><div class="eyebrow">NINJA MUST DIE 3 / ART ARCHIVE</div><h1>忍3视觉素材库</h1><p>忍者与流派 · 角色皮肤 · 武器与幻化 · Boss · 场景 · 壁纸 · 宣传 · 特效<br>按大类、细分类和角色精准筛选；图片从 GitHub 仓库读取。</p></header>
@@ -56,10 +75,11 @@ dialog a{color:#ff9ab0}
  </div>
  <p class="category-help" id="category-help" aria-live="polite"></p>
  <div class="grid" id="grid" aria-live="polite"></div>
+ <div id="more-wrap" hidden><button id="more" type="button">加载更多素材</button></div>
  <div id="empty" hidden>没有符合条件的已下载图片，请试试其他关键词或分类。</div>
  <p class="notice">图像版权归原权利方；这里是个人非官方素材索引，不代表拥有再分发或商业使用授权。发现原图与标注不符的条目已隔离到“查看待核对素材”，不再混入正常角色立绘；多数图片仍待全面目检。“场景参考”不代表纯净背景。</p>
 </main>
-<dialog id="viewer"><div class="dtop"><strong id="viewer-title"></strong><button id="viewer-close">关闭 ×</button></div><img id="viewer-img" alt=""><div class="actions"><a id="viewer-original" target="_blank" rel="noopener">打开仓库原图</a><a id="viewer-source" target="_blank" rel="noopener">查看来源</a></div></dialog>
+<dialog id="viewer"><div class="dtop"><strong id="viewer-title"></strong><button id="viewer-close">关闭 ×</button></div><div class="viewer-stage" id="viewer-stage"><img id="viewer-img" alt=""><span class="loading-label" id="viewer-loading" role="status">正在加载高清原图……</span></div><div class="actions"><a id="viewer-original" target="_blank" rel="noopener">打开仓库原图</a><a id="viewer-source" target="_blank" rel="noopener">查看来源</a></div></dialog>
 <script>
 "use strict";
 const cats=[
@@ -91,30 +111,69 @@ const localPath=a=>"./"+a.local_path;
 const groupName=a=>a.category==="characters"?(a.character||"其他角色"):(a.category==="weapons"?(a.weapon_family||a.name):"");
 const textFor=a=>[a.name,a.character||"",a.weapon_family||"",a.id,mapLabel[a.category]||"",subLabels[a.subcategory]||""].join(" ").toLowerCase();
 const originalHref=a=>a.source_page&&a.source_page.startsWith("https://")?a.source_page:"https://github.com/tyqittle/nmd3-animation-assets";
-const openViewer=a=>{
+// The grid always starts small; subsequent pages are appended without rebuilding.
+const PAGE_SIZE=24;
+let visibleRows=[],rendered=0,loadObserver=null,viewerToken=0,searchTimer=null;
+const previewPath=a=>"./previews/"+a.local_path.replace(/\\.[^.\\/]+$/,".webp");
+
+function openViewer(a){
+ const viewer=$("#viewer"),stage=$("#viewer-stage"),image=$("#viewer-img");
+ const token=++viewerToken;
+ const src=localPath(a);
  $("#viewer-title").textContent=a.name+" · "+(subLabels[a.subcategory]||mapLabel[a.category]||"参考");
- $("#viewer-img").alt=a.name;
- $("#viewer-img").src=localPath(a);
- $("#viewer-original").href=localPath(a);
+ $("#viewer-original").href=src;
  $("#viewer-source").href=originalHref(a);
- $("#viewer").showModal();
-};
+ image.alt=a.name;
+ image.removeAttribute("src");
+ stage.classList.remove("ready");
+ $("#viewer-loading").textContent="正在加载高清原图……";
+ if(!viewer.open)viewer.showModal();
+ const preload=new Image();
+ preload.decoding="async";
+ const finish=()=>{
+  if(token!==viewerToken||!viewer.open)return;
+  image.src=src;
+  stage.classList.add("ready");
+ };
+ preload.onload=()=>{
+  if(typeof preload.decode==="function")preload.decode().catch(()=>{}).then(finish);
+  else finish();
+ };
+ preload.onerror=()=>{
+  if(token!==viewerToken)return;
+  $("#viewer-loading").textContent="加载失败，请使用下方「打开仓库原图」重试";
+ };
+ preload.src=src;
+}
 $("#viewer-close").onclick=()=>$("#viewer").close();
 $("#viewer").onclick=e=>{if(e.target===$("#viewer"))$("#viewer").close()};
-$("#search").oninput=e=>{term=e.target.value.trim().toLowerCase();paint()};
+$("#viewer").addEventListener("close",()=>{viewerToken++;$("#viewer-img").removeAttribute("src");$("#viewer-stage").classList.remove("ready")});
+$("#search").oninput=e=>{
+ term=e.target.value.trim().toLowerCase();
+ clearTimeout(searchTimer);
+ searchTimer=setTimeout(paint,120);
+};
 $("#quality").onchange=e=>{quality=e.target.value;paint()};
 $("#sort").onchange=e=>{sort=e.target.value;paint()};
-$("#review-toggle").onclick=()=>{reviewMode=reviewMode==="normal"?"quarantined":"normal";category="all";subtype="all";role="all";$("#search").value="";term="";$("#review-toggle").setAttribute("aria-pressed",String(reviewMode==="quarantined"));$("#review-toggle").textContent=reviewMode==="quarantined"?"返回已分类素材":"查看待核对素材";updateSelectors();paint()};
+$("#review-toggle").onclick=()=>{
+ reviewMode=reviewMode==="normal"?"quarantined":"normal";
+ category="all";subtype="all";role="all";term="";$("#search").value="";
+ $("#review-toggle").setAttribute("aria-pressed",String(reviewMode==="quarantined"));
+ $("#review-toggle").textContent=reviewMode==="quarantined"?"返回已分类素材":"查看待核对素材";
+ updateSelectors();paint();
+};
 $("#subtype").onchange=e=>{subtype=e.target.value;paint()};
 $("#role").onchange=e=>{role=e.target.value;paint()};
+$("#more").onclick=loadMore;
+
 function updateSelectors(){
- const types=[...new Set(listed().filter(a=>category==="all"||a.category===category).map(a=>a.subcategory).filter(Boolean))];
+ const items=listed();
+ const types=[...new Set(items.filter(a=>category==="all"||a.category===category).map(a=>a.subcategory).filter(Boolean))];
  types.sort((a,b)=>(subLabels[a]||a).localeCompare(subLabels[b]||b,"zh"));
  if(!types.includes(subtype))subtype="all";
  $("#subtype").replaceChildren(new Option("全部细分类","all"),...types.map(t=>new Option(subLabels[t]||t,t)));
  $("#subtype").value=subtype;
- const visibleCharacters=listed().filter(a=>a.category==="characters");
- const people=[...new Set(visibleCharacters.map(a=>a.character).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"zh"));
+ const people=[...new Set(items.filter(a=>a.category==="characters").map(a=>a.character).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"zh"));
  if(category!=="all"&&category!=="characters")role="all";
  if(!people.includes(role))role="all";
  $("#role").replaceChildren(new Option("全部角色","all"),...people.map(p=>new Option(p,p)));
@@ -122,67 +181,129 @@ function updateSelectors(){
  $("#role").hidden=category!=="all"&&category!=="characters";
  $("#category-help").textContent=explanations[category]||"";
 }
+
+function createCard(a,index){
+ const art=document.createElement("article");art.className="card";
+ const poster=document.createElement("div");poster.className="poster";
+ const open=document.createElement("button");open.type="button";open.className="preview-button";
+ open.setAttribute("aria-label","查看高清原图："+a.name);
+ open.addEventListener("click",()=>openViewer(a));
+ const im=document.createElement("img");
+ im.alt=a.name;im.width=420;im.height=560;im.decoding="async";
+ im.loading=index<4?"eager":"lazy";
+ im.fetchPriority=index<2?"high":"low";
+ im.addEventListener("load",()=>im.classList.add("loaded"));
+ im.addEventListener("error",()=>{
+  if(im.dataset.fallback!=="1"){
+   im.dataset.fallback="1";
+   im.src=localPath(a); // New items remain viewable before previews are built.
+  }else{
+   open.textContent="预览加载失败，点此查看原图";
+   open.style.color="#b8bfcd";
+  }
+ });
+ im.src=previewPath(a);
+ open.append(im);poster.append(open);
+ if(a.width&&a.height){
+  const sz=document.createElement("span");
+  sz.textContent=a.width+" × "+a.height;
+  sz.setAttribute("aria-hidden","true");
+  poster.append(sz);
+ }
+ const meta=document.createElement("div");meta.className="meta";
+ const h=document.createElement("h3");h.textContent=a.name;meta.append(h);
+ const chips=document.createElement("div");chips.className="badges";
+ for(const [label,top] of [[mapLabel[a.category]||a.category,true],[subLabels[a.subcategory]||"待细分",false]]){
+  const el=document.createElement("span");el.className="tag"+(top?" top":"");
+  el.textContent=label;chips.append(el);
+ }
+ if(a.review_status==="quarantined"){
+  const tip=document.createElement("span");tip.className="tag top";
+  tip.textContent="身份/类型待核对";chips.append(tip);
+ }
+ meta.append(chips);
+ if(a.review_status==="quarantined"){
+  const note=document.createElement("p");
+  note.textContent=a.classification_note||"原名称与实际图片不吻合，待核对";
+  meta.append(note);
+ }
+ if((a.category==="characters"&&a.character)||(a.category==="weapons"&&a.weapon_family)){
+  const p=document.createElement("p");
+  p.textContent=(a.category==="characters"?"所属角色：":"武器系列：")+groupName(a);
+  meta.append(p);
+ }
+ const actions=document.createElement("div");actions.className="actions";
+ for(const [label,url] of [["查看原图",localPath(a)],["素材来源",originalHref(a)]]){
+  const link=document.createElement("a");
+  link.textContent=label;link.href=url;link.target="_blank";link.rel="noopener";
+  actions.append(link);
+ }
+ meta.append(actions);art.append(poster,meta);
+ return art;
+}
+
+function loadMore(){
+ if(rendered>=visibleRows.length)return;
+ const end=Math.min(rendered+PAGE_SIZE,visibleRows.length);
+ const frag=document.createDocumentFragment();
+ for(let i=rendered;i<end;i++)frag.append(createCard(visibleRows[i],i));
+ $("#grid").append(frag);
+ rendered=end;
+ const more=$("#more-wrap");
+ more.hidden=rendered>=visibleRows.length;
+ if(loadObserver){
+  loadObserver.disconnect();
+  if(!more.hidden)loadObserver.observe(more);
+ }
+}
+if("IntersectionObserver" in window){
+ loadObserver=new IntersectionObserver(entries=>{
+  if(entries.some(e=>e.isIntersecting))loadMore();
+ },{rootMargin:"420px 0px"});
+}
+
 function paint(){
- const filter=$("#filters");filter.replaceChildren();
+ if(loadObserver)loadObserver.disconnect();
+ const items=listed();
+ const counts=Object.create(null);
+ for(const a of items)counts[a.category]=(counts[a.category]||0)+1;
+ const filter=$("#filters");const buttons=document.createDocumentFragment();
  for(const [id,label] of cats){
-  const n=id==="all"?listed().length:listed().filter(a=>a.category===id).length;
   const b=document.createElement("button");
-  b.type="button";b.textContent=label+" "+n;
+  b.type="button";b.textContent=label+" "+(id==="all"?items.length:(counts[id]||0));
   b.className=id===category?"active":"";
   b.setAttribute("aria-pressed",String(id===category));
   b.onclick=()=>{category=id;subtype="all";updateSelectors();paint()};
-  filter.append(b);
+  buttons.append(b);
  }
- const rows=listed().filter(a=>(category==="all"||a.category===category)&&
+ filter.replaceChildren(buttons);
+ visibleRows=items.filter(a=>
+  (category==="all"||a.category===category)&&
   (subtype==="all"||a.subcategory===subtype)&&
-  (role==="all"||a.category==="characters"&&a.character===role)&&
-  (!term||textFor(a).includes(term))&&
+  (role==="all"||(a.category==="characters"&&a.character===role))&&
+  (!term||(a._search||textFor(a)).includes(term))&&
   (quality==="all"||(quality==="hd"&&Math.max(a.width||0,a.height||0)>=700)||
-   (quality==="alpha"&&a.has_alpha===true)));
+  (quality==="alpha"&&a.has_alpha===true))
+ );
  const order=Object.fromEntries(cats.map((v,i)=>[v[0],i]));
- rows.sort((a,b)=>sort==="recent"?data.indexOf(b)-data.indexOf(a):
-   sort==="name"?a.name.localeCompare(b.name,"zh"):
-   (order[a.category]-order[b.category])||
-   groupName(a).localeCompare(groupName(b),"zh")||
-   (subLabels[a.subcategory]||"").localeCompare(subLabels[b.subcategory]||"","zh")||
-   a.name.localeCompare(b.name,"zh"));
- const grid=$("#grid");grid.replaceChildren();
- $("#empty").hidden=rows.length>0;
- const frag=document.createDocumentFragment();
- for(const a of rows){
-  const art=document.createElement("article");art.className="card";
-  const poster=document.createElement("div");poster.className="poster";
-  const im=document.createElement("img");
-  im.src=localPath(a);im.loading="lazy";im.decoding="async";im.alt=a.name;
-  im.addEventListener("click",()=>openViewer(a));
-  im.onerror=()=>{im.remove();const t=document.createElement("span");t.textContent="图片加载失败";poster.append(t)};
-  poster.append(im);
-  if(a.width&&a.height){const sz=document.createElement("span");sz.textContent=a.width+" × "+a.height;poster.append(sz)}
-  const meta=document.createElement("div");meta.className="meta";
-  const h=document.createElement("h3");h.textContent=a.name;meta.append(h);
-  const chips=document.createElement("div");chips.className="badges";
-  for(const [label,top] of [[mapLabel[a.category]||a.category,true],[subLabels[a.subcategory]||"待细分",false]]){
-   const el=document.createElement("span");el.className="tag"+(top?" top":"");el.textContent=label;chips.append(el);
-  }
-  if(a.review_status==="quarantined"){const tip=document.createElement("span");tip.className="tag top";tip.textContent="身份/类型待核对";chips.append(tip);}
-  meta.append(chips);
-  if(a.review_status==="quarantined"){const note=document.createElement("p");note.textContent=a.classification_note||"原名称与实际图片不吻合，待核对";meta.append(note)}
-  if(a.category==="characters"&&a.character||a.category==="weapons"&&a.weapon_family){
-   const p=document.createElement("p");p.textContent=(a.category==="characters"?"所属角色：":"武器系列：")+groupName(a);meta.append(p);
-  }
-  const actions=document.createElement("div");actions.className="actions";
-  for(const [text,url] of [["查看原图",localPath(a)],["素材来源",originalHref(a)]]){
-   const link=document.createElement("a");link.textContent=text;link.href=url;link.target="_blank";link.rel="noopener";actions.append(link);
-  }
-  meta.append(actions);art.append(poster,meta);frag.append(art);
- }
- grid.append(frag);
- $("#stats").textContent="仓库共 "+data.length+" 张真实文件 · "+(reviewMode==="quarantined"?"待核对":"已分类")+" "+listed().length+" 张 · 当前显示 "+rows.length+" 张；原图路径不变";
+ visibleRows.sort((a,b)=>sort==="recent"?(b._index-a._index):
+  sort==="name"?a.name.localeCompare(b.name,"zh"):
+  (order[a.category]-order[b.category])||
+  groupName(a).localeCompare(groupName(b),"zh")||
+  (subLabels[a.subcategory]||"").localeCompare(subLabels[b.subcategory]||"","zh")||
+  a.name.localeCompare(b.name,"zh"));
+ rendered=0;
+ $("#grid").replaceChildren();
+ $("#empty").hidden=visibleRows.length>0;
+ $("#more-wrap").hidden=true;
+ loadMore();
+ $("#stats").textContent="仓库共 "+data.length+" 张真实文件 · "+(reviewMode==="quarantined"?"待核对":"已分类")+" "+items.length+" 张 · 当前筛选 "+visibleRows.length+" 张；列表优先使用轻量预览，点击加载高清原图";
 }
 fetch("./catalog/assets.json",{cache:"no-cache"}).then(r=>{
  if(!r.ok)throw Error("HTTP "+r.status);return r.json()
 }).then(cat=>{
  data=cat.assets.filter(a=>a.download_status==="downloaded"&&a.local_path);
+ data.forEach((a,i)=>{a._index=i;a._search=textFor(a)});
  updateSelectors();paint();
 }).catch(err=>{
  $("#stats").textContent="素材索引加载失败："+err.message;
