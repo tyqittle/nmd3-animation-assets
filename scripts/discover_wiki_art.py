@@ -146,6 +146,8 @@ def main():
                 "copyright":"third_party_review_needed","animation_use":"character_layer",
                 "quality_tier":"reference_low_res" if row["height"]<700 else "standard_character",
                 "classification_source":"wiki_target_metadata", "visual_review":"pending",
+                "review_status":"quarantined" if t.get("asset_type")=="unreviewed_portrait" else "categorized",
+                "classification_note":"Name or art type requires manual review" if t.get("asset_type")=="unreviewed_portrait" else "Imported from a labeled wiki portrait and checked for transparency",
                 "variant_kind":"combat_style" if t.get("asset_type")=="style_portrait" else ("costume" if t.get("asset_type")=="costume_portrait" else "reference")
             })
             old_ids.add(id);old_urls.add(row["image_url"]);old_hashes.add(row["sha256"])
