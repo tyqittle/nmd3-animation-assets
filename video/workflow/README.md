@@ -5,6 +5,8 @@
 GitHub Actions 入口：[Ninja 3 Video Production](../../.github/workflows/video-production.yml)。
 通用流程执行器：[production.py](scripts/production.py)。
 
+**质量验收指南：** [QUALITY_REVIEW.md](QUALITY_REVIEW.md)。成片技术检查和实际画面审查分开，避免以高分辨率、可播放替代真实的创意和动作质量。
+
 ## 必须遵循的是制作流程，不是视频模板
 
 1. **创意目标**：为**当前这一部**确定表达意图、受众、整体情绪、时长和输出格式；允许剧情、战斗、MV、搞笑、鬼畜、静音、竖屏或实验影像。
