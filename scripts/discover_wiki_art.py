@@ -25,10 +25,12 @@ MAX_IMAGE_BYTES = 12 * 1024 * 1024
 MAX_CANDIDATES = 4
 
 def get(url, referer=None, timeout=17, max_bytes=MAX_IMAGE_BYTES):
-    headers = {"User-Agent":"Mozilla/5.0 (compatible; NMD3-asset-reference/1.0)",
-               "Accept":"text/html,application/xhtml+xml,image/png,image/webp,image/jpeg;q=0.9,*/*;q=0.7"}
-    if referer: headers["Referer"] = referer
-    with request.urlopen(request.Request(url, headers=headers), timeout=timeout) as resp:
+    headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+               "Accept":"image/avif,image/webp,image/apng,image/png,image/*;q=0.8,text/html;q=0.7,*/*;q=0.5",
+               "Accept-Language":"zh-CN,zh;q=0.9,en;q=0.7",
+               "Referer":"https://wiki.biligame.com/nmd3/"}
+    encoded=parse.quote(url,safe=":/?&=%+#")
+    with request.urlopen(request.Request(encoded, headers=headers), timeout=timeout) as resp:
         if resp.status != 200: raise ValueError("HTTP status "+str(resp.status))
         data=resp.read(max_bytes+1)
         if len(data)>max_bytes: raise ValueError("response too big")
