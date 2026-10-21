@@ -44,5 +44,15 @@
         "min_height": 720
       }
     }
-  }
+  },
+  "setup": [
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "pillow",
+      "numpy"
+    ]
+  ]
 }
