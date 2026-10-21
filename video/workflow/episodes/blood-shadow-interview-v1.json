@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "id": "blood-shadow-interview-v1",
+  "title": "血影招聘会：唯一宿敌，终身合同",
+  "duration": 28.8,
+  "background": "assets/backgrounds/wallpaper_rooftop_01.jpg",
+  "rights": "非官方同人二创。血影与隼白宿敌关系为剧情梗，招聘会与全部对白是原创架空段子；使用仓库真实角色原始立绘。",
+  "characters": {
+    "blood": {
+      "name": "血影",
+      "path": "assets/characters/blood_shadow_01.png",
+      "color": "#FF8B9F"
+    },
+    "xiaohei": {
+      "name": "小黑",
+      "path": "assets/characters/xiaohei_fire_01.png",
+      "color": "#FFBD76"
+    },
+    "hayabusa": {
+      "name": "隼白",
+      "path": "assets/characters/hayabusa_01.png",
+      "color": "#EEC69B"
+    },
+    "lin": {
+      "name": "琳",
+      "path": "assets/characters/lin_01.png",
+      "color": "#ADDFFC"
+    }
+  },
+  "shots": [
+    {
+      "start": 0,
+      "end": 2.1,
+      "kind": "intro",
+      "lines": [
+        "忍村招聘会",
+        "岗位：唯一宿敌"
+      ]
+    },
+    {
+      "start": 2.1,
+      "end": 4.9,
+      "kind": "dialogue",
+      "speaker": "blood",
+      "lines": [
+        "你有什么特长？",
+        "能让我记住吗？"
+      ],
+      "voice": "你有什么特长？能让我记住吗？"
+    },
+    {
+      "start": 4.9,
+      "end": 7.9,
+      "kind": "dialogue",
+      "speaker": "xiaohei",
+      "lines": [
+        "我能开三大！",
+        "还会一拳爆！"
+      ],
+      "voice": "我能开三大！还会一拳爆！"
+    },
+    {
+      "start": 7.9,
+      "end": 10.2,
+      "kind": "dialogue",
+      "speaker": "blood",
+      "lines": [
+        "下一位。",
+        "谢谢参与。"
+      ],
+      "voice": "下一位。谢谢参与。"
+    },
+    {
+      "start": 10.2,
+      "end": 13.1,
+      "kind": "dialogue",
+      "speaker": "hayabusa",
+      "lines": [
+        "我不应聘。",
+        "我只是路过。"
+      ],
+      "voice": "我不应聘。我只是路过。"
+    },
+    {
+      "start": 13.1,
+      "end": 16.6,
+      "kind": "dialogue",
+      "speaker": "blood",
+      "lines": [
+        "就是你了！！",
+        "终身合同！！"
+      ],
+      "effect": "panic",
+      "voice": "就是你了！终身合同！"
+    },
+    {
+      "start": 16.6,
+      "end": 19.2,
+      "kind": "system",
+      "lines": [
+        "录用成功",
+        "岗位：血影的唯一宿敌"
+      ],
+      "effect": "disconnect"
+    },
+    {
+      "start": 19.2,
+      "end": 22.4,
+      "kind": "dialogue",
+      "speaker": "xiaohei",
+      "lines": [
+        "工资多少啊？",
+        "我也想应聘！"
+      ],
+      "voice": "工资多少啊？我也想应聘！"
+    },
+    {
+      "start": 22.4,
+      "end": 25.3,
+      "kind": "dialogue",
+      "speaker": "blood",
+      "lines": [
+        "零工资。",
+        "每天免费追杀。"
+      ],
+      "voice": "零工资。每天免费追杀。"
+    },
+    {
+      "start": 25.3,
+      "end": 28.8,
+      "kind": "outro",
+      "lines": [
+        "忍村招聘结果",
+        "小黑：已读不回",
+        "隼白：被迫入职"
+      ]
+    }
+  ]
+}
