@@ -3588,7 +3588,8 @@
       "skill_effect_reference": "忍术/技能画面",
       "unreviewed_portrait": "待人工细分立绘",
       "awakening_portrait": "流派觉醒外观",
-      "promo_composite": "复合宣传插画（人物与文案）"
+      "promo_composite": "复合宣传插画（人物与文案）",
+      "monster_group_reference": "怪物系代表图（非独立Boss立绘）"
     },
     "review_policy": "review_status=quarantined means original label or image type differs from verified visual content; excluded from normal gallery until rechecked. Filename and sha256 remain intact."
   }
