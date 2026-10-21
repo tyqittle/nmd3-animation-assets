@@ -52,6 +52,12 @@ def load_manifest(path):
         confined(WORKSPACE / output, WORKSPACE / "output")
         if Path(output).suffix.lower() not in (".mp4", ".mov", ".webm", ".mkv"):
             raise ValueError("Render output must be a playable video filename")
+    setup = document.get("setup", [])
+    if not isinstance(setup, list):
+        raise ValueError("setup must be an array of argv arrays")
+    for command in setup:
+        if not isinstance(command, list) or not command or not all(isinstance(x, str) and x for x in command):
+            raise ValueError("setup command must be a nonempty argv array")
     if not isinstance(document.get("required_files", []), list):
         raise ValueError("required_files should be an array (can be empty)")
     for item in document.get("required_files", []):
@@ -74,6 +80,12 @@ def ensure_assets(document):
 def output_for(document, stage):
     return confined(WORKSPACE / document["render"][stage]["output"].format(id=document["id"]),
                     WORKSPACE / "output")
+
+
+def prepare(document):
+    for command in document.get("setup", []):
+        print("PREPARE:", " ".join(command), flush=True)
+        subprocess.run(command, cwd=WORKSPACE, check=True, timeout=600)
 
 
 def invoke(document, stage):
@@ -155,6 +167,8 @@ def main(argv=None):
     document = load_manifest(args.project)
     ensure_assets(document)
     print("PROJECT:", document["title"], " | project:", document["id"], flush=True)
+    if args.stage in ("preview", "final", "all"):
+        prepare(document)
     if args.stage in ("preview", "all"):
         invoke(document, "preview")
     if args.stage in ("final", "all"):
