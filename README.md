@@ -4,6 +4,14 @@
 
 **[打开 Pages 素材图鉴](https://tyqittle.github.io/nmd3-animation-assets/)** · [素材原图总索引](catalog/assets.json) · [可下载 CSV 索引](catalog/assets.csv)
 
+## 新增：曼波语音音效包（2026-10-21）
+
+**[打开曼波专题在线试听](https://tyqittle.github.io/nmd3-animation-assets/comedy/)** · [下载14个曼波 WAV](assets/comedy/mambo/mambo-sfx-14-wav.zip) · [查看来源与使用说明](assets/comedy/mambo/README.md)
+
+已在仓库永久收录 **14个全新合成的、能听清「曼波」念词的WAV音效**：日文/中文单发、双连、三连、高速、慢速、尖声、低音、回声、机械鬼畜、抽卡成功、空大失败、警告、卡顿。每个都单独保存，并有文件时长、所用中性TTS声线、SHA256和版权提示。**这不是《赛马娘》诗歌剧游戏原声或二创UP主原声，不包含声线克隆和别人录音。**
+
+与原有24个基础搞笑音效、16种动画特效合计，整活网页当前展示 **54项（38个音效 + 16种特效）**。所有变体均有可下载 WAV 和完整 ZIP，参见 [曼波生成器](tools/generate_mambo_sfx.py) 及 [通过真实文件的声音测试](tools/test_mambo_sfx.py)。
+
 ## 新增：忍村整活音效与动态特效（2026-10-21）
 
 **[立即打开可试听/预览的搞笑素材库](https://tyqittle.github.io/nmd3-animation-assets/comedy/)** · [24个 WAV 音效 ZIP](assets/comedy/comedy-sfx-24-wav.zip) · [16套透明特效 ZIP](assets/comedy/comedy-vfx-16-complete.zip) · [分门别类的媒体索引](assets/comedy/catalog.json)
