@@ -4,6 +4,14 @@
 
 **[打开 Pages 素材图鉴](https://tyqittle.github.io/nmd3-animation-assets/)** · [素材原图总索引](catalog/assets.json) · [可下载 CSV 索引](catalog/assets.csv)
 
+## 新增：忍村整活音效与动态特效（2026-10-21）
+
+**[立即打开可试听/预览的搞笑素材库](https://tyqittle.github.io/nmd3-animation-assets/comedy/)** · [24个 WAV 音效 ZIP](assets/comedy/comedy-sfx-24-wav.zip) · [16套透明特效 ZIP](assets/comedy/comedy-vfx-16-complete.zip) · [分门别类的媒体索引](assets/comedy/catalog.json)
+
+本次实际生成并提交 **24 个原创合成搞笑音效 + 16 种透明动画特效**，每个特效同时提供透明动画 WebP、静态 PNG、16 帧 RGBA PNG 序列帧 ZIP。包含大重击、弹簧、悲伤小号、唱片刹停、尴尬虫鸣、冷笑话鼓点、问号、冷汗、烟雾、漫画冲击波、定格碎裂、彩纸、金币雨等；适合百炼烧心/焚天不烧心对比短剧和各类忍3鬼畜创作。**图片图鉴中的274张图片统计不包含这40组新音视频素材。**
+
+全套文件均直接保存在仓库 `assets/comedy/`，独立 [使用说明](assets/comedy/README.md)、[生成脚本](tools/generate_comedy_assets.py) 与 [自动测试工作流](.github/workflows/build-comedy-kit.yml) 已收录。媒体完整性检查覆盖WAV音量、时长、序列帧数量、透明通道与哈希；并非外部热门音效录音的搬运或复刻。
+
 ## 素材库最新扩容 · 2026-10-21（已实际入库）
 
 **[直接打开图鉴](https://tyqittle.github.io/nmd3-animation-assets/)** · [原始图片总索引](catalog/assets.json) · [怪物与 Boss](assets/bosses/) · [武器](assets/weapons/) · [角色立绘](assets/characters/skins/)
