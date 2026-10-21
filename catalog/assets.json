@@ -1927,7 +1927,8 @@
       "wallpaper_composite": "壁纸/场景构图",
       "unverified_wallpaper": "未采集壁纸",
       "event_promo": "活动宣传图",
-      "skill_effect_reference": "忍术/技能画面"
+      "skill_effect_reference": "忍术/技能画面",
+      "unreviewed_portrait": "待人工细分立绘"
     }
   }
 }
