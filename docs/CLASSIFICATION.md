@@ -2,6 +2,17 @@
 
 本规范用于 [网页素材图鉴](../index.html)、[JSON主索引](../catalog/assets.json)、[CSV索引](../catalog/assets.csv) 及后续自动采集。**分类依据来源标题、角色页和资源用途，不冒充已经逐张人工看图。** `visual_review=pending` 标明尚待内容复核。
 
+## 最新实图纠错：按“画面内容”和“游戏身份”分层
+
+2026-10-21 因实际截图暴露错误，已对重点图片进行了目视复核，参见 [15 条修正与 3 条隔离清单](VISUAL_AUDIT_2026-10-21.md)。
+
+- `style_portrait` 表示流派对应的独立形象（仅当采集的是这类图片）；`awakening_portrait` 表示**觉醒后获得的流派外观皮肤**，避免同一个流派的名称与获得方式混淆。
+- `costume_portrait` 是普通外观（例如魂·苍牙、雪·苍牙、棋士·紫原等）；`promo_composite` 是有多角色、活动文案或宣传构图的图，而不是单独角色抠图。
+- `review_status=quarantined` 表示画面或名称有明显问题，默认图鉴隔离但保留原始文件，通过“查看待核对素材”检视。
+- `visual_review=type_reviewed_identity_pending` 表示**看过画面、确认其类型，但仍无法确认名称、角色或皮肤对应**。不能冒充已逐张审完。
+- `original_record_name` 保留之前的错误命名用于追溯。修正类型只更改元数据，不改仓库二进制文件路径。
+- 后续爬取单人角色图必须检查透明层和可用于人物图的实际内容；有透明度也不等于角色身份已经核对。
+
 ## 分类原则
 
 大类是 **category**，细类是 **subcategory**。一个忍者角色可以包含多个流派、皮肤和参考动作；一个武器系列可以包含本体和幻化。资源文件在 `assets/` 内的位置为**历史存放路径**，不再拿目录名当分类依据；这样修分类不会让已经收藏的原图 URL 404。
@@ -11,6 +22,7 @@
 | 忍者角色 | characters | base_portrait（基础立绘） | 忍者本体 |
 | 忍者角色 | characters | style_portrait（流派立绘） | 同一忍者的战斗流派/初始流派外观，并不等于购买的皮肤 |
 | 忍者角色 | characters | costume_portrait（角色皮肤） | 时装、节庆衣装、明确的额外外观 |
+| 忍者角色 | characters | awakening_portrait（觉醒外观） | 流派对应的觉醒皮肤，不等于把人物新建成另一名忍者 |
 | 忍者角色 | characters | pose_reference（动作参考） | 攻击、跳跃等姿势图，不独立创建角色 |
 | 忍者角色 | characters | alternate_portrait / character_reference / unreviewed_portrait | 不同版本、宣传素材或身份待确认的候选 |
 | 武器 | weapons | weapon_art | 本体武器图 |
@@ -18,7 +30,7 @@
 | Boss与怪物 | bosses | boss_art | 非可操作敌人与Boss |
 | 场景参考 | scenes | scene_reference | 具有场景表现价值；不承诺“无角色、无文字” |
 | 壁纸与构图 | wallpapers | wallpaper_composite | 壁纸、角色+场景合成画面、场景构图参考 |
-| 活动宣传 | promos | event_promo | 周年庆、纪念、版本宣传等主视觉 |
+| 活动宣传 | promos | event_promo / promo_composite | 周年庆、纪念、版本宣传；完整人物+文字组成的复合宣传插画也归此类 |
 | 战斗特效 | effects | skill_effect_reference | 忍术截图、技能表现、战斗特效 |
 
 **示例：**
