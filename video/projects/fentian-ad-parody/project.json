@@ -1,0 +1,68 @@
+{
+  "schema_version": "1",
+  "id": "fentian-ad-parody",
+  "title": "焚天：命中率靠缘分｜忍村虚构兵器广告",
+  "concept": "竖屏夸张广告→Boss测试→武器诡异拐弯→静音反转→颁奖；纯二创喜剧，不代表游戏武器真实数值或机制",
+  "creative_direction": "自写竖屏动态视觉；不调用旧漫画对话框模板，也不调用历史MV镜头模板",
+  "sources": {
+    "weapon": "assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "boss": "assets/bosses/wiki/wiki_boss_haigu_sishen.png",
+    "hero": "assets/characters/xiaohei_fire_01.png",
+    "bg": "assets/backgrounds/wallpaper_rooftop_01.jpg"
+  },
+  "required_files": [
+    "ninja/video/projects/fentian-ad-parody/render.py",
+    "ninja/assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "ninja/assets/bosses/wiki/wiki_boss_haigu_sishen.png",
+    "ninja/assets/characters/xiaohei_fire_01.png",
+    "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg"
+  ],
+  "setup": [
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "pillow",
+      "numpy",
+      "edge-tts"
+    ]
+  ],
+  "render": {
+    "preview": {
+      "argv": [
+        "python",
+        "ninja/video/projects/fentian-ad-parody/render.py",
+        "--preview",
+        "--seconds",
+        "3",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-preview.mp4",
+      "timeout_seconds": 480,
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 2.8,
+        "max_seconds": 3.2
+      }
+    },
+    "final": {
+      "argv": [
+        "python",
+        "ninja/video/projects/fentian-ad-parody/render.py",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-final.mp4",
+      "timeout_seconds": 1800,
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 23.8,
+        "max_seconds": 24.2,
+        "min_width": 720,
+        "min_height": 1280
+      }
+    }
+  }
+}
