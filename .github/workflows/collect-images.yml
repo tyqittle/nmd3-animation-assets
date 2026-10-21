@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: nmd3-image-collector
+  group: nmd3-asset-catalog-writes
   cancel-in-progress: false
 
 jobs:
@@ -28,6 +28,20 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Fetch artwork candidates
         run: python scripts/fetch_assets.py --timeout 12 --delay 0.5
+      - name: Export current category CSV
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          cat=json.loads(Path("catalog/assets.json").read_text("utf-8"))
+          keys=["id","name","category","subcategory","character","weapon_family","variant_kind","image_url","source_page","local_path","download_status","width","height","has_alpha","sha256","quality_tier","classification_source","visual_review"]
+          with open("catalog/assets.csv","w",encoding="utf-8",newline="") as o:
+              wr=csv.DictWriter(o,fieldnames=keys,extrasaction="ignore")
+              wr.writeheader()
+              wr.writerows([{k:row.get(k,"") for k in keys} for row in cat["assets"]])
+          PY
+      - name: Validate material classification
+        run: python scripts/validate_taxonomy.py
       - name: Audit actual image files
         run: python scripts/audit_assets.py
       - name: Commit only successful image downloads and updated catalog
@@ -35,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog/assets.json assets/
+          git add catalog/assets.json catalog/assets.csv assets/
           if ! git diff --cached --quiet; then
             git commit -m "Collect and verify downloadable NMD3 image assets"
             git pull --rebase origin main
