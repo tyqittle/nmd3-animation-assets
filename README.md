@@ -105,12 +105,11 @@ python scripts/audit_assets.py
 
 本仓库为非官方个人参考资料库，图片版权属于原权利人。网页可见不意味着获授权公开复制、再分发或商用。仓库目前为 **Public**；如需仅私人使用，可在 GitHub Settings 调整为 Private。见 [版权说明](docs/RIGHTS.md)。
 
-## 唯一视频制作工作流（V1.1）
+## 忍3视频制作流程（v2.0 · 不绑定画面模板）
 
-**[Ninja 3 Video Production — GitHub Actions 唯一视频制作入口](.github/workflows/video-production.yml)**
+**[查看创作自由版完整制作规范](video/workflow/README.md)** · [GitHub Actions 通用视频生产入口](.github/workflows/video-production.yml) · [作品目录](video/projects/)
 
-- [工作流说明、分镜与版本记录](video/workflow/README.md)
-- [《忍村深渊复盘会》48 秒分镜 JSON](video/workflow/episodes/deep-abyss-meeting-v1.json)
-- [工作流更新记录](video/workflow/CHANGELOG.md)
+工作流只规定 **创意规划 → 素材审核 → 本作品分镜/声音设计 → 可选预览 → 独立渲染 → 技术/人工质检 → 交付**，不再规定“必须拍哪一类片子”或固定构图、人物站位、对话框、片头、背景音乐和转场。
 
-制作入口可选 **短视频**（搞笑动画/剧情）或 **MV**（原音乐剪辑），同一个 Actions 工作流负责渲染 MP4。修改脚本和分镜时也由这个工作流自动运行 2 秒回归测试。原来的三个视频 Actions 文件已合并取消，立绘和 MV 脚本保留。
+每部作品有独立的项目配置和渲染程序；Actions 通过输入项目路径执行，不再从固定短片/MV下拉列表中选择。旧深渊短片和 Shadow Protocol MV 仅作为两个**不同渲染器的历史示例**保留，不能当做统一创作模板。自动测试允许无角色、无对白、无字幕甚至没有音轨的独立视频工程通过。
+
