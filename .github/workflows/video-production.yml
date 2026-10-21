@@ -15,8 +15,9 @@ on:
         description: 'Short-video episode (ignored for MV)'
         required: true
         type: choice
-        default: deep-abyss-meeting-v1
+        default: blood-shadow-interview-v1
         options:
+          - blood-shadow-interview-v1
           - deep-abyss-meeting-v1
       quality:
         description: 'Short-video quality (MV keeps its original settings)'
@@ -69,6 +70,8 @@ jobs:
           python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py
       - name: Check episode references and image files
         run: python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/deep-abyss-meeting-v1.json
+      - name: Check new Blood Shadow episode
+        run: python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/blood-shadow-interview-v1.json
       - name: Render two-second draft MP4
         run: python ninja/video/workflow/scripts/render.py --recipe ninja/video/workflow/episodes/deep-abyss-meeting-v1.json --quality draft --tts off --seconds 2 --output output/smoke.mp4
       - name: Verify H.264 and AAC output
@@ -100,17 +103,17 @@ jobs:
       - name: Validate short-video assets and timeline
         if: (inputs.video_type || 'short') == 'short'
         env:
-          EPISODE: ${{ inputs.episode || 'deep-abyss-meeting-v1' }}
+          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
         run: python ninja/video/workflow/scripts/check.py "ninja/video/workflow/episodes/${EPISODE}.json"
       - name: Smoke-test short-video output
         if: (inputs.video_type || 'short') == 'short'
         env:
-          EPISODE: ${{ inputs.episode || 'deep-abyss-meeting-v1' }}
+          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
         run: python ninja/video/workflow/scripts/render.py --recipe "ninja/video/workflow/episodes/${EPISODE}.json" --quality draft --tts off --seconds 2 --output output/smoke.mp4
       - name: Render full short video
         if: (inputs.video_type || 'short') == 'short'
         env:
-          EPISODE: ${{ inputs.episode || 'deep-abyss-meeting-v1' }}
+          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
           QUALITY: ${{ inputs.quality || 'final' }}
           NARRATION: ${{ inputs.narration || 'placeholder' }}
         run: python ninja/video/workflow/scripts/render.py --recipe "ninja/video/workflow/episodes/${EPISODE}.json" --quality "$QUALITY" --tts "$NARRATION" --output "output/${EPISODE}-${QUALITY}.mp4"
@@ -123,7 +126,7 @@ jobs:
       - name: Inspect requested video output
         env:
           VIDEO_TYPE: ${{ inputs.video_type || 'short' }}
-          EPISODE: ${{ inputs.episode || 'deep-abyss-meeting-v1' }}
+          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
           QUALITY: ${{ inputs.quality || 'final' }}
         run: |
           if [ "$VIDEO_TYPE" = "mv" ]; then
