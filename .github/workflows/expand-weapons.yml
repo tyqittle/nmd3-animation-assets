@@ -33,12 +33,14 @@ jobs:
           import csv,json
           from pathlib import Path
           cat=json.loads(Path("catalog/assets.json").read_text("utf-8"))
-          keys=["id","name","category","subcategory","character","image_url","source_page","local_path","download_status","width","height","has_alpha","sha256","quality_tier"]
+          keys=["id","name","category","subcategory","character","weapon_family","variant_kind","image_url","source_page","local_path","download_status","width","height","has_alpha","sha256","quality_tier","classification_source","visual_review"]
           with open("catalog/assets.csv","w",encoding="utf-8",newline="") as f:
               writer=csv.DictWriter(f,fieldnames=keys,extrasaction="ignore")
               writer.writeheader()
               writer.writerows([{k:item.get(k,"") for k in keys} for item in cat["assets"]])
           PY
+      - name: Validate classification and CSV
+        run: python scripts/validate_taxonomy.py
       - name: Commit images that really exist
         run: |
           git config user.name "github-actions[bot]"
