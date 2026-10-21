@@ -28,6 +28,8 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Collect labeled illustrations and validate real files
         run: python -u scripts/discover_wiki_art.py
+      - name: Generate lightweight previews for new artwork
+        run: python scripts/build_previews.py
       - name: Audit downloaded files
         run: python -u scripts/audit_assets.py
       - name: Update searchable CSV metadata
@@ -51,6 +53,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add catalog/assets.json catalog/assets.csv assets/characters/skins/
+          git add -A previews/
           if ! git diff --cached --quiet; then
             git commit -m "Expand NMD3 skin artwork with verified images"
             git pull --rebase origin main
