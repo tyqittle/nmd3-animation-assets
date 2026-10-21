@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="忍3鬼畜剪辑工具箱：24种自制搞笑音效和16种透明动画特效，可试听、预览和下载原始媒体。">
+<meta name="description" content="忍3整活音效素材库：24种自制搞笑音效、14种可听见曼波语音的创意变体、16种透明动画，可试听预览和下载。">
 <title>忍村整活工具箱｜音效 × 透明特效</title>
 <style>
 :root{color-scheme:dark;--bg:#111319;--raised:#1d222b;--card:#20252d;--line:#39414e;--fg:#eeeef1;--muted:#a6b0bc;--yellow:#ffca82;--pink:#f6a0ac;font-family:system-ui,-apple-system,'Segoe UI','Microsoft YaHei',sans-serif}
@@ -60,26 +60,27 @@ nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:19px;font
 <header class="top">
 <div class="tiny">NINJA MUST DIE 3 / COMEDY EDITING KIT</div>
 <h1>忍村<em>整活工具箱</em></h1>
-<div class="lead">让“百炼烧心，焚天不烧心”这类短剧真的好笑：夸张重击、破防音效、冷场虫鸣、弹簧鬼畜，还有可以直接叠在角色画面上的透明动画。<strong>媒体文件实际保存在 GitHub 仓库，不依赖外部音效站。</strong></div>
+<div class="lead">让“百炼烧心，焚天不烧心”这类短剧真的好笑：夸张重击、破防音效、冷场虫鸣、弹簧鬼畜、还有最新加入的 <strong>「曼波！」真人声感 TTS 创意音效</strong>——单发、变声、鬼畜、回声、喜报等。<strong>真实 WAV 和透明特效保存在 GitHub 仓库，不依赖外部音效网站。</strong></div>
 <nav><a href="../">返回忍3角色图鉴 ↗</a><a href="../memes/">忍3梗档案馆 ↗</a><a href="https://github.com/tyqittle/nmd3-animation-assets/tree/main/assets/comedy" target="_blank" rel="noopener">查看原始媒体目录 ↗</a><a href="https://github.com/tyqittle/nmd3-animation-assets/blob/main/assets/comedy/README.md" target="_blank" rel="noopener">素材使用说明 ↗</a></nav>
 </header>
 <div class="stats" aria-live="polite"><div class="stat"><strong id="all-number">—</strong>总素材</div><div class="stat"><strong id="audio-number">—</strong>搞笑音效 · WAV</div><div class="stat"><strong id="effect-number">—</strong>透明特效 · 动画</div></div>
-<div class="batch"><a href="../assets/comedy/comedy-sfx-24-wav.zip" download>↓ 一键下载 24 个 WAV 音效包</a><a href="../assets/comedy/comedy-vfx-16-complete.zip" download>↓ 一键下载 16 个透明特效包</a></div>
+<div class="batch"><a href="../assets/comedy/mambo/mambo-sfx-14-wav.zip" download>↓ 下载 14 个曼波语音包 WAV</a><a href="../assets/comedy/comedy-sfx-24-wav.zip" download>↓ 原创基础 24 个 WAV 音效包</a><a href="../assets/comedy/comedy-vfx-16-complete.zip" download>↓ 一键下载 16 个透明特效包</a></div>
 <div class="tools">
 <div class="tabs" aria-label="素材类型">
 <button type="button" class="tab" data-type="all" aria-pressed="true">全部</button>
 <button type="button" class="tab" data-type="sound" aria-pressed="false">音效 WAV</button>
+<button type="button" class="tab" data-type="mambo" aria-pressed="false">曼波专题</button>
 <button type="button" class="tab" data-type="effect" aria-pressed="false">透明动画</button>
 </div>
-<input id="search" placeholder="搜索：尴尬、重击、冷汗、彩纸、Boss…" aria-label="搜索素材">
+<input id="search" placeholder="搜索：曼波、变声、尴尬、重击、冷汗、Boss…" aria-label="搜索素材">
 <select id="category" aria-label="按用途筛选"><option value="all">全部用途</option></select>
 </div>
-<p id="count" role="status">正在读取真实素材清单……</p>
+<p id="count" role="status">正在读取真实素材清单……</p><p id="mambo-note" style="font-size:12px;color:#e6bc96"></p>
 <main id="grid" class="grid" aria-live="polite"></main>
 <div id="empty">没有匹配的素材。试试其他搜索词或者清除分类。</div>
 <section class="note">
 <p><strong>怎样用于剪辑？</strong> 音效下载 <span class="kbd">.wav</span> 即可导入剪映 / PR / 达芬奇 / FFmpeg；透明特效优先下载对应的 <span class="kbd">PNG 序列帧 ZIP</span>，解压后按连续帧导入视频软件。<span class="kbd">.webp</span> 用于网站上循环预览，<span class="kbd">.png</span> 是单帧静态版本。</p>
-<p>所有声音都由随仓库附带的代码原创合成，动画由程序绘制；没有直接搬运短视频原声、明星语音或其他网站的录音。音色是同类剪辑效果的自制替代，不保证与经典网络原声完全相同。忍3相关角色、音乐、商标及游戏画面版权仍归各自原权利方。</p>
+<p>原有24个音效由代码合成，新加入的曼波语音来自<strong>全新中性神经TTS合成</strong>及独立声音处理，16种透明特效由程序绘制。<strong>曼波语音并非《赛马娘》诗歌剧原游戏配音，也不是某位UP主的录音</strong>，只是参考该网络声音梗的原创可剪辑替代。所有媒体的授权与使用还应遵守各自相关服务条款；未包含第三方短视频原声、歌曲或声线克隆。</p>
 </section>
 </div>
 <script>
@@ -150,7 +151,7 @@ function buildCard(item,idx){
 }
 function repaint(){
  const search=query.trim().toLowerCase();
- const data=all.filter(a=>(which==="all"||a.kind===which)&&
+ const data=all.filter(a=>(which==="all"||(which==="mambo"?a.category==="曼波":a.kind===which))&&
   (filterCategory==="all"||a.category===filterCategory)&&
   (!search||[a.name,a.id,a.category,a.description].join(" ").toLowerCase().includes(search)));
  const grid=$("#grid");
@@ -162,7 +163,7 @@ function repaint(){
 }
 function resetCategories(){
  const category=$("#category"),selection=category.value;
- const cats=[...new Set(all.filter(a=>which==="all"||a.kind===which).map(a=>a.category))];
+ const cats=[...new Set(all.filter(a=>which==="all"||(which==="mambo"?a.category==="曼波":a.kind===which)).map(a=>a.category))];
  category.replaceChildren(new Option("全部用途","all"),...cats.map(x=>new Option(x,x)));
  category.value=cats.includes(selection)?selection:"all";
  filterCategory=category.value;
@@ -183,16 +184,20 @@ for(const b of document.querySelectorAll(".tab"))b.onclick=()=>{
 };
 $("#search").oninput=e=>{query=e.target.value;repaint()};
 $("#category").onchange=e=>{filterCategory=e.target.value;repaint()};
-fetch(root+"catalog.json",{cache:"no-cache"}).then(r=>{
+const loadJSON=path=>fetch(root+path,{cache:"no-cache"}).then(r=>{
  if(!r.ok)throw Error("HTTP "+r.status);return r.json()
-}).then(cat=>{
- all=[...cat.sounds,...cat.effects];
+});
+Promise.all([loadJSON("catalog.json"),loadJSON("mambo/catalog.json").catch(()=>null)])
+.then(([cat,mambo])=>{
+ all=[...cat.sounds,...(mambo?.sounds||[]),...cat.effects];
  $("#all-number").textContent=all.length;
- $("#audio-number").textContent=cat.sounds.length;
+ $("#audio-number").textContent=cat.sounds.length+(mambo?.sounds.length||0);
  $("#effect-number").textContent=cat.effects.length;
+ if(!mambo)$("#mambo-note").textContent="曼波语音包尚未成功发布；原有音效和特效仍可正常试听下载。";
+ else $("#mambo-note").textContent="曼波专题已接入 "+mambo.sounds.length+" 个真实 WAV，非游戏原声或UP主录音。";
  resetCategories();repaint()
 }).catch(e=>{
- $("#count").textContent="暂时无法加载素材清单："+e.message+"。请检查 GitHub Actions 是否生成 assets/comedy/catalog.json。"
+ $("#count").textContent="素材清单加载失败："+e.message+"。请检查 GitHub Actions 是否生成 assets/comedy/catalog.json。"
 })
 </script>
 </body>
