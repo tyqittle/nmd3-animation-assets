@@ -29,7 +29,7 @@
 | 3.25–6.4 秒 | 买家急着省钱，下单百炼 | 小黑：百炼便宜，先整一把！ |
 | 6.4–10.75 秒 | 飞出的百炼回来，小黑错过接取 | 小黑：哎？这锤还得自己接？ |
 | 10.75–15.65 秒 | 接到锤，站稳，1.5秒蓄力进度条 | 小黑：接到了！还得蓄力一秒半？ |
-| 15.65–19.4 秒 | 蓄力完成后前方攻击，Boss在虚构情景里挪位导致落空 | 小黑：我刚蓄完力，BOSS跑了！ |
+| 15.65–19.4 秒 | 蓄力完成后前方攻击，骸骨死神的真实立绘从攻击线上明显移走，导致这次虚构攻击落空 | 小黑：我刚蓄完力，BOSS跑了！ |
 | 19.4–21.8 秒 | 小黑烦恼、音乐骤停 | 小黑：钱省了，人快烧心了 |
 | 21.8–25.5 秒 | 小椒展示真图焚天与技能标识 | 小椒：来试试焚天，两段都有短暂无敌 |
 | 25.5–28.7 秒 | 焚天戳刺定身、击飞、重劈、终结戳刺节奏演出 | 小黑：定身，重劈！这回顺手了！ |
@@ -42,6 +42,7 @@
 - 小黑：assets/characters/xiaohei_01.png
 - 百炼：assets/weapons/wiki/wiki_weapon_102_bailian.png
 - 焚天：assets/weapons/wiki/wiki_weapon_101_fentian.png
+- Boss：assets/bosses/wiki/wiki_boss_haigu_sishen.png
 - 氛围背景：assets/backgrounds/wallpaper_rooftop_01.jpg
 
 所有路径列入项目必需文件，缺图就拒绝渲染，不退化为色块人物。目录资料中原图身份的逐张人工视觉复核仍有 pending 状态，不能当作全部已人工核验。第三方图版权归原权利人。
@@ -53,3 +54,7 @@ GitHub Actions 中使用 Ninja 3 Video Production 工作流并提供本项目 pr
     python ninja/video/workflow/scripts/production.py --project video/projects/xiaojiao-fentian-shop/project.json --stage all
 
 动作、音效与音乐由项目独立合成。中文 AI 配音优先走 Edge TTS，出现失败时会记录在输出 JSON，绝不把只有字幕的片子冒称为配音完整。渲染和质检将产出 MP4、8帧质检图与声音报告。工作流只负责执行，不固定视频类型和排版。
+
+### 本轮画面验收修订
+
+初版 MP4 的八帧联络图检查发现：顾客宣告「不烧心」时，背景招牌与大字重叠；百炼空大没有可见 Boss。当前版本已经针对两处修改：口碑段落先加专属深色标题承载层，再出大字；空大段落由真实骸骨死神立绘离开攻击范围而非仅用说明文字，焚天展示也出现真实 Boss。待新一轮实际渲染联络图复核。
