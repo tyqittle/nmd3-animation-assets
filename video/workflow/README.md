@@ -4,7 +4,7 @@
 
 GitHub Actions 入口：[Ninja 3 Video Production](../../.github/workflows/video-production.yml)。
 通用流程执行器：[production.py](scripts/production.py)。
-创意可选素材：[24种原创搞笑音效 + 16种透明特效](../../assets/comedy/README.md)（[在线试听/预览](../../comedy/)）；不强制任何视频使用这些元素。
+创意可选素材：[24种原创基础音效 + 14种新配音「曼波」音效 + 16种透明特效](../../assets/comedy/README.md)（[在线试听/预览](../../comedy/)）；不强制任何视频使用这些元素。曼波音效仅是原创TTS变体，不能误标成《赛马娘》游戏配音。
 
 **质量验收指南：** [QUALITY_REVIEW.md](QUALITY_REVIEW.md)。成片技术检查和实际画面审查分开，避免以高分辨率、可播放替代真实的创意和动作质量。
 
