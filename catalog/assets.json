@@ -2,7 +2,7 @@
   "schema_version": "2.0",
   "game": "忍者必须死3",
   "as_of": "2026-10-21",
-  "notice": "Top-level category and subcategory form a stable taxonomy. Original file paths remain untouched; they need not mirror logical categories. visual_review=pending means classification derives from source/title metadata, not a full frame-by-frame manual image inspection. Only display download_status=downloaded. scene_reference is not automatically a clean empty background.",
+  "notice": "Classified by both visual review for flagged samples and original game wiki for confirmed skin names. review_status=quarantined means identity mismatch or non-isolated poster and cannot appear in normal portrait gallery. Legacy local_path never moved.",
   "assets": [
     {
       "id": "hayabusa_01",
@@ -24,7 +24,8 @@
       "subcategory": "base_portrait",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "blood_shadow_01",
@@ -46,7 +47,8 @@
       "subcategory": "style_portrait",
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaohei_01",
@@ -68,7 +70,8 @@
       "subcategory": "pose_reference",
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaohei_fire_01",
@@ -90,7 +93,8 @@
       "subcategory": "style_portrait",
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaohei_dragon_01",
@@ -109,10 +113,12 @@
       "sha256": "a90873dd05e78507b412f19351cbb518d9093ebe0283de0ecadfb26c95609147",
       "has_alpha": true,
       "character": "小黑",
-      "subcategory": "style_portrait",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "subcategory": "awakening_portrait",
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "龙焰·觉醒是觉醒后获得的外观，而非独立流派（官方更新公告）",
+      "review_status": "categorized"
     },
     {
       "id": "ali_01",
@@ -134,7 +140,8 @@
       "subcategory": "base_portrait",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "lin_01",
@@ -156,7 +163,8 @@
       "subcategory": "base_portrait",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "lin_snow_01",
@@ -178,7 +186,8 @@
       "subcategory": "style_portrait",
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "yihe_01",
@@ -200,7 +209,8 @@
       "subcategory": "style_portrait",
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "cangya_01",
@@ -219,10 +229,12 @@
       "sha256": "831a346b4c7f13c4bb7958fd4a96d970f59b8401d2c4c973a1254843c8724ee4",
       "has_alpha": true,
       "character": "苍牙",
-      "subcategory": "style_portrait",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "subcategory": "costume_portrait",
+      "variant_kind": "costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "魂·苍牙是鬼狩·苍牙的兑换外观（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "luoqing_01",
@@ -244,7 +256,8 @@
       "subcategory": "style_portrait",
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaojiao_01",
@@ -266,7 +279,8 @@
       "subcategory": "base_portrait",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "blood_bat_king_01",
@@ -286,7 +300,8 @@
       "has_alpha": true,
       "subcategory": "boss_art",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "thunder_dragon_01",
@@ -306,7 +321,8 @@
       "has_alpha": true,
       "subcategory": "boss_art",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "shark_01",
@@ -326,7 +342,8 @@
       "has_alpha": true,
       "subcategory": "boss_art",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "red_crystal_dragon_01",
@@ -346,7 +363,8 @@
       "has_alpha": true,
       "subcategory": "boss_art",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "gold_new_year_beast_01",
@@ -366,7 +384,8 @@
       "has_alpha": true,
       "subcategory": "boss_art",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "red_new_year_beast_01",
@@ -386,7 +405,8 @@
       "has_alpha": true,
       "subcategory": "boss_art",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "thunder_sword_01",
@@ -408,7 +428,8 @@
       "weapon_family": "雷鸣剑",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_ink_dragon_01",
@@ -428,7 +449,8 @@
       "has_alpha": false,
       "subcategory": "wallpaper_composite",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_festival_01",
@@ -448,7 +470,8 @@
       "has_alpha": false,
       "subcategory": "wallpaper_composite",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_moon_01",
@@ -468,7 +491,8 @@
       "has_alpha": false,
       "subcategory": "wallpaper_composite",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_torii_01",
@@ -488,7 +512,8 @@
       "has_alpha": false,
       "subcategory": "scene_reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_rooftop_01",
@@ -508,7 +533,8 @@
       "has_alpha": false,
       "subcategory": "event_promo",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_blue_lake_01",
@@ -528,7 +554,8 @@
       "has_alpha": false,
       "subcategory": "wallpaper_composite",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_purple_combat_01",
@@ -543,14 +570,14 @@
       "animation_use": "reference_only",
       "subcategory": "unverified_wallpaper",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "skin_003_lin",
-      "name": "青行姬·琳",
-      "category": "characters",
-      "subcategory": "costume_portrait",
-      "character": "琳",
+      "name": "暖色鸟居群像插画（原标青行姬·琳）",
+      "category": "promos",
+      "subcategory": "promo_composite",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/e/e7/mnvob16cevjk9xqvyub31qo4mjpsmtp.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%9D%92%E8%A1%8C%E5%A7%AC%C2%B7%E7%90%B3",
       "local_path": "assets/characters/skins/skin_003_lin.png",
@@ -562,11 +589,16 @@
       "has_alpha": false,
       "source_verified": "downloaded_from_wiki_page",
       "copyright": "third_party_review_needed",
-      "animation_use": "character_layer",
+      "animation_use": "cinematic_reference",
       "quality_tier": "standard_character",
-      "variant_kind": "costume",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "reference",
+      "classification_source": "direct_image_inspection",
+      "visual_review": "type_reviewed_identity_pending",
+      "original_record_name": "青行姬·琳",
+      "review_status": "quarantined",
+      "identity_verified": false,
+      "classification_note": "画面有游戏Logo、鸟居、多人及大片场景，非可分离的青行姬·琳单人皮肤立绘；图片身份与源标注未核实",
+      "image_kind": "composite_poster"
     },
     {
       "id": "hayabusa_yasha_01",
@@ -589,7 +621,8 @@
       "has_alpha": true,
       "variant_kind": "costume",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "hayabusa_anniversary_01",
@@ -612,7 +645,8 @@
       "has_alpha": true,
       "variant_kind": "costume",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ziyuan_default_01",
@@ -635,7 +669,8 @@
       "has_alpha": true,
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "silver_owl_combat_01",
@@ -658,7 +693,8 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xilan_hanxiao_01",
@@ -681,7 +717,8 @@
       "has_alpha": true,
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "lin_kagura_01",
@@ -704,13 +741,14 @@
       "has_alpha": true,
       "variant_kind": "costume",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ziyuan_guizhan_01",
-      "name": "鬼斩·紫原",
+      "name": "紫原·电吉他造型（原标鬼斩·紫原）",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "character_reference",
       "character": "紫原",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/c/cb/9iui0y5igcsq50duy1fhaqr4p66pue5.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%AC%BC%E6%96%A9%C2%B7%E7%B4%AB%E5%8E%9F",
@@ -718,16 +756,21 @@
       "download_status": "downloaded",
       "source_verified": "candidate_image_url_from_wiki_listing",
       "copyright": "third_party_review_needed",
-      "animation_use": "character_layer",
+      "animation_use": "character_reference",
       "quality_tier": "awaiting_download_and_review",
       "bytes": 583666,
       "width": 620,
       "height": 780,
       "sha256": "01cbf3c5a748a0421eb8ea1eabb5770f67b83f082ecaf7b9982bfe2d0e4c74a4",
       "has_alpha": true,
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "reference",
+      "classification_source": "direct_image_inspection",
+      "visual_review": "type_reviewed_identity_pending",
+      "original_record_name": "鬼斩·紫原",
+      "review_status": "quarantined",
+      "identity_verified": false,
+      "classification_note": "实图可见电吉他造型，与所标觉醒造型需要重新对应核实；保留紫原参考但暂停当作鬼斩流派立绘",
+      "image_kind": "composite_poster"
     },
     {
       "id": "yihe_shuangren_01",
@@ -750,7 +793,8 @@
       "has_alpha": true,
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaojiao_star_01",
@@ -773,7 +817,8 @@
       "has_alpha": true,
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaohei_magic_01",
@@ -796,7 +841,8 @@
       "has_alpha": true,
       "variant_kind": "costume",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ali_super_01",
@@ -819,7 +865,8 @@
       "has_alpha": true,
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ali_super_02",
@@ -842,13 +889,14 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "cangya_snow_01",
       "name": "雪·苍牙",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "costume_portrait",
       "character": "苍牙",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/3/3e/6cja854qo4ejaq82xxul6lcz64ezn6u.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%9B%AA%C2%B7%E8%8B%8D%E7%89%99",
@@ -863,9 +911,11 @@
       "height": 780,
       "sha256": "7aa6abe5dd491da22450dbd1056d1df80b502509bd9c7ef781b876da8cd4913c",
       "has_alpha": true,
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "雪·苍牙是活动商店皮肤（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "lin_snow_art_02",
@@ -888,13 +938,14 @@
       "has_alpha": true,
       "variant_kind": "alternate",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaojiao_xuanhuang_01",
       "name": "玄黄·双焰",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "costume_portrait",
       "character": "小椒",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/6/66/7ya5zxh3zn9lhpic8poyhqoic4qlnl9.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%8E%84%E9%BB%84%C2%B7%E5%8F%8C%E7%84%B0",
@@ -909,9 +960,11 @@
       "height": 780,
       "sha256": "35f711c6b20e44bc4597dd2a19033461030fbcf85ff7e97c96444b11c06536cf",
       "has_alpha": true,
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "玄黄·双焰是双焰·小椒的280外观券皮肤（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "silver_owl_leyuan_01",
@@ -934,7 +987,8 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wallpaper_lantern_lake_02",
@@ -955,7 +1009,8 @@
       "sha256": "af944ae33a36fc46568ec36f274139d48c3b0670b733d8fe8b4033969d04e05f",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "wind_feather_01",
@@ -977,7 +1032,8 @@
       "weapon_family": "风信鹤羽",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weiyan_01",
@@ -999,7 +1055,8 @@
       "weapon_family": "织炎",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "divine_conch_01",
@@ -1021,7 +1078,8 @@
       "weapon_family": "神使·沧溟",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "bailai_dawn_01",
@@ -1043,7 +1101,8 @@
       "weapon_family": "百雷·拂晓",
       "variant_kind": "appearance",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaoye_awakened_2026",
@@ -1066,7 +1125,8 @@
       "has_alpha": true,
       "variant_kind": "combat_style",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xiaoye_base_2026",
@@ -1089,14 +1149,15 @@
       "has_alpha": true,
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ziyuan_chessmaster_2026",
       "name": "棋士·紫原·对弈",
       "category": "characters",
       "character": "紫原",
-      "subcategory": "style_portrait",
+      "subcategory": "costume_portrait",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/5/5f/do0fqipp0vhjzmfg61plsjmaro6gncb.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E6%A3%8B%E5%A3%AB%C2%B7%E7%B4%AB%E5%8E%9F",
       "local_path": "assets/characters/2026expansion/ziyuan_chessmaster_2026.png",
@@ -1110,9 +1171,11 @@
       "height": 780,
       "sha256": "f6ca98b2396df7ab1322e3fdfcd3280764e5dbc46e8e913f12a8dda1b4d1d2f8",
       "has_alpha": true,
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "棋士·紫原是两千日答谢礼皮肤（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "bloodshadow_slash_2026",
@@ -1135,7 +1198,8 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "yihe_frost_outfit_2026",
@@ -1158,7 +1222,8 @@
       "has_alpha": true,
       "variant_kind": "costume",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "yinxiao_leiyi_2026",
@@ -1181,7 +1246,8 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weili_swordheart_2026",
@@ -1204,7 +1270,8 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "maotai_lady_2026",
@@ -1227,7 +1294,8 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "juh_e_lie_bian",
@@ -1248,7 +1316,8 @@
       "sha256": "07bbfc7510be0a933541f34cb25a043474895c1d8438e8f7c707d34d3a1b34d5",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "luetian_xuanjia_2026",
@@ -1269,7 +1338,8 @@
       "sha256": "023d76c557283f2540987fc611d14fdbbd063ab07dccc112375caa256d0c8123",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "jijie_zhengdangshi_2026",
@@ -1290,7 +1360,8 @@
       "sha256": "ea9dcd72153da1aa9ddfa8cf8fd13290c9f367a29763cf43c9db56f1400072ae",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "yihe_anniversary_4_2026",
@@ -1311,7 +1382,8 @@
       "sha256": "563b21c33b107434d42008e39f9d42dc070f37066c400aab5c1e250c58dafd5e",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "shuangyan_anniversary_promo_2026",
@@ -1332,7 +1404,8 @@
       "sha256": "66cd24f25bc24d90d36b7d02fbb64f1368d7d5c2b9a06879ed1b80acd2235149",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ziyuan_lianbo_2026",
@@ -1353,7 +1426,8 @@
       "sha256": "b515733fa6b3fbd61afb6449db3b0a9b8fc8a6e520c57ebc073e81b4f4b1e8d8",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "cangya_3rd_anniversary_2026",
@@ -1374,7 +1448,8 @@
       "sha256": "22784dace616943acc9436b113e1a280a4e64dd4bf05975a3de73eaf5241ddb4",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "linyi_sakura_fx_2026",
@@ -1395,7 +1470,8 @@
       "sha256": "695b01509bda298cd021287d4cd79892e712283a788ef23d4938b182ca4ab9c2",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "huari_zhi_xu_promo_2026",
@@ -1416,7 +1492,8 @@
       "sha256": "b08a1bc0198ec9dae39900d6e47e2e2067fc0eee79dc72827f2eb6700a45c1c6",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "congyun_frost_weave_2026",
@@ -1439,7 +1516,8 @@
       "weapon_family": "丛云之霜羽",
       "variant_kind": "appearance",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xilan_icefeather_2026",
@@ -1462,21 +1540,21 @@
       "has_alpha": true,
       "variant_kind": "reference",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "ying_sakurafire_promo_2026",
-      "name": "樱火·荧·樱花初登场",
-      "category": "characters",
-      "character": "荧",
-      "subcategory": "character_reference",
+      "name": "粉发少女宣传海报（原标樱火·荧）",
+      "category": "promos",
+      "subcategory": "promo_composite",
       "image_url": "https://syimg.3dmgame.com/uploadimg/xiaz/2025/1023/1761188232604.png",
       "source_page": "https://shouyou.3dmgame.com/gl/596953.html",
       "local_path": "assets/characters/2026expansion/ying_sakurafire_promo_2026.png",
       "download_status": "downloaded",
       "source_verified": "candidate_web_image_source_unverified_binary",
       "copyright": "third_party_review_needed",
-      "animation_use": "character_reference",
+      "animation_use": "cinematic_reference",
       "quality_tier": "awaiting_download",
       "bytes": 747234,
       "width": 511,
@@ -1484,8 +1562,13 @@
       "sha256": "8828736ce0e154acf9722342db7f54c94b96754075b265a5517c4bef65d64c59",
       "has_alpha": true,
       "variant_kind": "reference",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "classification_source": "direct_image_inspection",
+      "visual_review": "type_reviewed_identity_pending",
+      "original_record_name": "樱火·荧·樱花初登场",
+      "review_status": "quarantined",
+      "identity_verified": false,
+      "classification_note": "实图带大号宣传文案、海报构图，无法据此确认它是樱火·荧独立立绘",
+      "image_kind": "composite_poster"
     },
     {
       "id": "ying_sakurafire_attack_2026",
@@ -1506,7 +1589,8 @@
       "sha256": "6caf535e9d7d08548f21518dfa191a3476bb7379f2618cb62df1bde306034ad4",
       "has_alpha": true,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "xushi_sword_dance_promo_2026",
@@ -1527,7 +1611,8 @@
       "sha256": "9a764d739f0e0d293e0dc71eadcb68e242ee6f1af1ae2b1ee1f40e2ad0eaafef",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "yinxiao_spring_event_2026",
@@ -1548,7 +1633,8 @@
       "sha256": "10c54f5403ee4b5fb414e40cc5f54f8cc1c347f33613d948094a79335c1f2eb8",
       "has_alpha": false,
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weapon_2026_fuming_jiuyuan",
@@ -1572,7 +1658,8 @@
       "weapon_family": "伏溟九渊",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weapon_2026_jinmie_feng",
@@ -1596,7 +1683,8 @@
       "weapon_family": "尽滅",
       "variant_kind": "appearance",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weapon_2026_fengyue_liuling",
@@ -1620,7 +1708,8 @@
       "weapon_family": "风月含袖",
       "variant_kind": "appearance",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weapon_2026_juque_furi",
@@ -1644,7 +1733,8 @@
       "weapon_family": "巨阙·缚日",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weapon_2026_nuli_jibi",
@@ -1668,7 +1758,8 @@
       "weapon_family": "怒鲤双生",
       "variant_kind": "appearance",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "weapon_2026_bailei_longhong",
@@ -1692,7 +1783,8 @@
       "weapon_family": "百雷·拂晓",
       "variant_kind": "appearance",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "character_2026_shuangyan_hexinyan",
@@ -1716,13 +1808,14 @@
       "has_alpha": true,
       "variant_kind": "costume",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     },
     {
       "id": "skin_043_hayabusa",
       "name": "夜叉·隼白",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "awakening_portrait",
       "character": "隼白",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/9/9e/mmeed3taoxchckz7fep0furv9vcbk3t.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E5%A4%9C%E5%8F%89%C2%B7%E9%9A%BC%E7%99%BD",
@@ -1737,15 +1830,17 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "夜叉·隼白是觉醒后获得的外观（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "skin_047_bloodshadow",
       "name": "极刃·血影",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "awakening_portrait",
       "character": "血影",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/a/a5/4oap92l5u7d5kmv9gv2jbb5cvb34zwc.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E6%9E%81%E5%88%83%C2%B7%E8%A1%80%E5%BD%B1",
@@ -1760,15 +1855,17 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "极刃·血影是觉醒后获得的外观（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "skin_080_shuangyan",
       "name": "双焰·小椒",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "awakening_portrait",
       "character": "小椒",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/0/0a/9sw12o7u4e7wwjpf5lbtszvn8ft8owa.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E5%8F%8C%E7%84%B0%C2%B7%E5%B0%8F%E6%A4%92",
@@ -1783,15 +1880,17 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "双焰·小椒是觉醒后获得的外观（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "skin_090_ali_thunder",
       "name": "雷兽·阿力",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "awakening_portrait",
       "character": "阿力",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/9/93/jkda5qaizyq72xs7zsfevxvfvjmj61o.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E9%9B%B7%E5%85%BD%C2%B7%E9%98%BF%E5%8A%9B",
@@ -1806,15 +1905,17 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "雷兽·阿力为雷兽流派觉醒外观（官方更新公告）",
+      "review_status": "categorized"
     },
     {
       "id": "skin_091_mai",
       "name": "不知火·舞",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "base_portrait",
       "character": "不知火舞",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/3/39/sy20ic0w83nrwgfhwo6dqe0cci2c9dr.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E4%B8%8D%E7%9F%A5%E7%81%AB%C2%B7%E8%88%9E",
@@ -1829,15 +1930,17 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "original",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "不知火·舞为角色本体而非流派外观",
+      "review_status": "categorized"
     },
     {
       "id": "skin_089_xiaojiao_shenyan",
       "name": "神炎·小椒",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "awakening_portrait",
       "character": "小椒",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/7/7f/ko5h7f3zfbyc3zqctornothz5mhj052.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E7%A5%9E%E7%82%8E%C2%B7%E5%B0%8F%E6%A4%92",
@@ -1852,15 +1955,17 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "神炎·小椒是觉醒后获得的外观（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "skin_092_chengxiao",
       "name": "乘霄·戌时",
       "category": "characters",
-      "subcategory": "style_portrait",
+      "subcategory": "awakening_portrait",
       "character": "戌时",
       "image_url": "https://patchwiki.biligame.com/images/nmd3/7/74/clixg53mu8abqq3gup2j3rvx2zjhmkz.png",
       "source_page": "https://wiki.biligame.com/nmd3/%E4%B9%98%E9%9C%84%C2%B7%E6%88%8C%E6%97%B6",
@@ -1875,9 +1980,11 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character",
-      "variant_kind": "combat_style",
-      "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "variant_kind": "awakening_costume",
+      "classification_source": "wiki_character_skin_detail",
+      "visual_review": "pending",
+      "classification_note": "乘霄·戌时是觉醒后获得的外观（BWIKI）",
+      "review_status": "categorized"
     },
     {
       "id": "wiki_weapon_102_bailian",
@@ -1900,7 +2007,8 @@
       "weapon_family": "百炼",
       "variant_kind": "original",
       "classification_source": "catalog_name_and_source_page",
-      "visual_review": "pending"
+      "visual_review": "pending",
+      "review_status": "categorized"
     }
   ],
   "taxonomy": {
@@ -1928,7 +2036,10 @@
       "unverified_wallpaper": "未采集壁纸",
       "event_promo": "活动宣传图",
       "skill_effect_reference": "忍术/技能画面",
-      "unreviewed_portrait": "待人工细分立绘"
-    }
+      "unreviewed_portrait": "待人工细分立绘",
+      "awakening_portrait": "流派觉醒外观",
+      "promo_composite": "复合宣传插画（人物与文案）"
+    },
+    "review_policy": "review_status=quarantined means original label or image type differs from verified visual content; excluded from normal gallery until rechecked. Filename and sha256 remain intact."
   }
 }
