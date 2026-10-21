@@ -72,7 +72,16 @@ def valid_art(data):
         if im.format not in ("PNG","JPEG","WEBP"): raise ValueError("not an image")
         if w<420 or h<450: raise ValueError(f"low resolution {w}x{h}")
         if not 0.35<=w/h<=1.50: raise ValueError(f"not character-portrait shape {w}x{h}")
-        return w,h,im.format,"A" in im.getbands()
+        # A portrait archive entry must be an isolated character layer rather than a full poster.
+        if "A" not in im.getbands():
+            raise ValueError("no transparency: likely a full promotional image, not an isolated portrait")
+        alpha=im.getchannel("A")
+        # 620x780 opaque images occasionally turned out to be complete posters with a logo.
+        hist=alpha.histogram()
+        transparent=sum(hist[:64])
+        if transparent < w*h*0.06:
+            raise ValueError(f"insufficient transparent canvas: {transparent/(w*h):.1%}; requires manual review")
+        return w,h,im.format,True
 
 def discover(target):
     name=target["name"]
