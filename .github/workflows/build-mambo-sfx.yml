@@ -1,0 +1,67 @@
+name: Build Mambo Voice Meme SFX
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "tools/generate_mambo_sfx.py"
+      - "tools/test_mambo_sfx.py"
+      - ".github/workflows/build-mambo-sfx.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mambo-voice-assets-publish
+  cancel-in-progress: false
+
+jobs:
+  generate-mambo:
+    name: Make real Mambo voice WAVs and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install ffmpeg, numpy, edge voice synthesis
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install "numpy>=1.26,<3" "edge-tts>=7.0,<8"
+
+      - name: Check code and synthesize 14 distinct vocal sounds
+        run: |
+          python -m py_compile tools/generate_mambo_sfx.py tools/test_mambo_sfx.py
+          python tools/generate_mambo_sfx.py --output assets/comedy/mambo
+
+      - name: Verify actual WAV files, duration, volume and zip
+        run: python tools/test_mambo_sfx.py
+
+      - name: Commit actual new audio into permanent repository storage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/comedy/mambo
+          if git diff --cached --quiet; then
+            echo "Mambo media already up to date"
+          else
+            git commit -m "chore(comedy): publish 14 voiced Mambo WAV SFX and ZIP [skip ci]"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+          test -f assets/comedy/mambo/catalog.json
+          test -f assets/comedy/mambo/mambo-sfx-14-wav.zip
+          echo "MAMBO ASSETS COMMITTED"
+
+      - name: Back up the delivered audio kit as downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mambo-14-voice-wav
+          path: assets/comedy/mambo/
+          retention-days: 30
+          if-no-files-found: error
