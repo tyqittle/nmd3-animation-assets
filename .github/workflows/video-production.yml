@@ -68,7 +68,9 @@ jobs:
           python -m pip install pillow numpy
       - name: Check Python syntax
         run: |
-          python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py
+          python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py ninja/video/workflow/scripts/test_audio.py
+      - name: Unit-test speech timing and mixing (offline)
+        run: python ninja/video/workflow/scripts/test_audio.py
       - name: Check episode references and image files
         run: python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/deep-abyss-meeting-v1.json
       - name: Check new Blood Shadow episode
@@ -118,6 +120,13 @@ jobs:
           QUALITY: ${{ inputs.quality || 'final' }}
           NARRATION: ${{ inputs.narration || 'edge' }}
         run: python ninja/video/workflow/scripts/render.py --recipe "ninja/video/workflow/episodes/${EPISODE}.json" --quality "$QUALITY" --tts "$NARRATION" --output "output/${EPISODE}-${QUALITY}.mp4"
+      - name: Validate dialogue quality report
+        if: (inputs.video_type || 'short') == 'short' && (inputs.narration || 'edge') != 'off'
+        env:
+          EPISODE: ${{ inputs.episode || 'deep-abyss-meeting-v1' }}
+          QUALITY: ${{ inputs.quality || 'final' }}
+        run: |
+          python -c 'import json,os; p="output/%s-%s-audio-report.json"%(os.environ["EPISODE"],os.environ["QUALITY"]); d=json.load(open(p)); assert d["voice_count"]>=10, d; assert not d["speech_clipped"]; print("PASS: speech clips",d["voice_count"],"peak",d["peak"])'
       - name: Verify music source for legacy MV
         if: (inputs.video_type || 'short') == 'mv'
         run: test -s music/music/game-ost/jrpg-epic-rock-full.mp3
