@@ -10,12 +10,29 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from io import BytesIO
 from pathlib import Path
-from urllib import parse
+from urllib import parse, request
 
 from bs4 import BeautifulSoup
 from PIL import Image
 
 from discover_wiki_art import get, original_image_url
+
+
+def fetch_image(url: str, page: str) -> bytes:
+    headers={
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'Accept':'image/avif,image/webp,image/apng,image/png,image/*;q=0.8,*/*;q=0.5',
+        'Accept-Language':'zh-CN,zh;q=0.9,en;q=0.7',
+        'Referer':'https://wiki.biligame.com/nmd3/',
+    }
+    with request.urlopen(request.Request(url,headers=headers),timeout=18) as response:
+        if response.status != 200:
+            raise ValueError('HTTP '+str(response.status))
+        data=response.read(12*1024*1024+1)
+        if len(data)>12*1024*1024:
+            raise ValueError('Image larger than 12MB')
+        return data
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/assets.json"
@@ -78,7 +95,7 @@ def discover(target: dict):
             return {**result,"status":"no_matching_boss_image"}
         for url in candidates:
             try:
-                raw=get(url,referer=target["page"],timeout=16)
+                raw=fetch_image(url,target["page"])
                 w,h,alpha,extension=inspect(raw)
                 return {**result,"status":"ready","image_url":url,"data":raw,
                         "width":w,"height":h,"bytes":len(raw),"has_alpha":alpha,
@@ -105,7 +122,7 @@ def main():
             record=future.result()
             if record["status"]!="ready":
                 reported.append(record)
-                print("SKIP",t["name"],record["status"],flush=True)
+                print("SKIP",t["name"],record["status"],record.get("last_image_error",record.get("error","")),flush=True)
                 continue
             ident="wiki_boss_"+t["slug"]
             if ident in known_ids or record["image_url"] in known_urls or record["sha256"] in known_hashes:
