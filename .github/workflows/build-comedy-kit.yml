@@ -1,0 +1,79 @@
+name: Build Original Comedy SFX and VFX
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "tools/generate_comedy_assets.py"
+      - "tools/test_comedy_assets.py"
+      - ".github/workflows/build-comedy-kit.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: comedy-assets-publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Generate, validate and save media
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Install media tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy>=1.26,<3" "Pillow>=11,<13"
+
+      - name: Compile and generate real files
+        run: |
+          python -m py_compile tools/generate_comedy_assets.py tools/test_comedy_assets.py
+          python tools/generate_comedy_assets.py --output assets/comedy
+
+      - name: Inspect the emitted media, not just source code
+        run: python tools/test_comedy_assets.py
+
+      - name: Store an easy-to-download all-in-one archive
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root = Path("assets/comedy")
+          with zipfile.ZipFile(root/"comedy-vfx-16-complete.zip", "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+              for p in (root/"vfx").glob("*"):
+                  if p.is_file():
+                      z.write(p, p.relative_to(root))
+          print("ZIP VFX bytes:", (root/"comedy-vfx-16-complete.zip").stat().st_size)
+          PY
+
+      - name: Publish all real files on the repository default branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/comedy
+          if git diff --cached --quiet; then
+            echo "No changed media files"
+          else
+            git commit -m "chore(comedy): publish 24 WAV + 16 animated alpha VFX + PNG sequences [skip ci]"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+          git ls-files assets/comedy | wc -l
+
+      - name: Upload emergency downloadable backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: nmd3-comedy-media
+          path: |
+            assets/comedy/catalog.json
+            assets/comedy/*.zip
+          retention-days: 30
+          if-no-files-found: error
