@@ -1,0 +1,1560 @@
+{
+  "schema_version": "1.0.0",
+  "created_on": "2026-10-21",
+  "description": "《忍者必须死3》玩家梗与二创脚本素材。含已见来源的玩家梗/黑话/剧情钩子与明确标识的原创二创灵感。条目不是授权视频或图片。",
+  "disclaimer": "高=来源直接支持概念；中=来源提供背景或为社区个例；创意=基于已注明材料创作的新梗点。游戏版本机制可能变化；不要将二创台词当游戏原台词。",
+  "count": 68,
+  "sources": [
+    {
+      "title": "忍3专业术语玩家攻略（2023）",
+      "url": "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13",
+      "kind": "玩家攻略"
+    },
+    {
+      "title": "炎魂工作室2025创作者介绍（姚化火扇）",
+      "url": "https://www.pandadastudio.com/news/688aec249ea77",
+      "kind": "官方"
+    },
+    {
+      "title": "复盘忍3传奇人物（含姚先生专题）",
+      "url": "https://www.bilibili.com/video/BV1sQ4y1Y7FG",
+      "kind": "玩家视频"
+    },
+    {
+      "title": "忍界春日整活大赏（顺拐狐与联赛）",
+      "url": "https://www.taptap.cn/moment/652217348735895879",
+      "kind": "官方社区"
+    },
+    {
+      "title": "忍3家族聊天表情包：椒个朋友",
+      "url": "https://game.xiaomi.com/viewpoint/1490972085_1675678352667_11",
+      "kind": "活动资讯"
+    },
+    {
+      "title": "小黑生日梗图大作战",
+      "url": "https://www.taptap.cn/moment/216211983198848163",
+      "kind": "官方社区"
+    },
+    {
+      "title": "忍3抽卡毒点杂谈（2024）",
+      "url": "https://www.taptap.cn/moment/542801849653133819",
+      "kind": "玩家评论"
+    },
+    {
+      "title": "BWIKI：三章雨夜血影",
+      "url": "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1",
+      "kind": "剧情资料"
+    },
+    {
+      "title": "BWIKI忍者档案",
+      "url": "https://wiki.biligame.com/nmd3/%E5%BF%8D%E8%80%85%E6%A1%A3%E6%A1%88",
+      "kind": "角色资料"
+    },
+    {
+      "title": "忍3官方网站",
+      "url": "https://www.pandadastudio.com/m/",
+      "kind": "官方"
+    },
+    {
+      "title": "忍三七周年玩家吐槽视频（观点非事实）",
+      "url": "https://www.bilibili.com/video/BV1ZvbDzaECe/",
+      "kind": "玩家评论"
+    },
+    {
+      "title": "忍3自制梗图《大合影》",
+      "url": "https://www.taptap.cn/moment/653568272217671236",
+      "kind": "玩家同人"
+    },
+    {
+      "title": "忍三沙雕表情包第七弹",
+      "url": "https://www.bilibili.com/video/BV1ud4y1G7uH/",
+      "kind": "玩家同人"
+    },
+    {
+      "title": "忍三暗语科普（2023）",
+      "url": "https://www.douyin.com/video/7210456169909914880",
+      "kind": "玩家视频"
+    },
+    {
+      "title": "忍三老板娘问答素材（角色设定）",
+      "url": "https://www.taptap.cn/moment/797596868983918532",
+      "kind": "玩家攻略"
+    },
+    {
+      "title": "2025忍3家族联赛故事",
+      "url": "https://www.taptap.cn/moment/641722560974684950",
+      "kind": "官方社区"
+    },
+    {
+      "title": "玩家发布的忍3梗图合集",
+      "url": "https://www.bilibili.com/video/BV1v4421U7oM/",
+      "kind": "玩家同人"
+    },
+    {
+      "title": "忍三词汇问答讨论",
+      "url": "https://www.douyin.com/video/7210456169909914880",
+      "kind": "玩家讨论"
+    }
+  ],
+  "items": [
+    {
+      "id": "NMD3-001",
+      "title": "姚化火扇",
+      "category": "玩家名梗",
+      "characters": [
+        "姚先生",
+        "火扇"
+      ],
+      "context": "源于姚先生施放火扇时攻击落空的经典操作，后来泛指攻击追不上Boss或空掉。",
+      "hook": "武器特效拉满，Boss平移一小步，屏幕出现“姚化成功”。",
+      "shot": "0-2秒蓄力→Boss瞬移→空镜头停顿。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13",
+        "https://www.pandadastudio.com/news/688aec249ea77",
+        "https://www.bilibili.com/video/BV1sQ4y1Y7FG"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家名梗",
+        "姚先生",
+        "火扇"
+      ]
+    },
+    {
+      "id": "NMD3-002",
+      "title": "姚化不是新技能",
+      "category": "二创灵感",
+      "characters": [
+        "姚先生",
+        "任意忍者"
+      ],
+      "context": "把玩家失误术语改编成一本正经的武器技能介绍；这是新创作桥段。",
+      "hook": "“隐藏被动：精准避开Boss。”",
+      "shot": "仿游戏新武器PV先正经解说再落空。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "姚先生",
+        "任意忍者"
+      ]
+    },
+    {
+      "id": "NMD3-003",
+      "title": "火扇自己会躲Boss",
+      "category": "玩家名梗",
+      "characters": [
+        "姚先生",
+        "火扇"
+      ],
+      "context": "工作室创作者介绍也提及姚化火扇的“躲避Boss”，具有明确社区出处。",
+      "hook": "火扇飞来，Boss未动，火扇主动拐弯。",
+      "shot": "火扇拟人化和音效倒放。",
+      "sources": [
+        "https://www.pandadastudio.com/news/688aec249ea77"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家名梗",
+        "姚先生",
+        "火扇"
+      ]
+    },
+    {
+      "id": "NMD3-004",
+      "title": "忍界传奇姚先生",
+      "category": "玩家名梗",
+      "characters": [
+        "姚先生"
+      ],
+      "context": "玩家做过传奇人物专题，官方也在2025创作者介绍中提到姚先生。",
+      "hook": "一秒职业赛场神操作，下一秒姚化火扇。",
+      "shot": "纪录片解说+失误切片反差。",
+      "sources": [
+        "https://www.bilibili.com/video/BV1sQ4y1Y7FG",
+        "https://www.pandadastudio.com/news/688aec249ea77"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家名梗",
+        "姚先生"
+      ]
+    },
+    {
+      "id": "NMD3-005",
+      "title": "你们错过一个梗又能怎样",
+      "category": "玩家二创",
+      "characters": [
+        "全角色"
+      ],
+      "context": "2025春日整活大赏使用此类标题梗来介绍愚忍节创作，属于已发表的整活语境。",
+      "hook": "最后一张梗图还没读懂，屏幕就切下一个。",
+      "shot": "快切三连画面，停在尴尬表情。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-006",
+      "title": "顺拐狐",
+      "category": "玩家名梗",
+      "characters": [
+        "狐狸相关角色"
+      ],
+      "context": "官方社区收录B站作者的顺拐狐作品，属于把顺拐狼动作改造成忍3角色的模仿梗。",
+      "hook": "严肃角色迈着左右同手同脚步伐巡视忍村。",
+      "shot": "循环走路动画+节奏BGM。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家名梗",
+        "狐狸相关角色"
+      ]
+    },
+    {
+      "id": "NMD3-007",
+      "title": "忍界巡走",
+      "category": "二创灵感",
+      "characters": [
+        "顺拐狐",
+        "全角色"
+      ],
+      "context": "围绕有出处的顺拐狐作品扩展的创作建议，不声称是现成玩家梗。",
+      "hook": "顺拐狐逐个路过忍村、商店、家族战。",
+      "shot": "横向循环场景切换，角色行走保持顺拐。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "顺拐狐",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-008",
+      "title": "麦当劳打家族联赛",
+      "category": "玩家名梗",
+      "characters": [
+        "族长",
+        "家族成员"
+      ],
+      "context": "官方整活合集记录玩家担心在麦当劳不消费打家族联赛是否被赶走。",
+      "hook": "现实店员还没开口，族长先在群里催上线。",
+      "shot": "餐厅实拍感背景+游戏弹窗叠加。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家名梗",
+        "族长",
+        "家族成员"
+      ]
+    },
+    {
+      "id": "NMD3-009",
+      "title": "你想被族长赶出去吗",
+      "category": "玩家名梗",
+      "characters": [
+        "族长",
+        "家族成员"
+      ],
+      "context": "接续麦当劳联赛段子的官方收录回复，以家族联赛优先级制造反差。",
+      "hook": "店里没赶人，群里先发“迟到踢人”。",
+      "shot": "双聊天窗口的错位剪辑。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家名梗",
+        "族长",
+        "家族成员"
+      ]
+    },
+    {
+      "id": "NMD3-010",
+      "title": "家族联赛打到哪里",
+      "category": "玩家二创",
+      "characters": [
+        "家族成员"
+      ],
+      "context": "官方社区专门征集大家在不同地点打完联赛的奇特经历。",
+      "hook": "主将蹲在厕所，队友却以为他在忍神山。",
+      "shot": "纪实字幕和定位地图伪UI。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "家族成员"
+      ]
+    },
+    {
+      "id": "NMD3-011",
+      "title": "武士身后空无一人",
+      "category": "玩家二创",
+      "characters": [
+        "武士",
+        "小黑"
+      ],
+      "context": "官方春日整活大赏收录救出孩子组成队伍、反衬武士孤立的笑料。",
+      "hook": "武士自信回头，背后空空如也。",
+      "shot": "大军镜头切空地并加乌鸦声。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "武士",
+        "小黑"
+      ]
+    },
+    {
+      "id": "NMD3-012",
+      "title": "忍3家族人生结局",
+      "category": "玩家二创",
+      "characters": [
+        "家族成员"
+      ],
+      "context": "官方整活帖收录“人生结局梗（忍3家族版）”，走感伤与搞笑混剪路线。",
+      "hook": "昔日群聊999+，多年后只剩最后一条消息。",
+      "shot": "聊天群时间线+旧战斗截图。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879",
+        "https://www.taptap.cn/moment/641722560974684950"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "家族成员"
+      ]
+    },
+    {
+      "id": "NMD3-013",
+      "title": "已确诊为校园忍者",
+      "category": "玩家二创",
+      "characters": [
+        "琳",
+        "老板娘",
+        "卫鲤"
+      ],
+      "context": "2025官方收录校园主题忍3二创，将角色带到现实学校场景。",
+      "hook": "Boss是教导主任，忍术是迟到冲刺。",
+      "shot": "校园宣传片反差式转场。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "琳",
+        "老板娘",
+        "卫鲤"
+      ]
+    },
+    {
+      "id": "NMD3-014",
+      "title": "老板娘当老师",
+      "category": "玩家二创",
+      "characters": [
+        "猫太老板娘"
+      ],
+      "context": "官方春日整活大赏展示老板娘担任老师的校园二创构想。",
+      "hook": "开学第一节课是“如何合理消费勾玉”。",
+      "shot": "讲台站姿立绘+黑板字幕。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "猫太老板娘"
+      ]
+    },
+    {
+      "id": "NMD3-015",
+      "title": "文科理科体育生",
+      "category": "玩家二创",
+      "characters": [
+        "全角色"
+      ],
+      "context": "官方整活合集中确有“文科理科体育课”忍3对比视频。",
+      "hook": "面对Boss：写分析、算伤害、直接开大。",
+      "shot": "三分屏对比不同职业视角。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-016",
+      "title": "一拳把你打爆",
+      "category": "官方表情梗",
+      "characters": [
+        "小黑"
+      ],
+      "context": "忍3家族聊天表情中小黑的高使用率文案，资讯帖有明确记录。",
+      "hook": "明明刚刚阵亡，还发一拳表情。",
+      "shot": "大字贴图+小黑反差表情。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1490972085_1675678352667_11"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "官方表情梗",
+        "小黑"
+      ]
+    },
+    {
+      "id": "NMD3-017",
+      "title": "吸你欧气",
+      "category": "官方表情梗",
+      "characters": [
+        "洛青"
+      ],
+      "context": "家族聊天表情高频文案之一，用于抽卡欧非对比。",
+      "hook": "队友一发出货，我的洛青偷偷吸走欧气。",
+      "shot": "UI贴纸覆盖十连抽卡。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1490972085_1675678352667_11"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "官方表情梗",
+        "洛青"
+      ]
+    },
+    {
+      "id": "NMD3-018",
+      "title": "椒个朋友",
+      "category": "官方表情梗",
+      "characters": [
+        "小椒",
+        "小黑",
+        "阿力",
+        "琳",
+        "苍牙",
+        "小白"
+      ],
+      "context": "官方2023年推出的家族通用表情包系列，强调魔性步伐。",
+      "hook": "好友问“今天打周常吗”，六个人只会魔性起舞。",
+      "shot": "六人同步循环舞步。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1490972085_1675678352667_11"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "官方表情梗",
+        "小椒",
+        "小黑",
+        "阿力",
+        "琳",
+        "苍牙",
+        "小白"
+      ]
+    },
+    {
+      "id": "NMD3-019",
+      "title": "我还没用力你就倒下了",
+      "category": "官方表情创意",
+      "characters": [
+        "隼白"
+      ],
+      "context": "官方表情资讯文举例的隼白台词方案，非正式确认的实装配音。",
+      "hook": "隼白刚摆好姿势，对面因为红灯笼先倒。",
+      "shot": "霸气特写对切滑稽阵亡画面。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1490972085_1675678352667_11"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "官方表情创意",
+        "隼白"
+      ]
+    },
+    {
+      "id": "NMD3-020",
+      "title": "小黑生日梗图",
+      "category": "官方梗图活动",
+      "characters": [
+        "小黑"
+      ],
+      "context": "官方办过小黑头像加字、扩展梗图的生日活动。",
+      "hook": "别人生日许愿SSR，小黑许愿别再挨打。",
+      "shot": "静态头像+大字贴纸。",
+      "sources": [
+        "https://www.taptap.cn/moment/216211983198848163"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "官方梗图活动",
+        "小黑"
+      ]
+    },
+    {
+      "id": "NMD3-021",
+      "title": "忍3沙雕表情包系列",
+      "category": "玩家二创",
+      "characters": [
+        "全角色"
+      ],
+      "context": "B站已有多弹忍3沙雕表情包视频，可做风格研究和二创检索入口。",
+      "hook": "会议投影逐张出现角色反应图。",
+      "shot": "九宫格梗图+每张0.8秒节奏切换。",
+      "sources": [
+        "https://www.bilibili.com/video/BV1ud4y1G7uH/",
+        "https://www.bilibili.com/video/BV1v4421U7oM/"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-022",
+      "title": "真实欧皇与非酋",
+      "category": "玩家吐槽",
+      "characters": [
+        "全角色"
+      ],
+      "context": "玩家长期围绕UP歪卡、欧非晒卡讨论，具体池子机制会变动。",
+      "hook": "朋友十连双黄，我十连只看见“谢谢参与”。",
+      "shot": "左右屏幕抽卡结果反差。",
+      "sources": [
+        "https://www.taptap.cn/moment/542801849653133819"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家吐槽",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-023",
+      "title": "十连三金全歪",
+      "category": "玩家吐槽",
+      "characters": [
+        "抽卡玩家"
+      ],
+      "context": "抽卡讨论用十连三金全歪作典型心理落差例子。",
+      "hook": "先狂喜三声，再发现一个UP也没有。",
+      "shot": "连续三次闪金特效→瞬间静音。",
+      "sources": [
+        "https://www.taptap.cn/moment/542801849653133819"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家吐槽",
+        "抽卡玩家"
+      ]
+    },
+    {
+      "id": "NMD3-024",
+      "title": "保底比忍术还长",
+      "category": "二创灵感",
+      "characters": [
+        "抽卡玩家"
+      ],
+      "context": "来自真实保底机制争议衍生的搞笑比喻，不当作既有公认名梗。",
+      "hook": "Boss三阶段打完，UP角色还没有来。",
+      "shot": "把抽数进度条剪成Boss血条。",
+      "sources": [
+        "https://www.taptap.cn/moment/542801849653133819"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "抽卡玩家"
+      ]
+    },
+    {
+      "id": "NMD3-025",
+      "title": "小白灵机一动",
+      "category": "玩家吐槽",
+      "characters": [
+        "小白",
+        "玩家"
+      ],
+      "context": "玩家视频标题里存在将策划调整拟人为小白灵机一动的吐槽表述；观点仅代表创作者。",
+      "hook": "玩家刚存好资源，下一版本更新公告出现。",
+      "shot": "策划办公室黑幕剪影+突发弹窗。",
+      "sources": [
+        "https://www.bilibili.com/video/BV1ZvbDzaECe/"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家吐槽",
+        "小白",
+        "玩家"
+      ]
+    },
+    {
+      "id": "NMD3-026",
+      "title": "白夜叉登场",
+      "category": "剧情反差",
+      "characters": [
+        "隼白"
+      ],
+      "context": "白夜叉是隼白的称号，剧情中血影与隼白的会面可作素材。",
+      "hook": "血影摆擂台等宿敌，主角队先误入。",
+      "shot": "严肃对峙→镜头转向误闯者。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1",
+        "https://www.pandadastudio.com/m/"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "剧情反差",
+        "隼白"
+      ]
+    },
+    {
+      "id": "NMD3-027",
+      "title": "该来的人没来",
+      "category": "剧情反差",
+      "characters": [
+        "血影",
+        "小黑"
+      ],
+      "context": "第三章雨夜血影：血影等待特定对手，却先遇到主角一行。",
+      "hook": "等隼白却见到小黑，血影表情瞬间微妙。",
+      "shot": "等人剪辑：影子出现→特写失望。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "剧情反差",
+        "血影",
+        "小黑"
+      ]
+    },
+    {
+      "id": "NMD3-028",
+      "title": "怎么又是血影",
+      "category": "二创灵感",
+      "characters": [
+        "血影",
+        "小黑",
+        "琳",
+        "阿力",
+        "苍牙"
+      ],
+      "context": "雨夜血影同一叙事节点可切不同可选忍者遭遇血影的版本。",
+      "hook": "血影第N次念开场词，字幕“加班中”。",
+      "shot": "一模一样的进场镜头四连剪。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "血影",
+        "小黑",
+        "琳",
+        "阿力",
+        "苍牙"
+      ]
+    },
+    {
+      "id": "NMD3-029",
+      "title": "隼白救场专业户",
+      "category": "剧情反差",
+      "characters": [
+        "隼白",
+        "血影"
+      ],
+      "context": "第三章中主角被血影重伤后隼白赶到救场的剧情结构。",
+      "hook": "主角刚说完完蛋了，隼白从天而降。",
+      "shot": "危险暂停→英雄逆光入画。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "剧情反差",
+        "隼白",
+        "血影"
+      ]
+    },
+    {
+      "id": "NMD3-030",
+      "title": "血影只想找隼白",
+      "category": "剧情反差",
+      "characters": [
+        "血影",
+        "隼白"
+      ],
+      "context": "血影等待隼白的剧情动机，可用于宿敌型视频脚本。",
+      "hook": "四个主角轮流搭话，血影只问“隼白呢”。",
+      "shot": "四次同镜头换人物+同一声效。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "剧情反差",
+        "血影",
+        "隼白"
+      ]
+    },
+    {
+      "id": "NMD3-031",
+      "title": "墓地会不会有鬼",
+      "category": "剧情反差",
+      "characters": [
+        "小白"
+      ],
+      "context": "雨夜血影章节，小白逃脱后在墓地附近担心闹鬼。",
+      "hook": "刚被剑客追杀逃生，却开始怕鬼。",
+      "shot": "阴森音效突然替代战斗BGM。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "剧情反差",
+        "小白"
+      ]
+    },
+    {
+      "id": "NMD3-032",
+      "title": "阿力的竹叶烧",
+      "category": "角色反差",
+      "characters": [
+        "阿力"
+      ],
+      "context": "玩家整理的游戏问答记录了阿力喜欢竹叶烧的角色设定。",
+      "hook": "别人在研究伤害倍率，阿力在考虑酒单。",
+      "shot": "宴席场景+悠闲抬杯。",
+      "sources": [
+        "https://www.taptap.cn/moment/797596868983918532"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "角色反差",
+        "阿力"
+      ]
+    },
+    {
+      "id": "NMD3-033",
+      "title": "银枭宠妹",
+      "category": "角色反差",
+      "characters": [
+        "银枭",
+        "小夜"
+      ],
+      "context": "角色介绍记载银枭外表冷酷、对妹妹格外溺爱。",
+      "hook": "别人面前冷酷队长，小夜面前超热情哥哥。",
+      "shot": "同一角色眼神/配乐硬切。",
+      "sources": [
+        "https://www.pandadastudio.com/m/"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "角色反差",
+        "银枭",
+        "小夜"
+      ]
+    },
+    {
+      "id": "NMD3-034",
+      "title": "隼白是白夜叉",
+      "category": "角色反差",
+      "characters": [
+        "隼白"
+      ],
+      "context": "官方设定及剧情资料均有白夜叉称号。",
+      "hook": "“职业：白夜叉；兼职：救援队长”。",
+      "shot": "证件照排版+帅气救场混剪。",
+      "sources": [
+        "https://www.pandadastudio.com/m/",
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "角色反差",
+        "隼白"
+      ]
+    },
+    {
+      "id": "NMD3-035",
+      "title": "猫太百货应有尽有",
+      "category": "角色梗点",
+      "characters": [
+        "猫太老板娘"
+      ],
+      "context": "社区角色梗文案提到老板娘的猫太百货和夸张带货形象。",
+      "hook": "“今天的商品：想赢的三三队友。”",
+      "shot": "直播带货综艺字幕。",
+      "sources": [
+        "https://www.pandadastudio.com/m/"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "角色梗点",
+        "猫太老板娘"
+      ]
+    },
+    {
+      "id": "NMD3-036",
+      "title": "极刃血影帅到新人入坑",
+      "category": "玩家吐槽",
+      "characters": [
+        "极刃血影"
+      ],
+      "context": "新玩家讨论明确描述被血影外形吸引入坑、却对养成系统不满；个体体验不能推广到全部玩家。",
+      "hook": "冲着血影立绘进入游戏，第一眼看到养成清单。",
+      "shot": "帅气人物海报→密集UI贴图。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E5%BF%8D%E8%80%85%E6%A1%A3%E6%A1%88",
+        "https://www.taptap.cn/moment/542801849653133819"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家吐槽",
+        "极刃血影"
+      ]
+    },
+    {
+      "id": "NMD3-037",
+      "title": "CC苍牙",
+      "category": "玩家黑话",
+      "characters": [
+        "鬼狩苍牙"
+      ],
+      "context": "快速点击忍术以用残影强化输出的传统手法，玩家称CC。",
+      "hook": "主播一秒点屏十几次，镜头给手指。",
+      "shot": "手部动作和忍术动画节奏叠加。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "鬼狩苍牙"
+      ]
+    },
+    {
+      "id": "NMD3-038",
+      "title": "洛青也会CC",
+      "category": "玩家黑话",
+      "characters": [
+        "洛青"
+      ],
+      "context": "玩家攻略提到CC也用于洛青技能手法，属于具体版本玩法描述。",
+      "hook": "苍牙把CC教材递给洛青。",
+      "shot": "师徒教学动画，技能同步快切。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "洛青"
+      ]
+    },
+    {
+      "id": "NMD3-039",
+      "title": "背板子",
+      "category": "玩家黑话",
+      "characters": [
+        "跑图玩家"
+      ],
+      "context": "记住地形障碍或Boss招式节奏；俗称背板子。",
+      "hook": "新手疯狂躲，大佬闭眼跑。",
+      "shot": "同屏对照新手与熟练者。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "跑图玩家"
+      ]
+    },
+    {
+      "id": "NMD3-040",
+      "title": "板子把我背了",
+      "category": "二创灵感",
+      "characters": [
+        "跑图玩家"
+      ],
+      "context": "以背板术语作倒装文字游戏，属于原创桥段。",
+      "hook": "玩家说记熟板子，下一秒撞个正着。",
+      "shot": "慢镜头撞击+全屏板子闪回。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "跑图玩家"
+      ]
+    },
+    {
+      "id": "NMD3-041",
+      "title": "P1与P2",
+      "category": "玩家黑话",
+      "characters": [
+        "3v3玩家"
+      ],
+      "context": "玩家通常以P1/P2描述分段跑图或Boss不同阶段。",
+      "hook": "P1挥斥方遒，P2毫无意识。",
+      "shot": "分段标题+转场到暴毙镜头。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-042",
+      "title": "跳P",
+      "category": "玩家黑话",
+      "characters": [
+        "Boss",
+        "打手"
+      ],
+      "context": "Boss到固定血量转入另一招式阶段被称跳P或跳阶。",
+      "hook": "刚背会P1，Boss突然跳P。",
+      "shot": "Boss血条进度线+愣住的角色。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "Boss",
+        "打手"
+      ]
+    },
+    {
+      "id": "NMD3-043",
+      "title": "拉满火扇",
+      "category": "玩家黑话",
+      "characters": [
+        "火扇",
+        "玩家"
+      ],
+      "context": "操控扇类武器碰撞Boss以增伤的操作俗称拉扇。",
+      "hook": "教练说拉满，徒弟打成姚化。",
+      "shot": "先播教程后播灾难复刻。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "火扇",
+        "玩家"
+      ]
+    },
+    {
+      "id": "NMD3-044",
+      "title": "周常",
+      "category": "玩家黑话",
+      "characters": [
+        "打手",
+        "萌新"
+      ],
+      "context": "部分玩家把每周常打的SS+悬赏称作周常，不等于全部悬赏。",
+      "hook": "萌新以为是签到任务，打开却是SS+。",
+      "shot": "日常清单界面切高压Boss。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13",
+        "https://www.douyin.com/video/7210456169909914880"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "打手",
+        "萌新"
+      ]
+    },
+    {
+      "id": "NMD3-045",
+      "title": "车头",
+      "category": "玩家黑话",
+      "characters": [
+        "悬赏车主"
+      ],
+      "context": "SS+悬赏队伍的组织者/车主，玩家称车头。",
+      "hook": "四个人围着车头，喊“大佬带带”。",
+      "shot": "悬赏队伍变成拼车群聊。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "悬赏车主"
+      ]
+    },
+    {
+      "id": "NMD3-046",
+      "title": "三拖二",
+      "category": "玩家黑话",
+      "characters": [
+        "打手",
+        "萌新"
+      ],
+      "context": "悬赏代打配队表达：由三名打手带两人。",
+      "hook": "车头点名，三个大佬冲锋，两人看风景。",
+      "shot": "5人剪影站位，3+2分屏。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "打手",
+        "萌新"
+      ]
+    },
+    {
+      "id": "NMD3-047",
+      "title": "四拖一",
+      "category": "玩家黑话",
+      "characters": [
+        "打手",
+        "萌新"
+      ],
+      "context": "悬赏配队表达：四名打手带一人。",
+      "hook": "萌新还没按出技能，悬赏已结束。",
+      "shot": "四条伤害线同时爆发。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "打手",
+        "萌新"
+      ]
+    },
+    {
+      "id": "NMD3-048",
+      "title": "追梦2000龙血",
+      "category": "玩家黑话",
+      "characters": [
+        "玩家",
+        "商店"
+      ],
+      "context": "花龙血换随机SS图卷等行为被叫追梦，期待少见的高价值结果。",
+      "hook": "“今晚最后一把”，随后资源归零。",
+      "shot": "抽卡老虎机连闪→普通奖励。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "玩家",
+        "商店"
+      ]
+    },
+    {
+      "id": "NMD3-049",
+      "title": "打满S也要追梦",
+      "category": "玩家黑话",
+      "characters": [
+        "悬赏玩家"
+      ],
+      "context": "玩家攻略也把满S后继续打S、赌更高稀有奖励称为追梦。",
+      "hook": "刷了无数次，仍说“下一次一定”。",
+      "shot": "日历快速翻页。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "悬赏玩家"
+      ]
+    },
+    {
+      "id": "NMD3-050",
+      "title": "机甲师",
+      "category": "玩家黑话",
+      "characters": [
+        "高手",
+        "玩家"
+      ],
+      "context": "忍3社群以机甲指代较强账号、机甲师指代代练代肝操作者；不是官方称谓。",
+      "hook": "号的练度很高，开打却一秒撞墙。",
+      "shot": "驾驶舱操作风格+游戏角色。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "高手",
+        "玩家"
+      ]
+    },
+    {
+      "id": "NMD3-051",
+      "title": "献祭战术",
+      "category": "玩家黑话",
+      "characters": [
+        "双角色",
+        "3v3玩家"
+      ],
+      "context": "3v3中主动退场以便副角色接力输出的战术叫献祭。",
+      "hook": "解说喊献祭，主角以为是悲壮牺牲。",
+      "shot": "悲情慢镜头→副角色满技能登场。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "双角色",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-052",
+      "title": "红灯笼",
+      "category": "玩家黑话",
+      "characters": [
+        "3v3玩家"
+      ],
+      "context": "红灯笼等干扰卡牌在玩家攻略中被认为是常见脏卡。",
+      "hook": "Boss不打我，队友给我挂红灯笼。",
+      "shot": "弹幕密集时突然出现红灯笼。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-053",
+      "title": "黄灯笼扣钱",
+      "category": "玩家黑话",
+      "characters": [
+        "3v3玩家"
+      ],
+      "context": "玩家教程指出黄灯笼会造成资源损失。",
+      "hook": "“本局不掉血”，结算发现钱少了。",
+      "shot": "硬币掉落动画+心碎音效。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-054",
+      "title": "蓝灯笼扣能量",
+      "category": "玩家黑话",
+      "characters": [
+        "3v3玩家"
+      ],
+      "context": "玩家教程指出蓝灯笼会影响忍术能量。",
+      "hook": "大招刚要亮，蓝灯笼抢先出场。",
+      "shot": "能量条瞬间倒退。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-055",
+      "title": "令咒盾锁血",
+      "category": "玩家黑话",
+      "characters": [
+        "3v3玩家"
+      ],
+      "context": "攻略提到群体令咒盾可用于对手低血量阶段锁血。",
+      "hook": "眼看一刀就赢，结果被盾硬控了结局。",
+      "shot": "胜利倒计时突然倒带。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-056",
+      "title": "吃银果子也有代价",
+      "category": "玩家黑话",
+      "characters": [
+        "3v3玩家"
+      ],
+      "context": "玩家攻略指出银果子有增攻与易伤相关机制，属于历史攻略描述。",
+      "hook": "“攻击高了！”下一秒承伤也高了。",
+      "shot": "增益箭头和危险警报并排。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1408254469_1679578480532_13"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家黑话",
+        "3v3玩家"
+      ]
+    },
+    {
+      "id": "NMD3-057",
+      "title": "一拳表情对抽卡惨案",
+      "category": "二创灵感",
+      "characters": [
+        "小黑",
+        "洛青"
+      ],
+      "context": "将两个真实官方家族表情组合成原创对话式视频点子。",
+      "hook": "洛青吸欧气，小黑回复一拳把你打爆。",
+      "shot": "聊天气泡对喷，穿插抽卡画面。",
+      "sources": [
+        "https://game.xiaomi.com/viewpoint/1490972085_1675678352667_11"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "小黑",
+        "洛青"
+      ]
+    },
+    {
+      "id": "NMD3-058",
+      "title": "血影求职面试",
+      "category": "二创灵感",
+      "characters": [
+        "血影",
+        "隼白"
+      ],
+      "context": "把血影等待隼白的剧情扩写为面试搞笑段落，不是原作或传统名梗。",
+      "hook": "HR问特长，血影说“只打隼白”。",
+      "shot": "严肃面试镜头+反差字幕。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "血影",
+        "隼白"
+      ]
+    },
+    {
+      "id": "NMD3-059",
+      "title": "老板娘开抽卡心理辅导班",
+      "category": "二创灵感",
+      "characters": [
+        "老板娘",
+        "洛青",
+        "小黑"
+      ],
+      "context": "源于真实欧非讨论和商店角色设定的原创短剧构想。",
+      "hook": "开课第一句：不要看朋友的十连记录。",
+      "shot": "仿电视访谈，带动角色头像。",
+      "sources": [
+        "https://www.taptap.cn/moment/542801849653133819",
+        "https://www.pandadastudio.com/m/"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "老板娘",
+        "洛青",
+        "小黑"
+      ]
+    },
+    {
+      "id": "NMD3-060",
+      "title": "家族群战前动员",
+      "category": "二创灵感",
+      "characters": [
+        "族长",
+        "家族成员"
+      ],
+      "context": "从官方联赛趣事延伸的原创群聊戏剧脚本。",
+      "hook": "族长连发二十条语音，队员回复“收到”却没上线。",
+      "shot": "语音气泡雪崩，最后一人在线。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879",
+        "https://www.taptap.cn/moment/641722560974684950"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "族长",
+        "家族成员"
+      ]
+    },
+    {
+      "id": "NMD3-061",
+      "title": "隼白和血影互相找不到",
+      "category": "二创灵感",
+      "characters": [
+        "隼白",
+        "血影"
+      ],
+      "context": "将第三章角色关系借用为互相错过的循环喜剧。",
+      "hook": "你在竹叶寨我在忍神山，永远擦肩而过。",
+      "shot": "左右双分屏平行蒙太奇。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "隼白",
+        "血影"
+      ]
+    },
+    {
+      "id": "NMD3-062",
+      "title": "忍忍版疯狂星期四",
+      "category": "玩家跨圈梗",
+      "characters": [
+        "全角色"
+      ],
+      "context": "忍3社区也有人发疯狂星期四跨圈玩梗帖，这不是游戏原创梗。",
+      "hook": "小黑认真发出家族招募，文末竟是疯狂星期四。",
+      "shot": "一本正经公告字幕突然变脸。",
+      "sources": [
+        "https://www.taptap.cn/moment/216211983198848163"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家跨圈梗",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-063",
+      "title": "忍3梗图大合影",
+      "category": "玩家二创",
+      "characters": [
+        "全角色"
+      ],
+      "context": "TapTap已有玩家明确将“大合影”标作自制梗图第3期。",
+      "hook": "每位角色拿不同表情牌，最后一起合影。",
+      "shot": "定格群像配综艺花字。",
+      "sources": [
+        "https://www.taptap.cn/moment/653568272217671236"
+      ],
+      "evidence": "高",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家二创",
+        "全角色"
+      ]
+    },
+    {
+      "id": "NMD3-064",
+      "title": "小白到底是谁",
+      "category": "二创灵感",
+      "characters": [
+        "熊猫小白",
+        "开发组"
+      ],
+      "context": "熊猫小白既是角色，又与工作室形象有关，玩家也常用小白称呼开发方。",
+      "hook": "玩家怒喊“小白”，熊猫小白一脸茫然。",
+      "shot": "两个同名主体的错位对话。",
+      "sources": [
+        "https://www.pandadastudio.com/m/",
+        "https://www.taptap.cn/moment/542801849653133819"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "熊猫小白",
+        "开发组"
+      ]
+    },
+    {
+      "id": "NMD3-065",
+      "title": "技术好但卷不动",
+      "category": "玩家感慨",
+      "characters": [
+        "细数惭愧",
+        "玩家"
+      ],
+      "context": "忍3玩家直播录像中有“我已经卷不动啦”明确标题，可作情绪素材。",
+      "hook": "高手口称躺平，手却没停。",
+      "shot": "深夜高强度操作剪辑+疲惫字幕。",
+      "sources": [
+        "https://www.bilibili.com/video/BV1sQ4y1Y7FG"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家感慨",
+        "细数惭愧",
+        "玩家"
+      ]
+    },
+    {
+      "id": "NMD3-066",
+      "title": "联赛生死局",
+      "category": "玩家叙事",
+      "characters": [
+        "家族成员",
+        "族长"
+      ],
+      "context": "官方家族故事中有联赛绝地反击、头目生死局的记录。",
+      "hook": "族长先说随便打，最后全群屏住呼吸。",
+      "shot": "倒计时心跳+BGM戛然而止。",
+      "sources": [
+        "https://www.taptap.cn/moment/641722560974684950"
+      ],
+      "evidence": "中",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "玩家叙事",
+        "家族成员",
+        "族长"
+      ]
+    },
+    {
+      "id": "NMD3-067",
+      "title": "忍3校园版文科生",
+      "category": "二创灵感",
+      "characters": [
+        "琳",
+        "卫鲤"
+      ],
+      "context": "改编自官方收录的文理体三组对比作品的原创校园段落。",
+      "hook": "琳交的是论述题，卫鲤交的是刀法。",
+      "shot": "走廊长镜头→打斗特效。",
+      "sources": [
+        "https://www.taptap.cn/moment/652217348735895879"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "琳",
+        "卫鲤"
+      ]
+    },
+    {
+      "id": "NMD3-068",
+      "title": "忍界工作汇报",
+      "category": "二创灵感",
+      "characters": [
+        "隼白",
+        "血影",
+        "老板娘"
+      ],
+      "context": "经典职场模板与角色设定拼接，仅用于新创动画。",
+      "hook": "隼白汇报救援、血影汇报追杀、老板娘汇报营业额。",
+      "shot": "三人会议PPT逐页切换。",
+      "sources": [
+        "https://wiki.biligame.com/nmd3/%E4%B8%89%E7%AB%A0_%E8%BF%B7%E9%9B%BE%E8%BF%BD%E6%9D%80/%E9%9B%A8%E5%A4%9C%E8%A1%80%E5%BD%B1",
+        "https://www.pandadastudio.com/m/"
+      ],
+      "evidence": "创意",
+      "asset_status": "文本索引/未复制第三方视听素材",
+      "tags": [
+        "二创灵感",
+        "隼白",
+        "血影",
+        "老板娘"
+      ]
+    }
+  ]
+}
