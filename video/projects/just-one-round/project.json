@@ -58,5 +58,6 @@
       },
       "timeout_seconds": 3000
     }
-  }
+  },
+  "publish_pages": true
 }
