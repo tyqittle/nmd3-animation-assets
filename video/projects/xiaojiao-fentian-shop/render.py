@@ -19,11 +19,12 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[3]
-DURATION = 22.5
+DURATION = 37.0
 ASSETS = {
     "seller": ROOT / "assets/characters/xiaojiao_01.png",
     "buyer": ROOT / "assets/characters/xiaohei_01.png",
     "weapon": ROOT / "assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "bailian": ROOT / "assets/weapons/wiki/wiki_weapon_102_bailian.png",
     "location": ROOT / "assets/backgrounds/wallpaper_rooftop_01.jpg",
 }
 FONT_REG = [
@@ -37,14 +38,18 @@ FONT_BOLD = [
     "C:/Windows/Fonts/msyhbd.ttc",
 ]
 LINES = [
-    (0.7, "忍村街口，新开了一家兵器铺。", "zh-CN-YunyangNeural"),
-    (3.15, "老板，你这焚天，怎么卖这么贵？", "zh-CN-YunxiNeural"),
-    (5.65, "贵是贵了点，但是不烧心。", "zh-CN-XiaoxiaoNeural"),
-    (10.22, "行！那我试试！", "zh-CN-YunxiNeural"),
-    (15.45, "不是？你管这叫不烧心？！", "zh-CN-YunxiNeural"),
-    (18.0, "只烧铺子，不烧心。", "zh-CN-XiaoxiaoNeural"),
+    (0.65, "忍村新开了一家兵器铺。", "zh-CN-YunyangNeural"),
+    (3.25, "百炼便宜，先整一把！", "zh-CN-YunxiNeural"),
+    (6.4, "哎？这锤还得自己接？", "zh-CN-YunxiNeural"),
+    (10.75, "接到了！还得蓄力一秒半？", "zh-CN-YunxiNeural"),
+    (15.65, "我刚蓄完力，BOSS跑了！", "zh-CN-YunxiNeural"),
+    (19.4, "钱省了，人快烧心了。", "zh-CN-YunxiNeural"),
+    (21.8, "来试试焚天，两段都有短暂无敌。", "zh-CN-XiaoxiaoNeural"),
+    (25.5, "定身，重劈！这回顺手了！", "zh-CN-YunxiNeural"),
+    (28.7, "老板，贵是贵了点，但用着不烧心！", "zh-CN-YunxiNeural"),
+    (33.0, "做兵器，先把规矩立住。", "zh-CN-XiaoxiaoNeural"),
 ]
-BEATS = [0, 3.15, 5.65, 7.6, 10.2, 13.5, 14.55, 16.7, 19.8]
+BEATS = [0, 3.25, 6.4, 10.75, 15.65, 19.4, 21.8, 25.5, 28.7, 33.0]
 CREAM = (252, 232, 184)
 PAPER = (234, 209, 155)
 DARK = (17, 25, 32)
@@ -199,128 +204,170 @@ class Movie:
         self.rect(im,(30,1152,690,1227),(15,18,23,214),radius=14)
         self.drawtext(im,text,360,1190,29,(254,242,218))
 
-    def base_intro(self,im,t):
-        self.drawtext(im,"忍 村 街 口",360,115,27,PAPER)
-        pulse=spring(t/1.8)
-        self.character(im,"seller",370+16*math.sin(t*1.2),716+(1-pulse)*120,
-                       610*pulse+15,rot=2*math.sin(t*2))
-        if t>1.2:
-            self.character(im,"weapon",552,726,240,rot=math.sin(t*2)*6)
-        self.drawtext(im,"新开一家兵器铺",360,1030,38,CREAM)
-        if t>2.0:self.drawtext(im,"据说卖的都是好东西。",360,1087,28,PAPER)
+    def wooden_sign(self,im,label,x,y,color=(232,199,139),subtext=None):
+        self.rect(im,(x-170,y-38,x+170,y+52),(44,32,29,242),outline=color,width=4,radius=9)
+        self.drawtext(im,label,x,y,50,color,stroke=1)
+        if subtext:self.drawtext(im,subtext,x,y+79,27,PAPER)
 
-    def bargaining(self,im,t):
-        local=t-3.15
-        self.character(im,"buyer",164+max(0,1-local*2)*-90,696+math.sin(t*5)*4,456,
-                       flip=False,rot=2*math.sin(t*3))
-        self.character(im,"seller",565,670+math.sin(t*2.6)*4,535,
-                       flip=True,rot=-2*math.sin(t*2))
-        self.character(im,"weapon",369,688+8*math.sin(t*3),220,rot=math.sin(t*1.2)*9)
-        if t<5.65:
-            self.subtitle(im,"这焚天，怎么卖这么贵？","小黑")
-        else:
-            self.subtitle(im,"贵是贵了点，但不烧心。","小椒")
-        if t>6.45:
-            self.drawtext(im,"童叟无欺",365,505,34,GOLD)
+    def gripe_card(self,im,index,word):
+        self.rect(im,(26,94,694,197),(21,21,23,238),outline=(210,97,67,215),width=3,radius=12)
+        self.drawtext(im,"百炼烧心体验 "+str(index)+"/3",360,122,31,(255,144,111))
+        self.drawtext(im,word,360,172,37,CREAM)
 
-    def product(self,im,t):
-        local=t-7.6
+    def shard(self,im,x,y,tint=(246,158,72),r=20):
         d=ImageDraw.Draw(im,"RGBA")
-        im.alpha_composite(Image.new("RGBA",im.size,(30,18,15,170)))
-        for j in range(5):
-            rad=165+j*33+math.sin(t*2+j)*7
-            d.arc((self.z(360-rad),self.z(640-rad),self.z(360+rad),self.z(640+rad)),
-                  start=(t*80+j*49)%360,end=(t*80+j*49+172)%360,
-                  fill=(246,148,57,170),width=self.z(3))
-        self.character(im,"weapon",360,648,620*(.74+.26*smooth(local/1.0)),
-                       rot=-9+7*math.sin(t*2.9))
-        self.drawtext(im,"焚 天",360,212,116,CREAM,stroke=3)
-        self.drawtext(im,"限量神兵 · 品相上乘",360,337,34,PAPER)
-        self.drawtext(im,"老板口头保证：不烧心",360,1068,32,GOLD)
+        X,Y=self.z(x),self.z(y)
+        rad=self.z(r)
+        d.ellipse((X-rad,Y-rad,X+rad,Y+rad),fill=tint+(100,),
+                  outline=tint+(230,),width=self.z(3))
+        d.ellipse((X-rad//3,Y-rad//3,X+rad//3,Y+rad//3),fill=(255,252,222,190))
 
-    def demo(self,im,t):
-        local=t-10.2
-        self.character(im,"buyer",195,775,570,rot=3*math.sin(t*7))
-        self.character(im,"seller",575,757,405,flip=True,rot=5)
-        self.drawtext(im,"现场验货",360,122,65,CREAM)
-        if local<1.25:
-            self.character(im,"weapon",230,535,230,rot=-30+15*local)
-            self.subtitle(im,"行！那我试试！","小黑")
-        else:
-            # Rotating prop plus drawn fire trail follows the actual weapon.
-            p=cap((local-1.25)/2.55)
-            x=200+460*smooth(p)
-            y=550-180*math.sin(p*math.pi)
-            d=ImageDraw.Draw(im,"RGBA")
-            for j in range(16):
-                u=cap(p-j*.019)
-                xx=200+460*smooth(u)
-                yy=550-180*math.sin(u*math.pi)
-                r=8+j*.95
-                d.ellipse((self.z(xx-r),self.z(yy-r),self.z(xx+r),self.z(yy+r)),
-                          fill=(255,max(33,190-j*9),39,max(0,210-j*12)))
-            self.character(im,"weapon",x,y,290,rot=48+190*p)
-            self.drawtext(im,"等等！",360,1124,64,GOLD)
-        if local>2.65:
-            n=cap((local-2.65)/.65)
-            d.polygon([(0,self.z(1050)),(self.z(720),self.z(970)),
-                       (self.z(720),self.z(1280)),(0,self.z(1280))],
-                       fill=(255,79,23,int(225*n)))
-            self.drawtext(im,"轰！！",350,540,120,(255,220,120),stroke=4)
+    def street_arrival(self,im,t):
+        self.drawtext(im,"忍 村 兵 器 街",360,111,32,PAPER)
+        self.wooden_sign(im,"百 炼",215,445,(221,137,112),subtext="便宜点儿")
+        self.wooden_sign(im,"焚 天",555,445,(241,199,105),subtext="贵一些")
+        self.character(im,"bailian",205,660,235,rot=11*math.sin(t*3))
+        self.character(im,"weapon",542,668,235,rot=8*math.sin(t*3))
+        self.character(im,"buyer",320,995,310,rot=math.sin(t*3)*5)
+        self.character(im,"seller",610,974,290,flip=True)
+        self.drawtext(im,"小黑：先看看谁家便宜",360,1133,29,PAPER)
+        self.drawtext(im,"（忍3二创 · 虚构武器街）",360,1197,21,PAPER)
 
-    def aftermath(self,im,t):
-        # Burned storefront. Music hard stops, desaturated pause.
-        self.rect(im,(0,0,720,1280),(9,10,12,160))
-        self.rect(im,(110,258,610,365),(17,19,22,250),outline=(74,58,47,230),width=5)
-        self.drawtext(im,"小 椒 兵 器 铺",360,306,52,(134,104,77))
+    def cheap_stall(self,im,t):
+        p=t-3.25
+        self.character(im,"buyer",170,799+math.sin(t*9)*8,470,rot=4*math.sin(t*5))
+        self.character(im,"bailian",515,676,405,rot=10*math.sin(t*3),)
+        self.drawtext(im,"便 宜，先 上！",360,150,65,CREAM)
+        self.rect(im,(370,940,671,1008),(53,34,29,245),outline=(255,191,95,220),width=2,radius=10)
+        self.drawtext(im,"老板：卖出一把",522,975,28,GOLD)
+        self.subtitle(im,"百炼便宜，先整一把！","小黑")
+        if p>2:
+            self.drawtext(im,"*本段价格对比为剧情设定",355,1058,23,PAPER)
+
+    def missed_catch(self,im,t):
+        p=cap((t-6.4)/4.2)
+        self.gripe_card(im,1,"非双焰角色得自己接锤")
+        self.character(im,"buyer",185,794,560,rot=-8+6*math.sin(t*4))
+        xx=270+550*smooth(p); yy=480+390*smooth(p)
         d=ImageDraw.Draw(im,"RGBA")
-        for i in range(20):
-            x=i*49-65+int(12*math.sin(t+i))
-            y=1020+(i%4)*21
-            d.polygon([(self.z(x),self.z(y)),(self.z(x+24),self.z(y-12)),
-                       (self.z(x+54),self.z(y+29)),(self.z(x-3),self.z(y+38))],
-                       fill=(17,16,16,225))
-        self.character(im,"seller",533,687,480,flip=True,opacity=195)
-        self.character(im,"buyer",179,710,425,opacity=210)
-        self.drawtext(im,"……",360,1017,105,(220,215,203))
+        for j in range(14):
+            z=cap(p-j*.023)
+            tx=270+550*smooth(z);ty=480+390*smooth(z)
+            rr=max(3,18-j)
+            d.ellipse((self.z(tx-rr),self.z(ty-rr),self.z(tx+rr),self.z(ty+rr)),
+                      fill=(255,187,95,max(8,160-j*10)))
+        self.character(im,"bailian",xx,yy,275,rot=50+170*p)
+        self.drawtext(im,"等等！锤！",360,1060,59,(250,169,125))
+        self.subtitle(im,"哎？这锤还得自己接？","小黑")
+        self.drawtext(im,"*双焰·小椒使用百炼可自动接回",354,245,22,PAPER)
 
-    def punchline(self,im,t):
-        self.rect(im,(0,0,720,1280),(23,24,28,80))
-        self.character(im,"buyer",192,700,495,rot=-5+2*math.sin(t*9))
-        self.character(im,"seller",545,674,525,flip=True,rot=math.sin(t*2))
-        self.drawtext(im,"什么？！",370,452,74,GOLD)
-        if t<18.0:
-            self.subtitle(im,"你管这叫不烧心？！","小黑")
-        else:
-            self.subtitle(im,"只烧铺子，不烧心。","小椒")
-            if t>18.8:self.drawtext(im,"只 烧 铺 子",360,945,62,CREAM)
+    def timed_charge(self,im,t):
+        p=cap((t-10.75)/4.75)
+        self.gripe_card(im,2,"回锤后得站稳蓄力1.5秒")
+        self.character(im,"buyer",205,829,526,rot=0)
+        self.character(im,"bailian",390,715,280,rot=-26)
+        self.drawtext(im,"蓄 力 中",352,372,48,CREAM)
+        self.rect(im,(160,429,560,466),(32,33,37,240),outline=PAPER,width=2,radius=6)
+        self.rect(im,(165,434,165+390*min(1,p*1.2),461),(232,139,75,240),radius=4)
+        self.drawtext(im,"1.5 秒",352,529,83,GOLD)
+        self.drawtext(im,"（高伤蓄力条件）",352,626,28,PAPER)
+        self.subtitle(im,"接到了！还得蓄力一秒半？","小黑")
+        if p>.76:
+            self.drawtext(im,"BOSS：趁你蓄力，先走了",352,1020,30,(249,159,121))
 
-    def endcard(self,im,t):
-        self.rect(im,(0,0,720,1280),(10,14,17,229))
-        self.drawtext(im,"只烧铺子",360,430,105,CREAM,stroke=2)
-        self.drawtext(im,"不烧心",360,572,120,GOLD,stroke=3)
-        self.character(im,"weapon",360,835,280,rot=10*math.sin(t*4))
-        self.drawtext(im,"售后说明：本店不包重建。",360,1065,30,CREAM)
-        self.drawtext(im,"忍者必须死3 · 玩家脑洞二创",360,1195,22,PAPER)
+    def target_gone(self,im,t):
+        p=cap((t-15.65)/3.6)
+        self.gripe_card(im,3,"前方出手，得看Boss站位")
+        self.character(im,"buyer",178,856,475,rot=7*math.sin(t*4))
+        self.character(im,"bailian",270+520*p,632,380,rot=140*p)
+        d=ImageDraw.Draw(im,"RGBA")
+        for j in range(22):
+            z=cap(p-j*.016)
+            xx=270+520*z
+            yy=640-24*math.sin(z*4)
+            rr=5+j%5
+            d.ellipse((self.z(xx-rr),self.z(yy-rr),self.z(xx+rr),self.z(yy+rr)),
+                      fill=(250,157,61,max(8,200-j*9)))
+        self.drawtext(im,"BOSS：已离开直线攻击区域",360,386,27,(235,173,150))
+        self.drawtext(im,"空 了 ！",360,973,87,(255,132,97))
+        self.subtitle(im,"我刚蓄完力，BOSS跑了！","小黑")
+        self.drawtext(im,"*情景夸张演绎，非所有Boss实战结果",355,1058,22,PAPER)
+
+    def burnt_heart(self,im,t):
+        self.rect(im,(0,0,720,1280),(34,19,25,140))
+        self.character(im,"buyer",235,774,535,rot=-4)
+        self.character(im,"bailian",575,777,300,rot=-40,opacity=170)
+        self.drawtext(im,"便 宜 是 便 宜",360,326,56,PAPER)
+        self.drawtext(im,"但是真烧心！",360,460,74,(252,123,100),stroke=2)
+        self.subtitle(im,"钱省了，人快烧心了。","小黑")
+        self.drawtext(im,"*百炼有强控与伤害，烦的是操作节奏",355,1032,24,PAPER)
+
+    def fentian_entry(self,im,t):
+        p=smooth((t-21.8)/2.2)
+        self.rect(im,(0,0,720,1280),(49,35,20,120))
+        self.character(im,"seller",141,778,455,flip=True,rot=math.sin(t*2)*3)
+        self.character(im,"weapon",450,686,620*(.65+.35*p),rot=14*math.sin(t*2))
+        self.drawtext(im,"焚 天",360,230,102,(255,224,145),stroke=2)
+        self.drawtext(im,"两段都有短暂无敌",360,336,36,CREAM)
+        self.subtitle(im,"来试试焚天，两段都有短暂无敌。","小椒")
+        self.drawtext(im,"*无敌效果为技能释放期间短暂触发",356,1034,22,PAPER)
+
+    def fentian_combo(self,im,t):
+        p=cap((t-25.5)/3.2)
+        self.rect(im,(0,0,720,1280),(25,26,18,85))
+        self.character(im,"buyer",155,842,400)
+        # Spell arcs and real weapon sprite are animated separately.
+        d=ImageDraw.Draw(im,"RGBA")
+        for j in range(7):
+            radius=112+j*37+9*math.sin(t*5+j)
+            d.arc((self.z(425-radius),self.z(700-radius),self.z(425+radius),self.z(700+radius)),
+                  (t*130+j*35)%360,(t*130+j*35+140)%360,fill=(255,172,64,195),
+                  width=self.z(max(2,7-j//2)))
+        self.character(im,"weapon",425,700,530,rot=120*math.sin(p*math.pi))
+        for i in range(12):
+            x=150+i*39
+            y=580+math.sin(i+t*8)*110
+            self.shard(im,x,y,r=4+i%6)
+        self.drawtext(im,"定 身 → 击 飞 → 重 劈 → 戳 刺",360,210,35,(255,235,194))
+        self.drawtext(im,"这次不慌！",360,1060,61,(255,216,141))
+        self.subtitle(im,"定身，重劈！这回顺手了！","小黑")
+
+    def payoff(self,im,t):
+        self.character(im,"seller",567,766,550,flip=True,rot=2*math.sin(t*2))
+        self.character(im,"buyer",166,799,490,rot=2*math.sin(t*4))
+        self.character(im,"weapon",356,722,270,rot=8*math.sin(t*3))
+        self.drawtext(im,"贵 是 贵 了 点",360,218,70,CREAM)
+        self.drawtext(im,"但用着不烧心！",360,346,69,GOLD,stroke=2)
+        self.subtitle(im,"老板，贵是贵了点，但用着不烧心！","小黑")
+
+    def moral_end(self,im,t):
+        p=smooth((t-33.0)/2.4)
+        self.rect(im,(0,0,720,1280),(15,19,23,int(210*p+40)))
+        self.character(im,"seller",355,750,620,rot=2*math.sin(t*4))
+        self.drawtext(im,"规 矩 得 立 住",360,248,62,GOLD,stroke=2)
+        self.drawtext(im,"忍 忍 才 能 少 遭 罪",360,352,43,CREAM)
+        self.subtitle(im,"做兵器，先把规矩立住。","小椒")
+        self.drawtext(im,"百炼 ≠ 废武器，区别在使用机制与操作习惯",360,1045,21,PAPER)
+        self.drawtext(im,"数据依据：忍3官方武器介绍 / BWIKI",360,1096,23,PAPER)
+        self.drawtext(im,"非官方玩家二创 · 非真实价格/伤害排行",360,1240,20,PAPER)
 
     def frame(self,t):
-        if t>=19.8:
-            im=Image.new("RGBA",(self.w,self.h),(15,19,23,255))
-            self.endcard(im,t)
-        else:
-            im=self.shell(t,night=t>=13.5)
-            if t<3.15:self.base_intro(im,t)
-            elif t<7.6:self.bargaining(im,t)
-            elif t<10.2:self.product(im,t)
-            elif t<14.55:self.demo(im,t)
-            elif t<16.7:self.aftermath(im,t)
-            else:self.punchline(im,t)
-        # brief editorial flash cuts
+        im=self.shell(t,night=t>=15.65 and t<21.8)
+        if t<3.25:self.street_arrival(im,t)
+        elif t<6.4:self.cheap_stall(im,t)
+        elif t<10.75:self.missed_catch(im,t)
+        elif t<15.65:self.timed_charge(im,t)
+        elif t<19.4:self.target_gone(im,t)
+        elif t<21.8:self.burnt_heart(im,t)
+        elif t<25.5:self.fentian_entry(im,t)
+        elif t<28.7:self.fentian_combo(im,t)
+        elif t<33.0:self.payoff(im,t)
+        else:self.moral_end(im,t)
         for a in BEATS[1:]:
             delta=t-a
-            if 0<=delta<.07:
-                self.rect(im,(0,0,720,1280),(255,238,174,int(130*(1-delta/.07))))
-        self.vignette(im,70)
+            if 0<=delta<.075:
+                self.rect(im,(0,0,720,1280),(255,239,176,int(110*(1-delta/.075))))
+        self.vignette(im,75)
         return im.convert("RGB")
 
 def save_wave(dest,data,sr):
@@ -352,7 +399,7 @@ def soundtrack(dest,secs,voice=True):
     notes=[196,220,261.6,293.66,329.63,392]
     for i in range(math.ceil(secs*bpm*2)+1):
         at=i/(bpm*2)
-        if at>=secs or 14.55<=at<16.7:continue
+        if at>=secs or 19.4<=at<21.8:continue
         if i%2==0:add(note(66,.25,.13,"kick"),at)
         if i%2==1:
             n=rng.standard_normal(int(sr*.052)).astype(np.float32)
@@ -360,9 +407,11 @@ def soundtrack(dest,secs,voice=True):
             add(n,at)
         if i%4 in (0,2):add(note(notes[(i//3)%6],.40,.047),at)
     # Hand-made sound effects; no third-party songs or clips.
-    for i,(at,f,dur,v) in enumerate([(3.15,460,.18,.08),(7.6,680,.44,.09),
-                                    (10.2,370,.17,.08),(13.8,76,.88,.22),
-                                    (16.7,280,.12,.10),(19.8,820,.65,.10)]):
+    for i,(at,f,dur,v) in enumerate([(3.25,460,.18,.08),(6.4,680,.44,.09),
+                                    (10.75,370,.17,.08),(15.65,76,.88,.22),
+                                    (19.4,280,.12,.10),(21.8,820,.65,.10),
+                                    (25.5,920,.45,.12),(28.7,690,.20,.06),
+                                    (33.0,540,.3,.10)]):
         if at<secs:add(note(f,dur,v),at)
     narration=[]
     errors=[]
@@ -396,7 +445,7 @@ def soundtrack(dest,secs,voice=True):
                         FileNotFoundError) as e:
                     errors.append({"text":text,"error":str(e)[:160]})
     # One post-fire beat of comic silence
-    l=int(14.55*sr);r=min(count,int(16.6*sr))
+    l=int(19.4*sr);r=min(count,int(21.7*sr))
     if r>l:audio[l:r]*=.12
     mx=float(np.max(np.abs(audio)))
     if mx>.96:audio*=.96/mx
@@ -434,7 +483,7 @@ def main():
             ff.kill()
             raise
     report={
-        "title":"小椒卖焚天：贵是贵了点，但不烧心",
+        "title":"小椒卖焚天：贵是贵了点，但不烧心（百炼对比版）",
         "actual_dimensions":[mv.w,mv.h],
         "fps":mv.fps,"duration":seconds,
         "reference_art":[str(p.relative_to(ROOT)) for p in ASSETS.values()],
@@ -443,6 +492,7 @@ def main():
         "audio_has_music":True,
         "voice_success":len(narration)==len(LINES) if not args.preview else None,
         "copyright":"非官方原创恶搞；第三方游戏素材未取得另行商用授权",
+        "comparative_disclaimer":"百炼的非双焰接锤与1.5秒蓄力为机制事实；价格关系为虚构剧情；不声称百炼客观伤害低于焚天",
     }
     (output.parent/(output.stem+"-report.json")).write_text(
         json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
