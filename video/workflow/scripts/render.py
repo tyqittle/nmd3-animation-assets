@@ -82,14 +82,16 @@ def main():
         box(d,(31,45,402,96),(15,25,37,240),(184,206,218,145),6)
         text(d,"忍 村 深 渊 · 家 族 语 音",55,70,18)
         if s["kind"] in ("intro","outro"):
-            cast=["xiaohei","cangya","ali","lin","hayabusa"]
-            for j,k in enumerate(cast):place(c,k,145+245*j,675,390,t,180)
+            cast=list(people)[:5]
+            for j,k in enumerate(cast):
+                place(c,k,640+(j-(len(cast)-1)/2)*245,675,390,t,180)
             d=ImageDraw.Draw(c,"RGBA")
             box(d,(135,148,1145,510),(11,17,27,233),(237,194,138,200),14,3)
             text(d,s["lines"][0],640,235,62,"#F8E5CA","mm")
             for j,l in enumerate(s["lines"][1:]):text(d,l,640,353+j*70,36 if j else 44,"#FFDEAE","mm")
         elif s["kind"]=="system":
-            place(c,"ali",980,671,495,t,190,math.sin(t*3)*65)
+            actor=s.get("actor") or ("ali" if "ali" in people else next(iter(people)))
+            place(c,actor,980,671,495,t,190,math.sin(t*3)*65)
             d=ImageDraw.Draw(c,"RGBA")
             box(d,(190,233,1090,510),(34,25,40,244),(255,115,126,230),14,4)
             text(d,s["lines"][0],640,325,62,"#FFB8B3","mm")
