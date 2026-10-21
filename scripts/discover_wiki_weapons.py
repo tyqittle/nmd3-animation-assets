@@ -8,10 +8,26 @@ import hashlib, json, re, time
 from io import BytesIO
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from urllib import parse
+from urllib import parse, request
 from bs4 import BeautifulSoup
 from PIL import Image
-from discover_wiki_art import get, original_image_url
+from discover_wiki_art import original_image_url
+
+# BWIKI displays a generic WuqiBG ring BEFORE the actual weapon. Never index it.
+INVALID_SHARED_BG = 'https://patchwiki.biligame.com/images/nmd3/9/98/qt7fjkkslu3cxkr4n9p28kv12cwcihz.png'
+
+
+def get(url, referer=None, timeout=17, max_bytes=12*1024*1024):
+    safe=parse.quote(url,safe=':/?&=%+#')
+    headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+             'Accept':'image/avif,image/webp,image/apng,image/png,image/*;q=0.8,text/html;q=0.7,*/*;q=0.5',
+             'Accept-Language':'zh-CN,zh;q=0.9,en;q=0.7',
+             'Referer':'https://wiki.biligame.com/nmd3/'}
+    with request.urlopen(request.Request(safe,headers=headers),timeout=timeout) as response:
+        raw=response.read(max_bytes+1)
+        if len(raw)>max_bytes:raise ValueError('Response exceeds maximum bytes')
+        return raw
+
 
 ROOT=Path(__file__).resolve().parents[1]
 CATALOG=ROOT/"catalog/assets.json"
@@ -32,12 +48,19 @@ def options(html,name):
         if alt not in valid:
             continue
         for attr in ("data-src","data-original","data-lazy-src","src","data-actualsrc"):
-            url=original_image_url(im.get(attr))
-            if url and url not in result:
+            raw=im.get(attr)
+            # The ring is labeled as the weapon in the alt attribute but is NOT artwork.
+            if raw and 'wuqibg.' in parse.unquote(raw).lower():
+                continue
+            url=original_image_url(raw)
+            if url and url!=INVALID_SHARED_BG and url not in result:
                 result.append(url)
         if im.parent and im.parent.name=="a":
-            url=original_image_url(im.parent.get("href"))
-            if url and url not in result:
+            raw=im.parent.get('href')
+            if raw and 'wuqibg.' in parse.unquote(raw).lower():
+                continue
+            url=original_image_url(raw)
+            if url and url!=INVALID_SHARED_BG and url not in result:
                 result.insert(0,url)
     return result[:4]
 
@@ -74,6 +97,7 @@ def main():
     doc=json.loads(CATALOG.read_text("utf-8"))
     targets=json.loads(TARGETS.read_text("utf-8"))["targets"]
     ids={a["id"] for a in doc["assets"]}
+    by_id={a["id"]:a for a in doc["assets"]}
     urls={a.get("image_url") for a in doc["assets"]}
     hashes={a.get("sha256") for a in doc["assets"] if a.get("sha256")}
     report=[]; added=[]
@@ -82,20 +106,23 @@ def main():
         for fut in as_completed(futures):
             t=futures[fut]; x=fut.result()
             if x["status"]!="ready":
-                report.append(x);print("SKIP",t["name"],x["status"],flush=True);continue
+                report.append(x);print("SKIP",t["name"],x["status"],x.get("error",x.get("last_image_error","")),flush=True);continue
             aid="wiki_weapon_"+t["slug"]
-            if aid in ids or x["image_url"] in urls or x["sha256"] in hashes:
+            previous=by_id.get(aid)
+            repairing=previous is not None and previous.get("image_url")==INVALID_SHARED_BG
+            if ((aid in ids and not repairing) or
+                x["image_url"] in urls or x["sha256"] in hashes):
                 report.append({k:v for k,v in x.items() if k!="raw"}|{"status":"duplicate"})
-                print("DUP",t["name"],flush=True);continue
+                print("DUP",t["name"],x["image_url"],flush=True);continue
             out=f"assets/weapons/wiki/{aid}.{x['extension']}"
             path=ROOT/out;path.parent.mkdir(parents=True,exist_ok=True)
             path.write_bytes(x["raw"])
-            doc["assets"].append({
+            info={
                 "id":aid,"name":t["name"],"category":"weapons",
                 "subcategory":t.get("asset_type","weapon_art"),
                 "weapon_family":t.get("weapon_family",t["name"]),
                 "variant_kind":"appearance" if t.get("asset_type")=="weapon_appearance" else "original",
-                "classification_source":"wiki_target_metadata", "visual_review":"pending",
+                "classification_source":"wiki_labeled_weapon_image", "visual_review":"pending",
                 "review_status":"categorized",
                 "image_url":x["image_url"],
                 "source_page":x["source_page"],"local_path":out,
@@ -104,7 +131,13 @@ def main():
                 "animation_use":"prop_layer" if x["has_alpha"] else "weapon_reference_only",
                 "quality_tier":"standard_weapon" if x["width"]>=450 else "reference_low_res",
                 "width":x["width"],"height":x["height"],"has_alpha":x["has_alpha"],
-                "bytes":x["bytes"],"sha256":x["sha256"]})
+                "bytes":x["bytes"],"sha256":x["sha256"]}
+            if repairing:
+                # Replace only the confirmed mislabeled circular UI background record.
+                previous.update(info)
+                print("REPAIRED WuqiBG as",t["name"],flush=True)
+            else:
+                doc["assets"].append(info)
             ids.add(aid);urls.add(x["image_url"]);hashes.add(x["sha256"]);added.append(t["name"])
             report.append({k:v for k,v in x.items() if k!="raw"})
             print("SAVED",t["name"],x["width"],x["height"],flush=True)
