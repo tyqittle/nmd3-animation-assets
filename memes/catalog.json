@@ -94,6 +94,31 @@
       "title": "忍三词汇问答讨论",
       "url": "https://www.douyin.com/video/7210456169909914880",
       "kind": "玩家讨论"
+    },
+    {
+      "title": "忍3：猫太百货角色梗文案示例",
+      "url": "https://www.taptap.cn/moment/725412431102214392",
+      "kind": "玩家二创"
+    },
+    {
+      "title": "新玩家因血影入坑及养成体验",
+      "url": "https://www.taptap.cn/moment/822917950678765129",
+      "kind": "个人玩家讨论"
+    },
+    {
+      "title": "忍3社区：疯狂星期四跨圈话题",
+      "url": "https://www.taptap.cn/moment/220332494610760817",
+      "kind": "玩家论坛"
+    },
+    {
+      "title": "忍三主播：卷不动直播录像",
+      "url": "https://www.bilibili.com/video/BV1Kb4y1E7oG/",
+      "kind": "玩家直播"
+    },
+    {
+      "title": "角色银枭相关设定梳理",
+      "url": "https://zh.wikipedia.org/wiki/%E5%BF%8D%E8%80%85%E5%BF%85%E9%A0%88%E6%AD%BB3",
+      "kind": "百科汇编"
     }
   ],
   "items": [
@@ -795,11 +820,11 @@
         "银枭",
         "小夜"
       ],
-      "context": "角色介绍记载银枭外表冷酷、对妹妹格外溺爱。",
+      "context": "人物设定汇编记载银枭外表冷酷、对妹妹小夜很关心；这条是性格反差二创切入点。",
       "hook": "别人面前冷酷队长，小夜面前超热情哥哥。",
       "shot": "同一角色眼神/配乐硬切。",
       "sources": [
-        "https://www.pandadastudio.com/m/"
+        "https://zh.wikipedia.org/wiki/%E5%BF%8D%E8%80%85%E5%BF%85%E9%A0%88%E6%AD%BB3"
       ],
       "evidence": "高",
       "asset_status": "文本索引/未复制第三方视听素材",
@@ -837,11 +862,11 @@
       "characters": [
         "猫太老板娘"
       ],
-      "context": "社区角色梗文案提到老板娘的猫太百货和夸张带货形象。",
+      "context": "社区玩家借用老板娘商店形象制作夸张带货台词；不是官方角色原话。",
       "hook": "“今天的商品：想赢的三三队友。”",
       "shot": "直播带货综艺字幕。",
       "sources": [
-        "https://www.pandadastudio.com/m/"
+        "https://www.taptap.cn/moment/725412431102214392"
       ],
       "evidence": "中",
       "asset_status": "文本索引/未复制第三方视听素材",
@@ -857,12 +882,12 @@
       "characters": [
         "极刃血影"
       ],
-      "context": "新玩家讨论明确描述被血影外形吸引入坑、却对养成系统不满；个体体验不能推广到全部玩家。",
+      "context": "一则新玩家明确表示因血影外形入坑、又对养成系统不满；仅代表其个人体验，不泛化为玩家群体。",
       "hook": "冲着血影立绘进入游戏，第一眼看到养成清单。",
       "shot": "帅气人物海报→密集UI贴图。",
       "sources": [
-        "https://wiki.biligame.com/nmd3/%E5%BF%8D%E8%80%85%E6%A1%A3%E6%A1%88",
-        "https://www.taptap.cn/moment/542801849653133819"
+        "https://www.taptap.cn/moment/822917950678765129",
+        "https://wiki.biligame.com/nmd3/%E5%BF%8D%E8%80%85%E6%A1%A3%E6%A1%88"
       ],
       "evidence": "中",
       "asset_status": "文本索引/未复制第三方视听素材",
@@ -1413,7 +1438,7 @@
       "hook": "小黑认真发出家族招募，文末竟是疯狂星期四。",
       "shot": "一本正经公告字幕突然变脸。",
       "sources": [
-        "https://www.taptap.cn/moment/216211983198848163"
+        "https://www.taptap.cn/moment/220332494610760817"
       ],
       "evidence": "中",
       "asset_status": "文本索引/未复制第三方视听素材",
@@ -1477,7 +1502,7 @@
       "hook": "高手口称躺平，手却没停。",
       "shot": "深夜高强度操作剪辑+疲惫字幕。",
       "sources": [
-        "https://www.bilibili.com/video/BV1sQ4y1Y7FG"
+        "https://www.bilibili.com/video/BV1Kb4y1E7oG/"
       ],
       "evidence": "中",
       "asset_status": "文本索引/未复制第三方视听素材",
