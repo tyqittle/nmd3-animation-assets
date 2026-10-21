@@ -22,8 +22,9 @@ def main():
     ap.add_argument("--recipe",required=True)
     ap.add_argument("--output",required=True)
     ap.add_argument("--quality",choices=("draft","final"),default="final")
-    ap.add_argument("--tts",choices=("off","placeholder"),default="placeholder")
+    ap.add_argument("--tts",choices=("off","placeholder","edge"),default="edge")
     ap.add_argument("--seconds",type=float,default=None)
+    ap.add_argument("--audio-report",default=None,help="Output JSON report for aligned speech")
     args=ap.parse_args()
     ep=load(args.recipe)
     W,H,F=(640,360,24) if args.quality=="draft" else (1280,720,30)
@@ -124,7 +125,9 @@ def main():
         return c.convert("RGB")
     output=Path(args.output);output.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
-        track=Path(tmp)/"track.wav";make_audio(ep,track,seconds,args.tts)
+        track=Path(tmp)/"track.wav"
+        report_path=args.audio_report or str(output.with_name(output.stem+"-audio-report.json"))
+        make_audio(ep,track,seconds,args.tts,report_path=report_path)
         args_ff=["ffmpeg","-y","-hide_banner","-loglevel","error","-f","rawvideo",
              "-pixel_format","rgb24","-video_size",f"{W}x{H}","-framerate",str(F),
              "-i","pipe:0","-i",str(track),"-c:v","libx264","-preset","veryfast",
