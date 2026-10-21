@@ -25,6 +25,7 @@ ASSETS = {
     "buyer": ROOT / "assets/characters/xiaohei_01.png",
     "weapon": ROOT / "assets/weapons/wiki/wiki_weapon_101_fentian.png",
     "bailian": ROOT / "assets/weapons/wiki/wiki_weapon_102_bailian.png",
+    "boss": ROOT / "assets/bosses/wiki/wiki_boss_haigu_sishen.png",
     "location": ROOT / "assets/backgrounds/wallpaper_rooftop_01.jpg",
 }
 FONT_REG = [
@@ -279,6 +280,8 @@ class Movie:
         p=cap((t-15.65)/3.6)
         self.gripe_card(im,3,"前方出手，得看Boss站位")
         self.character(im,"buyer",178,856,475,rot=7*math.sin(t*4))
+        # Boss visibly exits the forward attack line, explaining this comic whiff.
+        self.character(im,"boss",575+470*smooth(p),674,450,opacity=235)
         self.character(im,"bailian",270+520*p,632,380,rot=140*p)
         d=ImageDraw.Draw(im,"RGBA")
         for j in range(22):
@@ -316,6 +319,7 @@ class Movie:
         p=cap((t-25.5)/3.2)
         self.rect(im,(0,0,720,1280),(25,26,18,85))
         self.character(im,"buyer",155,842,400)
+        self.character(im,"boss",598,666,410,opacity=190)
         # Spell arcs and real weapon sprite are animated separately.
         d=ImageDraw.Draw(im,"RGBA")
         for j in range(7):
@@ -333,6 +337,9 @@ class Movie:
         self.subtitle(im,"定身，重劈！这回顺手了！","小黑")
 
     def payoff(self,im,t):
+        # Cover the permanent storefront sign before laying out the payoff text:
+        # it must NEVER fight visually with the meme punchline.
+        self.rect(im,(19,140,701,440),(20,22,26,250),outline=(232,177,96,230),width=3,radius=16)
         self.character(im,"seller",567,766,550,flip=True,rot=2*math.sin(t*2))
         self.character(im,"buyer",166,799,490,rot=2*math.sin(t*4))
         self.character(im,"weapon",356,722,270,rot=8*math.sin(t*3))
