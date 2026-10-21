@@ -128,14 +128,16 @@ def main():
             (ROOT/path).write_bytes(row["data"])
             catalog["assets"].append({
                 "id":id,"name":name,"category":"characters",
-                "subcategory":"skin_illustration","character":t.get("character",name),
+                "subcategory":t.get("asset_type","unreviewed_portrait"),"character":t.get("character","待核对"),
                 "image_url":row["image_url"],"source_page":row["source_page"],
                 "local_path":path,"download_status":"downloaded",
                 "width":row["width"],"height":row["height"],"sha256":row["sha256"],
                 "bytes":row["bytes"],"has_alpha":row["has_alpha"],
                 "source_verified":"downloaded_from_wiki_page",
                 "copyright":"third_party_review_needed","animation_use":"character_layer",
-                "quality_tier":"reference_low_res" if row["height"]<700 else "standard_character"
+                "quality_tier":"reference_low_res" if row["height"]<700 else "standard_character",
+                "classification_source":"wiki_target_metadata", "visual_review":"pending",
+                "variant_kind":"combat_style" if t.get("asset_type")=="style_portrait" else ("costume" if t.get("asset_type")=="costume_portrait" else "reference")
             })
             old_ids.add(id);old_urls.add(row["image_url"]);old_hashes.add(row["sha256"])
             added.append(name)
