@@ -1,0 +1,60 @@
+{
+  "schema_version": "1",
+  "id": "deep-abyss-meeting",
+  "title": "历史样片：忍村深渊复盘会",
+  "kind": "dialogue-animation",
+  "role": "example-only",
+  "notes": "旧漫画会议风格作为可选独立作品保留；不要复制它作为其他项目的基础。",
+  "required_files": [
+    "ninja/video/workflow/episodes/deep-abyss-meeting-v1.json",
+    "ninja/video/workflow/scripts/render.py",
+    "ninja/assets/characters/hayabusa_01.png",
+    "ninja/assets/backgrounds/wallpaper_moon_01.jpg"
+  ],
+  "render": {
+    "preview": {
+      "argv": [
+        "python",
+        "ninja/video/workflow/scripts/render.py",
+        "--recipe",
+        "ninja/video/workflow/episodes/deep-abyss-meeting-v1.json",
+        "--quality",
+        "draft",
+        "--tts",
+        "off",
+        "--seconds",
+        "2",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-preview.mp4",
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 1.8,
+        "max_seconds": 2.25
+      }
+    },
+    "final": {
+      "argv": [
+        "python",
+        "ninja/video/workflow/scripts/render.py",
+        "--recipe",
+        "ninja/video/workflow/episodes/deep-abyss-meeting-v1.json",
+        "--quality",
+        "final",
+        "--tts",
+        "edge",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-final.mp4",
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 47,
+        "max_seconds": 49,
+        "min_width": 1280,
+        "min_height": 720
+      }
+    }
+  }
+}
