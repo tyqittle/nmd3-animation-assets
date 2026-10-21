@@ -3,7 +3,7 @@
 Render with: python3 ninja/mv/make_mv.py
 Uses only image files in ninja/ and audio file in music/.
 """
-import os, math, random, subprocess, shutil
+import os, math, random, subprocess, shutil, argparse
 from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance, ImageOps
@@ -181,20 +181,28 @@ def screen(t,beats):
   s=int(360*(1-p/.09))
   d.polygon([(0,0),(s,0),(s+190,H),(0,H)],fill=(244,245,244,int(170*(1-p/.09))))
  return base.convert("RGB")
-def render():
+def render(seconds=None, output=None):
  if not shutil.which("ffmpeg"):raise SystemExit("ffmpeg required")
+ render_length = LENGTH if seconds is None else min(LENGTH, float(seconds))
+ if render_length <= 0:raise ValueError("seconds must be positive")
  assert AUDIO.exists(),str(AUDIO)
  for p in BG+[x[1] for x in HERO]+BOSS:
   assert (ROOT/p).exists(),p
  beats=beat_analysis()
- path=OUTPUT/"ninja3-shadow-protocol-v2.mp4"
- cmd=["ffmpeg","-y","-loglevel","error","-f","rawvideo","-pix_fmt","rgb24","-video_size",f"{W}x{H}","-framerate",str(FPS),"-i","-","-i",str(AUDIO),"-t",str(LENGTH),"-filter_complex","[0:v]scale=1280:720:flags=lanczos,format=yuv420p[v];[1:a]afade=t=in:st=0:d=1.5,afade=t=out:st=45:d=3[a]","-map","[v]","-map","[a]","-c:v","libx264","-preset","veryfast","-crf","21","-c:a","aac","-b:a","192k","-movflags","+faststart",str(path)]
+ path=Path(output) if output is not None else OUTPUT/"ninja3-shadow-protocol-v2.mp4"
+ path.parent.mkdir(parents=True,exist_ok=True)
+ cmd=["ffmpeg","-y","-loglevel","error","-f","rawvideo","-pix_fmt","rgb24","-video_size",f"{W}x{H}","-framerate",str(FPS),"-i","-","-i",str(AUDIO),"-t",str(render_length),"-filter_complex","[0:v]scale=1280:720:flags=lanczos,format=yuv420p[v];[1:a]afade=t=in:st=0:d=1.5,afade=t=out:st=45:d=3[a]","-map","[v]","-map","[a]","-c:v","libx264","-preset","veryfast","-crf","21","-c:a","aac","-b:a","192k","-movflags","+faststart",str(path)]
  proc=subprocess.Popen(cmd,stdin=subprocess.PIPE)
  try:
-  for i in range(int(LENGTH*FPS)):
+  for i in range(round(render_length*FPS)):
    proc.stdin.write(screen(i/FPS,beats).tobytes())
  finally:
   proc.stdin.close()
  if proc.wait():raise SystemExit("ffmpeg failed")
  print("Rendered:",path)
-if __name__=="__main__":render()
+if __name__=="__main__":
+ parser=argparse.ArgumentParser(description="Legacy Shadow Protocol MV renderer; kept as optional artistic backend")
+ parser.add_argument("--seconds",type=float,default=None,help="Optional short preview duration")
+ parser.add_argument("--output",default=None,help="Custom output file")
+ args=parser.parse_args()
+ render(seconds=args.seconds,output=args.output)
