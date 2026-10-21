@@ -59,6 +59,24 @@ def matching_images(html: bytes, name: str) -> list[str]:
             url = original_image_url(link.get("href"))
             if url and url not in sources:
                 sources.insert(0, url)
+    # Most monster articles include a naked full-image link immediately after the
+    # named heading. Its IMG alt can be blank, so we also inspect that narrow region.
+    heading=next((h for h in content.find_all(['h2','h3'])
+                  if name in h.get_text(' ',strip=True)),None)
+    if heading is not None:
+        for el in heading.next_elements:
+            if getattr(el,'name',None) in ('h2','h3'):
+                break
+            if getattr(el,'name',None) != 'a':
+                continue
+            raw=el.get('href')
+            candidate=original_image_url(raw)
+            if candidate and candidate not in sources:
+                # Do not use generic MonsterFrontPage/other wiki UI thumbnails.
+                if raw and not any(x in parse.unquote(raw).lower() for x in ('monsterfrontpage','breadimg','wiki')):
+                    sources.append(candidate)
+            if len(sources)>=4:
+                break
     return sources[:4]
 
 
@@ -89,7 +107,7 @@ def discover(target: dict):
                 return {**result,"status":"unsafe_image_url"}
             candidates=[direct]
         else:
-            page=get(target["page"],timeout=14,max_bytes=3*1024*1024)
+            page=get(parse.quote(target["page"],safe=":/?&=%+#"),timeout=14,max_bytes=3*1024*1024)
             candidates=matching_images(page,target["name"])
         if not candidates:
             return {**result,"status":"no_matching_boss_image"}
