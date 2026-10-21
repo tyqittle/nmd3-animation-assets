@@ -4,13 +4,25 @@
 
 **[打开 Pages 素材图鉴](https://tyqittle.github.io/nmd3-animation-assets/)** · [素材原图总索引](catalog/assets.json) · [可下载 CSV 索引](catalog/assets.csv)
 
+## 武器与 Boss 实图扩充（2026-10-21）
+
+[直接浏览网站](https://tyqittle.github.io/nmd3-animation-assets/) · [武器文件](assets/weapons/) · [Boss 文件](assets/bosses/)
+
+本轮已经把 **17 张武器实图和 5 张 Boss 实图** 下载并写入仓库，武器从 13 张增至 **30 张**，Boss 从 6 张增至 **11 张**。整个素材图鉴现在有 **107 张可读取的图片文件和 107 张对应 WebP 预览图**（人物 45、武器 30、Boss 11、壁纸 8、场景 1、宣传 10、特效 2）。
+
+Boss 新增：**异化毒龙、八咫乌、骸骨死神、青翼龙王、残心**。武器新增：**焚天、破雾·贯羽、尽滅、三日月雷切、苍雪祝神铃、岚·不鸣之刃、龙毫笔、风月含袖、怒鲤双生、紫电白虹、如龙临渊、八岐断雷枪、丛云之霜羽**与多种百炼、三日月雷切幻化。原先误把 BWiki 公共 `WuqiBG` 圆环模板当作“百炼”武器的条目已经替换为真实武器图。
+
+新增素材均保留来源页、原图路径、尺寸、哈希校验等字段。下载和图像格式验证已完成，**逐张人工视觉身份复核仍待完善**；尚未成功获取图片的候选不会显示为已入库素材。采集后立即生成轻量 WebP 预览，网站仍可点开未经缩小的原图。
+
+[武器待采集目标](catalog/wiki_weapon_targets.json) · [Boss 待采集目标](catalog/wiki_boss_targets.json) · [武器采集与同步工作流](.github/workflows/expand-weapons.yml) · [Boss 采集与同步工作流](.github/workflows/expand-bosses.yml)
+
 ## 实图核对与分类修复（2026-10-21）
 
 **[打开素材图鉴](https://tyqittle.github.io/nmd3-animation-assets/)** · [待核对与实图纠错清单](docs/VISUAL_AUDIT_2026-10-21.md) · [完整 JSON](catalog/assets.json)
 
-本仓库仍保存 **85 张真实图片文件**，不会因为分类错误就删除原始素材。已发现 **3 张源名称与实际画面类型/身份不一致的素材**，在网站默认页面隔离，点击「查看待核对素材」仍可查看。
+**历史记录（本次扩充前）**：当时仓库有 **85 张真实图片文件**；现已增至 107 张，最新分类数量见上方。本次分类修复不会因为标注错误而删除原始素材。已发现 **3 张源名称与实际画面类型/身份不一致的素材**，在网站默认页面隔离，点击「查看待核对素材」仍可查看。
 
-| 逻辑大类 | 已下载文件 | 正常图鉴展示 |
+| 逻辑大类 | 扩充前已下载文件 | 扩充前正常图鉴展示 |
 |---|---:|---:|
 | 忍者角色 | 45 | 44 |
 | 武器 | 13 | 13 |
@@ -36,7 +48,7 @@
 - **角色：** 乘霄·戌时、双焰·小椒、雷兽·阿力、神炎·小椒、不知火·舞、夜叉·隼白、极刃·血影、贺新焰·双焰小椒。
 - **武器：** 伏溟九渊、尽滅·共逐风、风月含袖·流泠、巨阙·缚日、怒鲤双生·寂鲤并蒂、百雷·拂晓·龙泓、百炼。
 - 新原图位于 `assets/characters/skins/`、`assets/characters/2026-10-expansion/`、`assets/weapons/2026-10-expansion/`、`assets/weapons/wiki/`。
-- 新增 [89 项角色和皮肤候选采集目标](catalog/wiki_illustration_targets.json)、[18 项武器候选采集目标](catalog/wiki_weapon_targets.json)。新武器**焚天**目前列在待采集目标中，**还没有经过下载校验的原图**，不计入实图数量。
+- 新增 [89 项角色和皮肤候选采集目标](catalog/wiki_illustration_targets.json)、[18 项武器候选采集目标](catalog/wiki_weapon_targets.json)。新武器**焚天**目前列在待采集目标中，在该批次**尚未完成下载验证**；现已在本轮武器扩充中取得实际图片并入库。
 
 ### 2026-10-20 上一批补充：+23 张实际图片
 
