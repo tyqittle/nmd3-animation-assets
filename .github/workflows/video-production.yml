@@ -1,50 +1,31 @@
 name: Ninja 3 Video Production
 
+# This workflow constrains production stages, never creative direction.
 on:
   workflow_dispatch:
     inputs:
-      video_type:
-        description: 'Select video format'
+      project:
+        description: 'Path to YOUR project.json in the repository (no fixed episode list)'
         required: true
-        type: choice
-        default: short
-        options:
-          - short
-          - mv
-      episode:
-        description: 'Short-video episode (ignored for MV)'
+        type: string
+      stage:
+        description: 'Preview, final, or preview then final'
         required: true
+        default: all
         type: choice
-        default: blood-shadow-interview-v1
         options:
-          - blood-shadow-interview-v1
-          - deep-abyss-meeting-v1
-      quality:
-        description: 'Short-video quality (MV keeps its original settings)'
-        required: true
-        type: choice
-        default: final
-        options:
-          - draft
+          - all
+          - preview
           - final
-      narration:
-        description: 'Mandarin voices (edge=natural, placeholder=robot, off=music only)'
-        required: true
-        type: choice
-        default: edge
-        options:
-          - edge
-          - placeholder
-          - "off"
   push:
     paths:
       - 'mv/**'
-      - 'video/workflow/**'
+      - 'video/**'
       - '.github/workflows/video-production.yml'
   pull_request:
     paths:
       - 'mv/**'
-      - 'video/workflow/**'
+      - 'video/**'
       - '.github/workflows/video-production.yml'
 
 permissions:
@@ -52,121 +33,72 @@ permissions:
 
 jobs:
   verify:
-    name: Automatic smoke test
+    name: Verify independent video projects
     if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - name: Checkout Ninja 3 repository
+      - name: Checkout Ninja 3 source
         uses: actions/checkout@v4
         with:
           path: ninja
-      - name: Install video test dependencies
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg fonts-noto-cjk
-          python -m pip install pillow numpy
-      - name: Check Python syntax
-        run: |
-          python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py ninja/video/workflow/scripts/test_audio.py
-      - name: Unit-test speech timing and mixing (offline)
-        run: python ninja/video/workflow/scripts/test_audio.py
-      - name: Check episode references and image files
-        run: python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/deep-abyss-meeting-v1.json
-      - name: Check new Blood Shadow episode
-        run: python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/blood-shadow-interview-v1.json
-      - name: Render two-second draft MP4
-        run: python ninja/video/workflow/scripts/render.py --recipe ninja/video/workflow/episodes/deep-abyss-meeting-v1.json --quality draft --tts off --seconds 2 --output output/smoke.mp4
-      - name: Verify H.264 and AAC output
-        run: |
-          test -s output/smoke.mp4
-          ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height -of json output/smoke.mp4
-
-  produce:
-    name: Build selected video
-    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[render-video]'))
-    runs-on: ubuntu-latest
-    timeout-minutes: 40
-    steps:
-      - name: Checkout Ninja 3 repository
-        uses: actions/checkout@v4
-        with:
-          path: ninja
-      - name: Checkout soundtrack library for MV only
-        if: (inputs.video_type || 'short') == 'mv'
+      - name: Fetch optional music assets for legacy MV sample
         uses: actions/checkout@v4
         with:
           repository: tyqittle/anime-music-library
           path: music
-      - name: Install video production dependencies
+      - name: Install common verification tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg espeak-ng fonts-noto-cjk fonts-dejavu-core
-          python -m pip install pillow numpy edge-tts
-      - name: Validate short-video assets and timeline
-        if: (inputs.video_type || 'short') == 'short'
-        env:
-          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
-        run: python ninja/video/workflow/scripts/check.py "ninja/video/workflow/episodes/${EPISODE}.json"
-      - name: Smoke-test short-video output
-        if: (inputs.video_type || 'short') == 'short'
-        env:
-          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
-        run: python ninja/video/workflow/scripts/render.py --recipe "ninja/video/workflow/episodes/${EPISODE}.json" --quality draft --tts off --seconds 2 --output output/smoke.mp4
-      - name: Render full short video
-        if: (inputs.video_type || 'short') == 'short'
-        env:
-          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
-          QUALITY: ${{ inputs.quality || 'final' }}
-          NARRATION: ${{ inputs.narration || 'edge' }}
-        run: python ninja/video/workflow/scripts/render.py --recipe "ninja/video/workflow/episodes/${EPISODE}.json" --quality "$QUALITY" --tts "$NARRATION" --output "output/${EPISODE}-${QUALITY}.mp4"
-      - name: Validate dialogue quality report
-        if: (inputs.video_type || 'short') == 'short' && (inputs.narration || 'edge') != 'off'
-        env:
-          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
-          QUALITY: ${{ inputs.quality || 'final' }}
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          python -m pip install pillow numpy
+      - name: Compile Python sources
         run: |
-          python - <<'PY'
-          import json, os
-          ep = os.environ["EPISODE"]
-          episode = json.load(open("ninja/video/workflow/episodes/"+ep+".json", encoding="utf-8"))
-          report = json.load(open("output/"+ep+"-"+os.environ["QUALITY"]+"-audio-report.json", encoding="utf-8"))
-          expected = [i for i, s in enumerate(episode["shots"]) if s.get("voice")]
-          clips = report["clips"]
-          assert len(clips) == len(expected), (len(clips), len(expected))
-          assert not report["speech_clipped"]
-          assert all(c["shot"] == i and c["start"] >= episode["shots"][i]["start"]
-                     and c["end"] <= episode["shots"][i]["end"]
-                     for i, c in zip(expected, clips)), clips
-          assert report["peak"] > 0
-          print("PASS:", len(clips), "fully aligned voices, peak:", report["peak"])
-          PY
-      - name: Verify music source for legacy MV
-        if: (inputs.video_type || 'short') == 'mv'
-        run: test -s music/music/game-ost/jrpg-epic-rock-full.mp3
-      - name: Render full music video
-        if: (inputs.video_type || 'short') == 'mv'
-        run: python ninja/mv/make_mv.py
-      - name: Inspect requested video output
-        env:
-          VIDEO_TYPE: ${{ inputs.video_type || 'short' }}
-          EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
-          QUALITY: ${{ inputs.quality || 'final' }}
+          python -m py_compile ninja/mv/make_mv.py ninja/video/workflow/scripts/production.py ninja/video/workflow/scripts/render.py ninja/video/workflow/scripts/audio.py ninja/video/workflow/scripts/check.py ninja/video/workflow/scripts/test_audio.py ninja/video/workflow/scripts/test_production.py
+      - name: Test generic video workflow (no fixed visual language)
+        run: python ninja/video/workflow/scripts/test_production.py
+      - name: Test existing dialogue engine
+        run: python ninja/video/workflow/scripts/test_audio.py
+      - name: Verify project sources and manifests
+        run: python ninja/video/workflow/scripts/production.py --stage validate-all
+      - name: Test legacy dialogue data as a regression only
         run: |
-          if [ "$VIDEO_TYPE" = "mv" ]; then
-            file="output/ninja3-shadow-protocol-v2.mp4"
-          else
-            file="output/${EPISODE}-${QUALITY}.mp4"
-          fi
-          test -s "$file"
-          ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height -of json "$file"
-      - name: Upload resulting MP4
+          python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/deep-abyss-meeting-v1.json
+          python ninja/video/workflow/scripts/check.py ninja/video/workflow/episodes/blood-shadow-interview-v1.json
+      - name: Preview dialogue example independently
+        run: python ninja/video/workflow/scripts/production.py --project video/projects/deep-abyss-meeting/project.json --stage preview
+      - name: Preview music video example independently
+        run: python ninja/video/workflow/scripts/production.py --project video/projects/shadow-protocol-mv/project.json --stage preview
+
+  produce:
+    name: Build user-selected creative project
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout Ninja 3 source
+        uses: actions/checkout@v4
+        with:
+          path: ninja
+      - name: Fetch optional music assets
+        uses: actions/checkout@v4
+        with:
+          repository: tyqittle/anime-music-library
+          path: music
+      - name: Install common media tools (other dependencies are per project)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-noto-cjk fonts-dejavu-core espeak-ng
+      - name: Follow this project's render commands
+        env:
+          PROJECT: ${{ inputs.project }}
+          STAGE: ${{ inputs.stage }}
+        run: |
+          python ninja/video/workflow/scripts/production.py --project "$PROJECT" --stage "$STAGE"
+      - name: Upload rendered video and project outputs
         uses: actions/upload-artifact@v4
         with:
-          name: ninja3-video-${{ inputs.video_type || 'short' }}-${{ github.run_number }}
-          path: |
-            output/*.mp4
-            output/*-audio-report.json
-            ninja/video/workflow/episodes/*.json
+          name: ninja3-production-${{ github.run_number }}
+          path: output/**
           if-no-files-found: error
           retention-days: 30
