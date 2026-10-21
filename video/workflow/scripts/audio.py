@@ -33,10 +33,13 @@ def create(episode,output,duration,tts):
         add(note(pitches[(i//4)%4]*2,.16,.025),when+beat*.62)
     for shot in episode["shots"][1:]:
         add(note(670,.15,.07),shot["start"])
-    for ix in range(3):
-        add(note((520,390,260)[ix],.24,.10),18.4+ix*.2)
-    for ix in range(4):
-        add(note(110+110*ix,.3,.10),31.62+ix*.13)
+    for shot in episode["shots"]:
+        if shot["kind"]=="system":
+            for ix in range(3):
+                add(note((520,390,260)[ix],.24,.10),shot["start"]+ix*.2)
+        elif shot.get("effect")=="panic":
+            for ix in range(4):
+                add(note(110+110*ix,.3,.10),shot["start"]+.03+ix*.13)
     if tts=="placeholder":
         with tempfile.TemporaryDirectory() as temp:
             for i,shot in enumerate(episode["shots"]):
