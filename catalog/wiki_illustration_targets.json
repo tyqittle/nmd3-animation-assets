@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "source_index": "https://wiki.biligame.com/nmd3/忍者皮肤",
-  "description": "仅从 BWIKI 皮肤详情页采集名称包含立绘的资源；不会采集头像、表情或缩略图。",
+  "description": "扩展角色与皮肤立绘采集目标，使用 BWIKI 页面显式标注的立绘图；仅将通过下载校验的图片入库。",
   "targets": [
     {
       "name": "镜花·琳",
@@ -352,6 +352,102 @@
       "name": "清悦·兮兰",
       "character": "其他",
       "slug": "070_misc"
+    },
+    {
+      "name": "乘霄·戌时（皮肤）",
+      "character": "乘霄·戌时",
+      "slug": "071_chengxiao_juexing"
+    },
+    {
+      "name": "戌时（皮肤）",
+      "character": "乘霄·戌时",
+      "slug": "072_chengxiao_base"
+    },
+    {
+      "name": "浪花快枪手",
+      "character": "乘霄·戌时",
+      "slug": "074_chengxiao_watergun"
+    },
+    {
+      "name": "风铭·戌时（皮肤）",
+      "character": "风铭·戌时",
+      "slug": "075_xushi_fengming"
+    },
+    {
+      "name": "戌时",
+      "character": "风铭·戌时",
+      "slug": "076_xushi_base"
+    },
+    {
+      "name": "胜利之星",
+      "character": "风铭·戌时",
+      "slug": "077_xushi_star"
+    },
+    {
+      "name": "萌军船长",
+      "character": "风铭·戌时",
+      "slug": "078_xushi_captain"
+    },
+    {
+      "name": "双焰·小椒",
+      "character": "双焰·小椒",
+      "slug": "080_shuangyan"
+    },
+    {
+      "name": "喵之双子星",
+      "character": "双焰·小椒",
+      "slug": "081_shuangyan_cats"
+    },
+    {
+      "name": "贺新焰",
+      "character": "双焰·小椒",
+      "slug": "082_shuangyan_anniversary"
+    },
+    {
+      "name": "跃焰双驱",
+      "character": "双焰·小椒",
+      "slug": "083_shuangyan_dual"
+    },
+    {
+      "name": "星祈捕梦者",
+      "character": "霜刃·伊鹤",
+      "slug": "084_yihe_starseer"
+    },
+    {
+      "name": "旧日·时之轮",
+      "character": "雷羿·银枭",
+      "slug": "085_yinxiao_time"
+    },
+    {
+      "name": "心动怪谈",
+      "character": "樱火·荧",
+      "slug": "086_ying_ghost"
+    },
+    {
+      "name": "绯斩·苍牙",
+      "character": "绯斩·苍牙",
+      "slug": "088_cangya_fezhan"
+    },
+    {
+      "name": "神炎·小椒",
+      "character": "神炎·小椒",
+      "slug": "089_xiaojiao_shenyan"
+    },
+    {
+      "name": "雷兽·阿力",
+      "character": "雷兽·阿力",
+      "slug": "090_ali_thunder"
+    },
+    {
+      "name": "不知火·舞",
+      "character": "不知火·舞",
+      "slug": "091_mai"
+    },
+    {
+      "name": "乘霄·戌时",
+      "character": "乘霄·戌时",
+      "slug": "092_chengxiao"
     }
-  ]
+  ],
+  "updated": "2026-10-21"
 }
