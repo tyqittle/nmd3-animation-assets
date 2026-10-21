@@ -1,0 +1,72 @@
+name: Render Ninja 3 Short Video
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Episode recipe
+        required: true
+        type: choice
+        options:
+          - deep-abyss-meeting-v1
+      quality:
+        description: Render quality
+        required: true
+        type: choice
+        default: final
+        options:
+          - draft
+          - final
+      tts:
+        description: Temporary robotic Chinese narration
+        required: true
+        type: choice
+        default: placeholder
+        options:
+          - placeholder
+          - "off"
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout local Ninja 3 artwork
+        uses: actions/checkout@v4
+      - name: Install video and Chinese text dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg espeak-ng fonts-noto-cjk
+          python -m pip install pillow numpy
+      - name: Verify recipe and repository images
+        env:
+          EPISODE: ${{ inputs.episode }}
+        run: python video/workflow/scripts/check.py "video/workflow/episodes/${EPISODE}.json"
+      - name: Render two-second smoke test
+        env:
+          EPISODE: ${{ inputs.episode }}
+        run: |
+          python video/workflow/scripts/render.py --recipe "video/workflow/episodes/${EPISODE}.json" --quality draft --tts off --seconds 2 --output output/smoke.mp4
+          ffprobe -v error -show_entries format=duration,size -of json output/smoke.mp4
+      - name: Render whole video as MP4
+        env:
+          EPISODE: ${{ inputs.episode }}
+          QUALITY: ${{ inputs.quality }}
+          TTS: ${{ inputs.tts }}
+        run: python video/workflow/scripts/render.py --recipe "video/workflow/episodes/${EPISODE}.json" --quality "$QUALITY" --tts "$TTS" --output "output/${EPISODE}-${QUALITY}.mp4"
+      - name: Check output file
+        env:
+          EPISODE: ${{ inputs.episode }}
+          QUALITY: ${{ inputs.quality }}
+        run: |
+          test -s "output/${EPISODE}-${QUALITY}.mp4"
+          ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height -of json "output/${EPISODE}-${QUALITY}.mp4"
+      - name: Upload MP4 and episode data
+        uses: actions/upload-artifact@v4
+        with:
+          name: nmd3-short-video-${{ inputs.episode }}-${{ inputs.quality }}
+          path: |
+            output/${{ inputs.episode }}-${{ inputs.quality }}.mp4
+            video/workflow/episodes/${{ inputs.episode }}.json
+          if-no-files-found: error
+          retention-days: 30

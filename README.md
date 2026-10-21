@@ -77,3 +77,12 @@ python scripts/audit_assets.py
 ## 版权
 
 本仓库为非官方个人参考资料库，图片版权属于原权利人。网页可见不意味着获授权公开复制、再分发或商用。仓库目前为 **Public**；如需仅私人使用，可在 GitHub Settings 调整为 Private。见 [版权说明](docs/RIGHTS.md)。
+
+## 忍3短视频制作工作流（V1.0）
+
+- [查看可持续迭代的视频制作工作流](video/workflow/README.md)
+- [编辑48秒《忍村深渊复盘会》分镜 JSON](video/workflow/episodes/deep-abyss-meeting-v1.json)
+- [版本与迭代记录](video/workflow/CHANGELOG.md)
+- [GitHub Actions 一键渲染 MP4](.github/workflows/render-short-video.yml)
+
+该流程与原来的 MV 渲染工作流相互独立；从本仓库实际素材生成 MP4，先试渲染、再质检，不再依赖浏览器网页录制。
