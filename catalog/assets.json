@@ -1599,6 +1599,25 @@
       "copyright": "third_party_review_needed",
       "animation_use": "character_layer",
       "quality_tier": "standard_character"
+    },
+    {
+      "id": "wiki_weapon_102_bailian",
+      "name": "百炼",
+      "category": "weapons",
+      "subcategory": "weapon_art",
+      "image_url": "https://patchwiki.biligame.com/images/nmd3/9/98/qt7fjkkslu3cxkr4n9p28kv12cwcihz.png",
+      "source_page": "https://wiki.biligame.com/nmd3/%E7%99%BE%E7%82%BC",
+      "local_path": "assets/weapons/wiki/wiki_weapon_102_bailian.png",
+      "download_status": "downloaded",
+      "source_verified": "weapon_image_label_on_wiki_page",
+      "copyright": "third_party_review_needed",
+      "animation_use": "prop_layer",
+      "quality_tier": "standard_weapon",
+      "width": 520,
+      "height": 520,
+      "has_alpha": true,
+      "bytes": 34132,
+      "sha256": "96ef7cf1e8622a5978a833afebf0df28d9db7d67e1bd795bef714a9387821277"
     }
   ]
 }
