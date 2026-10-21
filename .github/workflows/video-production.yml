@@ -75,6 +75,8 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[render-video:'))
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: write
     steps:
       - name: Checkout Ninja 3 source
         uses: actions/checkout@v4
@@ -114,3 +116,43 @@ jobs:
           path: output/**
           if-no-files-found: error
           retention-days: 30
+
+      - name: Publish opt-in MP4 directly into the repository
+        env:
+          PROJECT: ${{ inputs.project }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          python - <<'PY'
+          import json, os, re, shutil
+          from pathlib import Path
+          manifest = os.environ.get("PROJECT", "")
+          if not manifest:
+              hit = re.search(r'\[render-video:(video/projects/[a-zA-Z0-9_./-]+/project\.json)\]', os.environ.get("COMMIT_MESSAGE", ""))
+              if not hit:
+                  raise SystemExit("No project requested")
+              manifest = hit.group(1)
+          repo = Path("ninja").resolve()
+          doc = json.loads((repo / manifest).read_text(encoding="utf-8"))
+          if doc.get("publish_pages") is not True:
+              print("Opt-in publication disabled for", doc["id"])
+              raise SystemExit(0)
+          source = (Path.cwd() / doc["render"]["final"]["output"].format(id=doc["id"])).resolve()
+          if not source.is_file() or not source.is_relative_to((Path.cwd()/"output").resolve()):
+              raise SystemExit("Final MP4 missing or outside output directory")
+          dest = repo / "video" / "exports" / (doc["id"] + ".mp4")
+          dest.parent.mkdir(parents=True, exist_ok=True)
+          shutil.copyfile(source, dest)
+          print("Direct MP4 ready:", dest, dest.stat().st_size)
+          PY
+          cd ninja
+          git add video/exports
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(video): publish opt-in MP4 [skip ci]"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          else
+            echo "No MP4 publication requested"
+          fi
