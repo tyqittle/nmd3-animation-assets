@@ -33,7 +33,7 @@ jobs:
           import csv,json
           from pathlib import Path
           cat=json.loads(Path("catalog/assets.json").read_text("utf-8"))
-          keys=["id","name","category","subcategory","character","weapon_family","variant_kind","image_url","source_page","local_path","download_status","width","height","has_alpha","sha256","quality_tier","classification_source","visual_review"]
+          keys=["id","name","category","subcategory","character","weapon_family","variant_kind","review_status","visual_review","original_record_name","classification_note","image_url","source_page","local_path","download_status","width","height","has_alpha","sha256","quality_tier","classification_source"]
           with open("catalog/assets.csv","w",encoding="utf-8",newline="") as f:
               writer=csv.DictWriter(f,fieldnames=keys,extrasaction="ignore")
               writer.writeheader()
