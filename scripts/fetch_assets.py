@@ -67,7 +67,7 @@ def fetch(entry, timeout=18, dry_run=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--category", choices=["all", "characters", "bosses", "weapons", "backgrounds"], default="all")
+    parser.add_argument("--category", choices=["all", "characters", "bosses", "weapons", "scenes", "wallpapers", "promos", "effects"], default="all")
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--timeout", type=float, default=18)
     parser.add_argument("--delay", type=float, default=0.8)
