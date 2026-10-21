@@ -8,6 +8,7 @@ import hashlib
 import json
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from functools import lru_cache
 from io import BytesIO
 from pathlib import Path
 from urllib import parse, request
@@ -38,6 +39,11 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "catalog/assets.json"
 TARGETS = ROOT / "catalog/wiki_boss_targets.json"
 REPORT = ROOT / "reports/boss_discovery.json"
+
+
+@lru_cache(maxsize=8)
+def cached_page(url: str) -> bytes:
+    return get(parse.quote(url,safe=":/?&=%+#"),timeout=20,max_bytes=5*1024*1024)
 
 
 def matching_images(html: bytes, name: str) -> list[str]:
@@ -107,7 +113,7 @@ def discover(target: dict):
                 return {**result,"status":"unsafe_image_url"}
             candidates=[direct]
         else:
-            page=get(parse.quote(target["page"],safe=":/?&=%+#"),timeout=14,max_bytes=3*1024*1024)
+            page=cached_page(target["page"])
             candidates=matching_images(page,target["name"])
         if not candidates:
             return {**result,"status":"no_matching_boss_image"}
@@ -147,22 +153,24 @@ def main():
                 reported.append({k:v for k,v in record.items() if k!="data"} | {"status":"duplicate"})
                 print("DUP",t["name"],flush=True)
                 continue
+            group_ref=t.get("kind")=="group_reference"
             path=f"assets/bosses/wiki/{ident}.{record['extension']}"
             file=ROOT/path
             file.parent.mkdir(parents=True,exist_ok=True)
             file.write_bytes(record["data"])
             doc["assets"].append({
-                "id":ident,"name":t["name"],"category":"bosses","subcategory":"boss_art",
+                "id":ident,"name":t["name"],"category":"bosses",
+                "subcategory":"monster_group_reference" if group_ref else "boss_art",
                 "image_url":record["image_url"],"source_page":t["page"],
                 "local_path":path,"download_status":"downloaded",
-                "source_verified":"matching_bwiki_monster_page","copyright":"third_party_review_needed",
-                "animation_use":"boss_reference_only" if not record["has_alpha"] else "boss_layer",
+                "source_verified":"bwiki_monster_dossier_family_thumbnail" if group_ref else "matching_bwiki_monster_page","copyright":"third_party_review_needed",
+                "animation_use":"monster_group_reference_only" if group_ref else ("boss_reference_only" if not record["has_alpha"] else "boss_layer"),
                 "width":record["width"],"height":record["height"],
                 "has_alpha":record["has_alpha"],"bytes":record["bytes"],
                 "sha256":record["sha256"],
-                "classification_source":"wiki_monster_page",
+                "classification_source":"bwiki_monster_dossier" if group_ref else "wiki_monster_page",
                 "visual_review":"pending","review_status":"categorized",
-                "classification_note":"图片来自对应怪物百科页；人物身份仍待逐图人工复核"
+                "classification_note":"怪物档案中的系列代表图，仅供怪物系外观参考，不代表独立 Boss 完整立绘；仍待人工目检" if group_ref else "图片来自对应怪物百科页；身份仍待人工复核"
             })
             known_ids.add(ident)
             known_urls.add(record["image_url"])
