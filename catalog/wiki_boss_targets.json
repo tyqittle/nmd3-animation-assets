@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-10-21",
-  "description": "忍3 BWiki 怪物页面：direct_image 指向页面内明确标注对应 BOSS 的图片源文件；只有实际下载、验图和去重成功才入 assets.json。其他为待核查候选。",
+  "description": "个体 Boss 优先取原始怪物页和明确原图；怪物系封面来自 BWIKI 怪物档案，单独标记 monster_group_reference，不冒充独立 Boss 实体立绘。所有图像须下载、验图、去重成功才进入 catalog。",
   "source": "https://wiki.biligame.com/nmd3/怪物档案",
   "targets": [
     {
@@ -58,6 +58,360 @@
       "name": "鱿刃先生",
       "slug": "youren_xiansheng",
       "page": "https://wiki.biligame.com/nmd3/鱿刃先生"
+    },
+    {
+      "name": "异化毒龙系",
+      "slug": "group_001",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "红龙系",
+      "slug": "group_002",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "赤青系",
+      "slug": "group_003",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "镇狱系",
+      "slug": "group_004",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "雷龙系",
+      "slug": "group_005",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "青龙系",
+      "slug": "group_006",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "黑龙系",
+      "slug": "group_007",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "丹青式神系",
+      "slug": "group_008",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "半藏系",
+      "slug": "group_009",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "小白-β系",
+      "slug": "group_010",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "旅行者系",
+      "slug": "group_011",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "无心之傀系",
+      "slug": "group_012",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "梦境领主系",
+      "slug": "group_013",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "武士使者系",
+      "slug": "group_014",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "武士先锋系",
+      "slug": "group_015",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "残心系",
+      "slug": "group_016",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "毒手系",
+      "slug": "group_017",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "沙克系",
+      "slug": "group_018",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "猩红小椒系",
+      "slug": "group_019",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "白小黑系",
+      "slug": "group_020",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "神秘人系",
+      "slug": "group_021",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "程序猿系",
+      "slug": "group_022",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "绫翼系",
+      "slug": "group_023",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "血影系",
+      "slug": "group_024",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "赤鬼系",
+      "slug": "group_025",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "隼白系",
+      "slug": "group_026",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "雪影系",
+      "slug": "group_027",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "鬼斩·狂系",
+      "slug": "group_028",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "冥府先锋系",
+      "slug": "group_029",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "幻境守卫系",
+      "slug": "group_030",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "恶鬼双煞系",
+      "slug": "group_031",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "暗之身系",
+      "slug": "group_032",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "樱花精系",
+      "slug": "group_033",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "紫面鬼系",
+      "slug": "group_034",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "绫羽系",
+      "slug": "group_035",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "般若系",
+      "slug": "group_036",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "赤木静子系",
+      "slug": "group_037",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "赤面鬼系",
+      "slug": "group_038",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "雷神系",
+      "slug": "group_039",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "青面鬼系",
+      "slug": "group_040",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "黑·式神系",
+      "slug": "group_041",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "优子系",
+      "slug": "group_042",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "前台系",
+      "slug": "group_043",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "掠夺者号系",
+      "slug": "group_044",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "机械蜂系",
+      "slug": "group_045",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "炎剑守卫系",
+      "slug": "group_046",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "石式神系",
+      "slug": "group_047",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "试炼之剑系",
+      "slug": "group_048",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "阳剑守卫系",
+      "slug": "group_049",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "八咫乌系",
+      "slug": "group_050",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "大嘴蝠系",
+      "slug": "group_051",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "犬太郎系",
+      "slug": "group_052",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "犬老板系",
+      "slug": "group_053",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "虎纹年兽王系",
+      "slug": "group_054",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "赤须年兽王系",
+      "slug": "group_055",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "金面年兽王系",
+      "slug": "group_056",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "风栖系",
+      "slug": "group_057",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "鱿刃先生系",
+      "slug": "group_058",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
+    },
+    {
+      "name": "阳剑系",
+      "slug": "group_059",
+      "kind": "group_reference",
+      "page": "https://wiki.biligame.com/nmd3/%E6%80%AA%E7%89%A9%E6%A1%A3%E6%A1%88"
     }
   ]
 }
