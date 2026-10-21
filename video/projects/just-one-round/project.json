@@ -1,0 +1,62 @@
+{
+  "schema_version": "1",
+  "id": "just-one-round",
+  "title": "忍3：队友说随便打打｜抖音风格搞笑短剧",
+  "kind": "original-short-form-comedy",
+  "role": "independent-original",
+  "required_files": [
+    "ninja/video/projects/just-one-round/render.py",
+    "ninja/assets/characters/xiaohei_01.png",
+    "ninja/assets/characters/hayabusa_01.png",
+    "ninja/assets/bosses/shark_01.png",
+    "ninja/assets/weapons/wiki/wiki_weapon_101_fentian.png",
+    "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg",
+    "ninja/assets/backgrounds/wallpaper_moon_01.jpg"
+  ],
+  "setup": [
+    [
+      "python",
+      "-m",
+      "pip",
+      "install",
+      "pillow",
+      "numpy"
+    ]
+  ],
+  "render": {
+    "preview": {
+      "argv": [
+        "python",
+        "ninja/video/projects/just-one-round/render.py",
+        "--preview",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-preview.mp4",
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 3,
+        "max_seconds": 3.35,
+        "min_width": 720,
+        "min_height": 1280
+      }
+    },
+    "final": {
+      "argv": [
+        "python",
+        "ninja/video/projects/just-one-round/render.py",
+        "--output",
+        "{output}"
+      ],
+      "output": "output/{id}-final.mp4",
+      "checks": {
+        "audio_required": true,
+        "min_seconds": 21,
+        "max_seconds": 22,
+        "min_width": 720,
+        "min_height": 1280
+      },
+      "timeout_seconds": 3000
+    }
+  }
+}
