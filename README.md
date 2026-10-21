@@ -82,11 +82,12 @@ python scripts/audit_assets.py
 
 本仓库为非官方个人参考资料库，图片版权属于原权利人。网页可见不意味着获授权公开复制、再分发或商用。仓库目前为 **Public**；如需仅私人使用，可在 GitHub Settings 调整为 Private。见 [版权说明](docs/RIGHTS.md)。
 
-## 忍3短视频制作工作流（V1.0）
+## 唯一视频制作工作流（V1.1）
 
-- [查看可持续迭代的视频制作工作流](video/workflow/README.md)
-- [编辑48秒《忍村深渊复盘会》分镜 JSON](video/workflow/episodes/deep-abyss-meeting-v1.json)
-- [版本与迭代记录](video/workflow/CHANGELOG.md)
-- [GitHub Actions 一键渲染 MP4](.github/workflows/render-short-video.yml)
+**[Ninja 3 Video Production — GitHub Actions 唯一视频制作入口](.github/workflows/video-production.yml)**
 
-该流程与原来的 MV 渲染工作流相互独立；从本仓库实际素材生成 MP4，先试渲染、再质检，不再依赖浏览器网页录制。
+- [工作流说明、分镜与版本记录](video/workflow/README.md)
+- [《忍村深渊复盘会》48 秒分镜 JSON](video/workflow/episodes/deep-abyss-meeting-v1.json)
+- [工作流更新记录](video/workflow/CHANGELOG.md)
+
+制作入口可选 **短视频**（搞笑动画/剧情）或 **MV**（原音乐剪辑），同一个 Actions 工作流负责渲染 MP4。修改脚本和分镜时也由这个工作流自动运行 2 秒回归测试。原来的三个视频 Actions 文件已合并取消，立绘和 MV 脚本保留。

@@ -1,6 +1,6 @@
-# 忍3短视频制作工作流 v1.0
+# 忍3统一视频制作工作流 v1.1
 
-本目录是可复用的视频生产工作流，不覆盖仓库已有的 MV 流程，也不移动原始立绘。工作目标是持续迭代《忍者必须死3》非官方搞笑短片。
+**唯一 GitHub Actions 入口：** [Ninja 3 Video Production](../../.github/workflows/video-production.yml)。合并旧 MV 制作、短视频制作和自动回归测试；原始立绘、`mv/make_mv.py` 和分镜文件全部保留，避免功能丢失。
 
 ## 从选题到成片
 
@@ -25,7 +25,14 @@
 
 ## GitHub 一键渲染
 
-在 Actions > Render Ninja 3 Short Video > Run workflow 选择剧集、画质和是否使用占位配音。将检验、试渲染、正式渲染 MP4，上传 Actions Artifact 供下载（暂存 30 天）。不会自动公开上传 B 站或自动把成品提交到代码仓库。
+在 **Actions > Ninja 3 Video Production > Run workflow** 选择：
+
+- `video_type = short`：从 `episodes/*.json` 选择剧情短片，支持 `draft/final` 和临时配音选项。
+- `video_type = mv`：使用保留的 `mv/make_mv.py` 与 `tyqittle/anime-music-library` 制作音乐视频；短片选项对 MV 不生效。
+
+**只有这一个视频制作 Actions 工作流。** 修改 `mv/**`、`video/workflow/**` 时，同一工作流会自动运行代码静态检查、原图校验和 2 秒 MP4 回归测试；要生成完整 MP4 则手动 Run workflow。最终影片作为 Artifact 保留 30 天。不会自动上传 B 站，也不会自动把 MP4 提交到仓库。
+
+旧 MV 脚本保留在 `mv/` 作为统一视频工作流的内部渲染模块，**不是另一个独立的视频工作流入口**。
 
 ## 质量红线
 
