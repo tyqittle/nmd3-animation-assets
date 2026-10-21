@@ -1,22 +1,24 @@
 {
   "schema_version": "1",
   "id": "xiaojiao-fentian-shop",
-  "title": "小椒卖焚天：贵是贵了点，但不烧心",
+  "title": "小椒卖焚天：百炼烧心 vs 焚天不烧心",
   "role": "independent-story-film",
-  "concept": "忍村街头兵器铺荒诞喜剧。口头承诺不烧心，试用却把铺子点着。所有对白和剧情均属二创，非游戏内真实机制。",
-  "creative_direction": "复古街头店铺摄影语言、店招纵深、人物实图动画、火焰道具轨迹、烧毁后停拍静默、干冷结尾，不复用历史视频模板。",
+  "concept": "正确遵循不烧心热梗：想省钱的顾客先选百炼，经历非双焰角色手动接锤、接锤后蓄力1.5秒、需看Boss站位的操作门槛；最终尝试焚天的双段短暂无敌、定身连续出招，回头夸「贵是贵了点，但用着不烧心」，小椒一本正经立规矩。价格关系为虚构，不是客观伤害强弱排名。",
+  "creative_direction": "复古市井好货和便宜货对比短剧：顾客贪便宜→三次具体烧心操作→试用焚天→顾客回头认证不烧心→老板规矩论。分镜随故事改变，不做字面燃烧梗、不复用旧视频的固定漫画模板。",
   "sources": {
     "seller": "assets/characters/xiaojiao_01.png",
     "buyer": "assets/characters/xiaohei_01.png",
     "weapon": "assets/weapons/wiki/wiki_weapon_101_fentian.png",
-    "backdrop": "assets/backgrounds/wallpaper_rooftop_01.jpg"
+    "backdrop": "assets/backgrounds/wallpaper_rooftop_01.jpg",
+    "bailian": "assets/weapons/wiki/wiki_weapon_102_bailian.png"
   },
   "required_files": [
     "ninja/video/projects/xiaojiao-fentian-shop/render.py",
     "ninja/assets/characters/xiaojiao_01.png",
     "ninja/assets/characters/xiaohei_01.png",
     "ninja/assets/weapons/wiki/wiki_weapon_101_fentian.png",
-    "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg"
+    "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg",
+    "ninja/assets/weapons/wiki/wiki_weapon_102_bailian.png"
   ],
   "setup": [
     [
@@ -59,8 +61,8 @@
       "timeout_seconds": 2400,
       "checks": {
         "audio_required": true,
-        "min_seconds": 22.3,
-        "max_seconds": 22.7,
+        "min_seconds": 36.8,
+        "max_seconds": 37.2,
         "min_width": 720,
         "min_height": 1280,
         "min_fps": 24,
@@ -68,5 +70,6 @@
         "contact_sheet": true
       }
     }
-  }
+  },
+  "notes": "百炼与焚天都属于控伤兼备的火系武器。本片比较操作复杂度，不比较实际售价、总伤、系数或保值率。"
 }
