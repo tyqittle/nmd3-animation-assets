@@ -28,11 +28,12 @@ on:
           - draft
           - final
       narration:
-        description: 'Temporary synthesized dialogue for shorts'
+        description: 'Mandarin voices (edge=natural, placeholder=robot, off=music only)'
         required: true
         type: choice
-        default: placeholder
+        default: edge
         options:
+          - edge
           - placeholder
           - "off"
   push:
@@ -99,7 +100,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg espeak-ng fonts-noto-cjk fonts-dejavu-core
-          python -m pip install pillow numpy
+          python -m pip install pillow numpy edge-tts
       - name: Validate short-video assets and timeline
         if: (inputs.video_type || 'short') == 'short'
         env:
@@ -115,7 +116,7 @@ jobs:
         env:
           EPISODE: ${{ inputs.episode || 'blood-shadow-interview-v1' }}
           QUALITY: ${{ inputs.quality || 'final' }}
-          NARRATION: ${{ inputs.narration || 'placeholder' }}
+          NARRATION: ${{ inputs.narration || 'edge' }}
         run: python ninja/video/workflow/scripts/render.py --recipe "ninja/video/workflow/episodes/${EPISODE}.json" --quality "$QUALITY" --tts "$NARRATION" --output "output/${EPISODE}-${QUALITY}.mp4"
       - name: Verify music source for legacy MV
         if: (inputs.video_type || 'short') == 'mv'
@@ -142,6 +143,7 @@ jobs:
           name: ninja3-video-${{ inputs.video_type || 'short' }}-${{ github.run_number }}
           path: |
             output/*.mp4
+            output/*-audio-report.json
             ninja/video/workflow/episodes/*.json
           if-no-files-found: error
           retention-days: 30
