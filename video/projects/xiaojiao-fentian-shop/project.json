@@ -10,7 +10,8 @@
     "buyer": "assets/characters/xiaohei_01.png",
     "weapon": "assets/weapons/wiki/wiki_weapon_101_fentian.png",
     "backdrop": "assets/backgrounds/wallpaper_rooftop_01.jpg",
-    "bailian": "assets/weapons/wiki/wiki_weapon_102_bailian.png"
+    "bailian": "assets/weapons/wiki/wiki_weapon_102_bailian.png",
+    "boss": "assets/bosses/wiki/wiki_boss_haigu_sishen.png"
   },
   "required_files": [
     "ninja/video/projects/xiaojiao-fentian-shop/render.py",
@@ -18,7 +19,8 @@
     "ninja/assets/characters/xiaohei_01.png",
     "ninja/assets/weapons/wiki/wiki_weapon_101_fentian.png",
     "ninja/assets/backgrounds/wallpaper_rooftop_01.jpg",
-    "ninja/assets/weapons/wiki/wiki_weapon_102_bailian.png"
+    "ninja/assets/weapons/wiki/wiki_weapon_102_bailian.png",
+    "ninja/assets/bosses/wiki/wiki_boss_haigu_sishen.png"
   ],
   "setup": [
     [
@@ -71,8 +73,8 @@
       }
     }
   },
-  "notes": "百炼与焚天都属于控伤兼备的火系武器。本片比较操作复杂度，不比较实际售价、总伤、系数或保值率。 成片完成后自动保存到 video/exports/xiaojiao-fentian-shop.mp4，可直接下载；不会覆盖其他视频。",
-  "script_revision": "2026-10-21-bailian-comparison-v2",
+  "notes": "百炼与焚天都属于控伤兼备的火系武器。本片比较操作复杂度，不比较实际售价、总伤、系数或保值率。 成片完成后自动保存到 video/exports/xiaojiao-fentian-shop.mp4，可直接下载；不会覆盖其他视频。 2026-10-21 画面质检：已修复不烧心大字与店招重叠；百炼空大展示真Boss错位动作。",
+  "script_revision": "2026-10-21-bailian-comparison-v3-visual-qa",
   "asserted_weapon_comparison": {
     "bailian": [
       "non_shuangyan_manual_catch",
