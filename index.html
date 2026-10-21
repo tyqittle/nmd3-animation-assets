@@ -114,7 +114,7 @@ const originalHref=a=>a.source_page&&a.source_page.startsWith("https://")?a.sour
 // The grid always starts small; subsequent pages are appended without rebuilding.
 const PAGE_SIZE=24;
 let visibleRows=[],rendered=0,loadObserver=null,viewerToken=0,searchTimer=null;
-const previewPath=a=>"./previews/"+a.local_path.replace(/\\.[^.\\/]+$/,".webp");
+const previewPath=a=>"./previews/"+a.local_path.replace(/\.[^./]+$/,".webp");
 
 function openViewer(a){
  const viewer=$("#viewer"),stage=$("#viewer-stage"),image=$("#viewer-img");
