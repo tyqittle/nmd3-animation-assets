@@ -1,62 +1,83 @@
-# 忍3统一视频制作工作流 v1.2
+# 忍3视频制作工作流 v2.0 — 流程固定，创作自由
 
-**唯一 GitHub Actions 入口：** [Ninja 3 Video Production](../../.github/workflows/video-production.yml)。合并旧 MV 制作、短视频制作和自动回归测试；原始立绘、`mv/make_mv.py` 和分镜文件全部保留，避免功能丢失。
+**本文件只约束如何可靠地完成一次视频制作，不约束视频长什么样。** 不必照搬上一个作品的角色站位、对话框、字幕、转场、节奏、片头或配色。
 
-## 从选题到成片
+GitHub Actions 入口：[Ninja 3 Video Production](../../.github/workflows/video-production.yml)。
+通用流程执行器：[production.py](scripts/production.py)。
 
-1. 在 ../../memes/catalog.json 查找梗：核对 context、evidence、sources。原创反转须明确标为二创。
-2. 复制 episodes/deep-abyss-meeting-v1.json 作为新一集分镜；定义每镜头 start/end、speaker、lines、voice、effect。
-3. 使用仓库 assets/ 下已入库原图，核对角色身份、尺寸与透明背景，绝不以不相关的 AI 图冒充原立绘。
-4. 使用 scripts/check.py 验证素材路径、分镜完整性和时长；先做小分辨率短片测试，再渲染整片。
-5. 使用 scripts/render.py 输出 H.264/AAC MP4。scripts/audio.py 为六位角色选用独立中文合成音色、自动调整过长台词的语速、混合原创配乐与音效，并在讲话时压低音乐。默认 edge-tts 在线中文声音；离线机器人语音仅限测试。
-6. 通过 ffprobe 检查视频及音轨编码、尺寸和时长，人工审查画面裁剪、字幕、笑点与配音。
-7. 保留每集 JSON、代码提交及 CHANGELOG。不要覆盖 assets/ 原始图片，不要把临时配音称为正式配音。
+## 必须遵循的是制作流程，不是视频模板
 
-## 本地运行
+1. **创意目标**：为**当前这一部**确定表达意图、受众、整体情绪、时长和输出格式；允许剧情、战斗、MV、搞笑、鬼畜、静音、竖屏或实验影像。
+2. **素材核实**：选择或制作独立的角色、Boss、武器、背景、音乐、音效；核对画面身份、来源、授权、分辨率与透明度。需要图生图时记录真正的参考原图；不冒充成功。
+3. **为作品设计分镜和声音**：可以采用脚本、文字镜头表、关键帧、时间线、动画工程、剪辑表；只要求表达清晰、视听节奏合理，不强制人物对白、固定镜头结构或某种视觉样式。
+4. **独立制作与渲染**：每部作品选自己的工具链和渲染程序，允许 Pillow、Blender、AE、FFmpeg、OpenCV、Live2D、音画剪辑或其他程序。预览可由作品自主定义，也允许只提交正式输出。
+5. **质检**：自动检查视频文件存在且可解码、时长有效；音轨/尺寸/时间范围仅按当前作品声明的条件验收。人工审查素材错配、裁切、节奏、对白完整性、画面质量与版权问题。
+6. **交付和迭代**：保存该作品的工程、命令、来源、最终视频和质检记录；发现问题返回对应制作步骤修复，而不是统一改成另一种模板。
 
-需要 Python 3.10+、FFmpeg、Pillow、NumPy 和中文字库（Linux 安装 fonts-noto-cjk）。自然普通话需安装 edge-tts 且运行时有网络；如明确选择离线机器人测试配音，另装 espeak-ng。网络 TTS 不可用会报错，不会偷偷改用机器人音。
+### 绝不能强加给所有作品的东西
 
-在仓库根目录执行：
+- 固定片头、片尾、进度条、对话框、角色位置、文字系统、转场、字体、调色或特效。
+- 固定背景音乐、配音、声线、角色数、镜头数、时长、比例、帧率、编码工具或讲述方式。
+- 必须使用某个现有的 `episodes/*.json`、`video/workflow/scripts/render.py` 或 `mv/make_mv.py`。
+- “为了自动化方便”将独立作品变成仅替换人名和背景的同一段代码。
 
-    python -m pip install pillow numpy edge-tts
-    python video/workflow/scripts/check.py video/workflow/episodes/deep-abyss-meeting-v1.json
-    python video/workflow/scripts/render.py --recipe video/workflow/episodes/deep-abyss-meeting-v1.json --quality draft --tts off --seconds 2 --output output/test.mp4
-    python video/workflow/scripts/render.py --recipe video/workflow/episodes/deep-abyss-meeting-v1.json --quality final --tts edge --output output/deep-abyss-meeting-v1.mp4
+## 新增视频的技术接口
 
-## GitHub 一键渲染
+每个独立作品创建 `video/projects/<作品目录>/project.json`。它告诉流程“怎样制作这部片”，**不规定任何画面内容或风格**。
 
-在 **Actions > Ninja 3 Video Production > Run workflow** 选择：
+示例（请实现自己的项目脚本；下面的 `my-project/render.py` 不是仓库已存在的文件）：
 
-- `video_type = short`：从 `episodes/*.json` 选择剧情短片，支持 `draft/final`；`narration = edge` 为默认自然中文，`placeholder` 为机器人测试语音，`off` 仅配乐音效。
-- `video_type = mv`：使用保留的 `mv/make_mv.py` 与 `tyqittle/anime-music-library` 制作音乐视频；短片选项对 MV 不生效。
+~~~json
+{
+  "schema_version": "1",
+  "id": "my-project",
+  "title": "完全自主设计的忍3视频",
+  "required_files": ["ninja/video/projects/my-project/render.py"],
+  "setup": [["python", "-m", "pip", "install", "numpy"]],
+  "render": {
+    "preview": {
+      "argv": ["python", "ninja/video/projects/my-project/render.py",
+               "--preview", "--output", "{output}"],
+      "output": "output/{id}-preview.mp4"
+    },
+    "final": {
+      "argv": ["python", "ninja/video/projects/my-project/render.py",
+               "--output", "{output}"],
+      "output": "output/{id}-final.mp4",
+      "checks": {"audio_required": true, "min_seconds": 5}
+    }
+  }
+}
+~~~
 
-**只有这一个视频制作 Actions 工作流。** 修改 `mv/**`、`video/workflow/**` 时，同一工作流会自动运行代码静态检查、原图校验和 2 秒 MP4 回归测试；要生成完整 MP4 则手动 Run workflow。最终影片作为 Artifact 保留 30 天。不会自动上传 B 站，也不会自动把 MP4 提交到仓库。
+技术规则：`render.final` 必须声明，`render.preview` 可选。`argv` 是参数数组，不经 shell；可用 `{output}`、`{id}`、`{repo}`、`{workspace}`。项目自己的代码和资源从工作区读取，生成文件放在工作区 `output/`，可以用 MP4、MOV、WebM、MKV。`setup` 是可选依赖安装命令，不给所有作品强行绑定一个动画引擎。
 
-旧 MV 脚本保留在 `mv/` 作为统一视频工作流的内部渲染模块，**不是另一个独立的视频工作流入口**。
+可选自动检查项：`audio_required`、`min_seconds`、`max_seconds`、`min_width`、`min_height`。**不存在必需的角色名单、字幕形式、声音类别、视频宽高比或统一构图。** 特殊的本地软件、图形环境或依赖需要单独为对应项目配置执行环境。
 
-## 质量红线
+## GitHub Actions：一个入口，所有创作
 
-- 角色、背景图片必须实际存在于本仓库；缺素材停止渲染，不用占位假人冒充。
-- 分镜无重叠、空档；字幕不能截断；不同尺寸立绘需统一画面占比。
-- 原创段子和真实玩家梗分开，涉及版本机制需复核。
-- 人物声线是独立中文合成音色，并非《忍3》声优原声或声音克隆。商业化/公开传播前自行核实立绘、音乐、音色服务许可。
-- 目前只做精灵位移、镜头震动、文字特效与画面合成；并非 Live2D、真实口型或角色一致性图生图。
+进入 [Ninja 3 Video Production](../../.github/workflows/video-production.yml) → Run workflow。
 
-## 迭代路线
+- `project`：填写你这部作品的项目文件路径，例如 `video/projects/shadow-protocol-mv/project.json`。不再有固定的短片/MV类型下拉框，不再预选剧集。
+- `stage = preview`：试渲染（如项目提供）；`final`：直接生成最终版；`all`：从试渲染到最终成片并做技术校验。
+- 自动上传 `output/` 里的文件作为 Actions Artifact（保留30天），不会擅自发布到其他平台。
 
-- v1.1：可视化分镜编辑、角色预览与尺寸模板
-- v1.2：分层角色、眨眼、口型与表情替换
-- v1.3：时间轴混音与配音对齐
-- v1.4：转场模板、运动曲线和镜头节奏
-- v2.0：基于真实原立绘的图生图与角色一致性检验
+本地工作区示例（当前目录是存放 `ninja/` 与可选 `music/` 的共同父目录）：
 
-重大变更升级模板或工作流版本，记录 CHANGELOG，并保留可回退提交。
+~~~bash
+python ninja/video/workflow/scripts/production.py --stage validate-all
+python ninja/video/workflow/scripts/production.py --project video/projects/shadow-protocol-mv/project.json --stage preview
+python ninja/video/workflow/scripts/production.py --project video/projects/deep-abyss-meeting/project.json --stage all
+~~~
 
-## 语音质量与排错（v1.2）
+## 旧代码的地位：可选示例，不是生产规范
 
-- **不再截断台词**：每句语音按镜头起止时间排入，若超长则在限度内用 FFmpeg `atempo` 保持音高加速；需要超过 1.7 倍时直接报错，要求修改分镜时长或文案。
-- **按人物区分配音**：`scripts/audio.py` 内 `PROFILES` 提供默认中文声音/语速/音高；`characters.<角色>.voice_profile` 或镜头级 `voice_profile` 可覆盖。
-- **混音**：讲话区间音乐自动 ducking（带渐变），人声有响度与峰值控制，转场音效不抢对白。
-- **可查错**：每部视频旁产生 `*-audio-report.json`，逐句列出语音、时长、加速倍数和对齐位置；Actions 产物包含这个报告。
-- **自动回归**：`python video/workflow/scripts/test_audio.py` 完全离线验证不裁词、语音对齐、静音模式和 PCM 时长。首次 `edge` 渲染需联网，在线服务不保证永久可用。
-- **手动离线预览**：`--tts placeholder` 使用 eSpeak NG 粗略核对台词，不建议发布。
+- [深渊复盘会](../projects/deep-abyss-meeting/project.json) 的旧 `render.py` 包含固定文字框和角色摆放，仅供其本身继续运行。
+- [Shadow Protocol MV](../projects/shadow-protocol-mv/project.json) 用完全独立的 `mv/make_mv.py` 制作音乐节奏影像，可单独运行和预览。
+- `scripts/audio.py` 是配音合成与混音**可选模块**，静音、纯音乐及真人配音作品无需使用。
+- `episodes/*.json` 是旧漫画短片特定格式，不作为新作品的数据结构要求。
+- 技术性流程测试在 `scripts/test_production.py`；旧配音测试在 `scripts/test_audio.py`。
+
+### 怎样判断修复有效
+
+**新增一个画面语言完全不同的视频，不需要修改总工作流，也不用复制旧镜头脚本。** 只需该作品自己的项目文件 + 自己的制作工具，便能使用相同的校验、预览（可选）、正式输出和交付机制。工作流绝不替作品做审美选择。
